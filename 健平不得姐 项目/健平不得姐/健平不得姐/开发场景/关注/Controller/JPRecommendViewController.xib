@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JPRecommendViewController">
+            <connections>
+                <outlet property="leftTableView" destination="Thw-hw-cKW" id="luz-H4-jhO"/>
+                <outlet property="rightTableView" destination="Hku-9m-LoB" id="eck-MG-MHi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-hw-cKW">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="3zm-7U-Inw"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qky-3l-NSJ"/>
+                        <outlet property="delegate" destination="-1" id="e0A-pw-F7R"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hku-9m-LoB">
+                    <rect key="frame" x="80" y="0.0" width="520" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qJd-n9-DNd"/>
+                        <outlet property="delegate" destination="-1" id="pzd-J1-eIW"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Hku-9m-LoB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BSE-aG-4G9"/>
+                <constraint firstAttribute="trailing" secondItem="Hku-9m-LoB" secondAttribute="trailing" id="IEr-w7-K3F"/>
+                <constraint firstAttribute="bottom" secondItem="Hku-9m-LoB" secondAttribute="bottom" id="JS9-D7-1zg"/>
+                <constraint firstAttribute="bottom" secondItem="Thw-hw-cKW" secondAttribute="bottom" id="KIe-cc-VBP"/>
+                <constraint firstItem="Hku-9m-LoB" firstAttribute="leading" secondItem="Thw-hw-cKW" secondAttribute="trailing" id="Lla-gZ-lJr"/>
+                <constraint firstItem="Thw-hw-cKW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sym-fS-E4I"/>
+                <constraint firstItem="Thw-hw-cKW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="az1-vp-Uhz"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
