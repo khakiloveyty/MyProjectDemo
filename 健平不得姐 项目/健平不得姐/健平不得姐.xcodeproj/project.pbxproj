@@ -52,6 +52,8 @@
 		6F8D1AAC1CEDC6860056FB0C /* JPTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D1AAA1CEDC6860056FB0C /* JPTopicCell.m */; };
 		6F8D1AAD1CEDC6860056FB0C /* JPTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8D1AAB1CEDC6860056FB0C /* JPTopicCell.xib */; };
 		6F8D1AB01CEE00700056FB0C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D1AAF1CEE00700056FB0C /* NSDate+Extension.m */; };
+		6F8D2C321CF7F15E00101AC6 /* JPTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D2C311CF7F15E00101AC6 /* JPTopicVoiceView.m */; };
+		6F8D2C341CF7F16800101AC6 /* JPTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8D2C331CF7F16800101AC6 /* JPTopicVoiceView.xib */; };
 		6F93178B1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93178A1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m */; };
 		6F93178E1CE9B9B3005B1CF3 /* JPRecommendTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93178D1CE9B9B3005B1CF3 /* JPRecommendTag.m */; };
 		6F9317921CE9BB0B005B1CF3 /* JPRecommendTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9317901CE9BB0B005B1CF3 /* JPRecommendTagCell.m */; };
@@ -166,6 +168,9 @@
 		6F8D1AAB1CEDC6860056FB0C /* JPTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPTopicCell.xib; sourceTree = "<group>"; };
 		6F8D1AAE1CEE00700056FB0C /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		6F8D1AAF1CEE00700056FB0C /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		6F8D2C301CF7F15E00101AC6 /* JPTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTopicVoiceView.h; sourceTree = "<group>"; };
+		6F8D2C311CF7F15E00101AC6 /* JPTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTopicVoiceView.m; sourceTree = "<group>"; };
+		6F8D2C331CF7F16800101AC6 /* JPTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPTopicVoiceView.xib; sourceTree = "<group>"; };
 		6F9317891CE9B2F0005B1CF3 /* JPRecommendTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPRecommendTagsViewController.h; sourceTree = "<group>"; };
 		6F93178A1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPRecommendTagsViewController.m; sourceTree = "<group>"; };
 		6F93178C1CE9B9B3005B1CF3 /* JPRecommendTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPRecommendTag.h; sourceTree = "<group>"; };
@@ -426,6 +431,9 @@
 				6F89C1CB1CF2D88B00062F68 /* JPTopicPictureView.xib */,
 				6FE088341CF319B700531509 /* JPProgressView.h */,
 				6FE088351CF319B700531509 /* JPProgressView.m */,
+				6F8D2C301CF7F15E00101AC6 /* JPTopicVoiceView.h */,
+				6F8D2C311CF7F15E00101AC6 /* JPTopicVoiceView.m */,
+				6F8D2C331CF7F16800101AC6 /* JPTopicVoiceView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -756,6 +764,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F9317DF1CE9E50C005B1CF3 /* JPLoginRegisterViewController.xib in Resources */,
+				6F8D2C341CF7F16800101AC6 /* JPTopicVoiceView.xib in Resources */,
 				6F6C227B1CE5B47A000BE077 /* JPRecommendViewController.xib in Resources */,
 				6F8D1AAD1CEDC6860056FB0C /* JPTopicCell.xib in Resources */,
 				6FE088331CF3156700531509 /* JPShowPictureViewController.xib in Resources */,
@@ -840,6 +849,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F6C22891CE5E6D0000BE077 /* JPRecommendUserCell.m in Sources */,
+				6F8D2C321CF7F15E00101AC6 /* JPTopicVoiceView.m in Sources */,
 				6FE088361CF319B700531509 /* JPProgressView.m in Sources */,
 				6F6C22591CE492FD000BE077 /* UIView+Extension.m in Sources */,
 				6F9317921CE9BB0B005B1CF3 /* JPRecommendTagCell.m in Sources */,

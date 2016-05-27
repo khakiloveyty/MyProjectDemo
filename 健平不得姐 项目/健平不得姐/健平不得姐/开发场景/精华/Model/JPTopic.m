@@ -11,10 +11,9 @@
 
 @implementation JPTopic
 
-//自定义成员变量
+//自定义成员变量（自己重写了setter方法和getter方法的情况下就要自定义）
 {
-    CGFloat _cellHeight;
-    CGRect _pictureFrame;
+    CGFloat _cellHeight;    //要重新cellHeight的getter方法，所以要自定义成员变量
 }
 
 /*
@@ -36,8 +35,8 @@
      */
     
     return @{
-             @"pictureWidth":@"width",
-             @"pictureHeight":@"height",
+             @"imageWidth":@"width",
+             @"imageHeight":@"height",
              @"small_image":@"image0",
              @"big_image":@"image1",
              @"mid_image":@"image2"
@@ -111,7 +110,7 @@
             
             //按【最大宽度】算出【比例缩放后】的高度
             CGFloat pictureWidth=maxSize.width;
-            CGFloat scale=self.pictureHeight/self.pictureWidth;
+            CGFloat scale=self.imageHeight/self.imageWidth;
             CGFloat pictureHeiht=pictureWidth*scale;
             
             //如果图片高度超出最大值，则让它变为指定数值
@@ -120,13 +119,31 @@
                 self.bigPicture=YES;
             }
             
-            //计算图片控件的frame
+            //计算图片的frame
             CGFloat pictureX=JPTopicCellMargin;
             CGFloat pictureY=JPTopicCellTextY+textH+JPTopicCellMargin;
             _pictureFrame=CGRectMake(pictureX, pictureY, pictureWidth, pictureHeiht);
             
             //cell高度 += 图片高度 + 图片与下方控件的间距
             _cellHeight+=pictureHeiht+JPTopicCellMargin;
+            
+        }else if (self.type==JPVoiceTopic) {
+        
+            //计算声音图片的frame
+            CGFloat voiceX=JPTopicCellMargin;
+            CGFloat voiceY=JPTopicCellTextY+textH+JPTopicCellMargin;
+            
+            //按【最大宽度】算出【比例缩放后】的高度
+            CGFloat voiceWidth=maxSize.width;
+            CGFloat scale=self.imageHeight/self.imageWidth;
+            CGFloat voiceHeiht=voiceWidth*scale;
+            
+            _voiceFrame=CGRectMake(voiceX, voiceY, voiceWidth, voiceHeiht);
+            
+            //cell高度 += 声音图片高度 + 图片与下方控件的间距
+            _cellHeight+=voiceHeiht+JPTopicCellMargin;
+            
+        }else if (self.type==JPVideoTopic) {
             
         }
         

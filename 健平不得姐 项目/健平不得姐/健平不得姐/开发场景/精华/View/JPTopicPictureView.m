@@ -55,6 +55,7 @@
 }
 
 -(void)setTopic:(JPTopic *)topic{
+    
     _topic=topic;
     
 //    JPLog(@"下载完？%lf %@ %@",topic.pictureProgress,topic.name,self.imageView.image);
@@ -80,8 +81,8 @@
     self.imageView.image=nil;
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.big_image] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
-        //receivedSize：已下载的尺寸
-        //expectedSize：总尺寸
+        //receivedSize：已下载的大小
+        //expectedSize：总大小
         
         //计算并保存进度值
         topic.pictureProgress=1.0*receivedSize/expectedSize;

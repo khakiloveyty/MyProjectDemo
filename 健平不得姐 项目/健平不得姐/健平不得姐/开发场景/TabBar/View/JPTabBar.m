@@ -20,12 +20,15 @@
 -(id)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {
+        
         //添加“+”按钮到Tab上
         UIButton *plusButton=[[UIButton alloc]init];
+        
         [plusButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [plusButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
         [plusButton setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [plusButton setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        
         //设置按钮尺寸跟图片大小一致
         plusButton.size=plusButton.currentBackgroundImage.size;
         

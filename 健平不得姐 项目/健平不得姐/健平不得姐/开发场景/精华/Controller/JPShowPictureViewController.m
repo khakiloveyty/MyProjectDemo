@@ -37,7 +37,7 @@
     
     //设置尺寸
     CGFloat pictureWidth=Screen_Width;
-    CGFloat pictureHeight=pictureWidth*(self.topic.pictureHeight/self.topic.pictureWidth);
+    CGFloat pictureHeight=pictureWidth*(self.topic.imageHeight/self.topic.imageWidth);
     
     //设置位置
     CGFloat pictureX=0;

@@ -10,6 +10,7 @@
 #import "JPTopic.h"
 #import "NSDate+Extension.h"
 #import "JPTopicPictureView.h"
+#import "JPTopicVoiceView.h"
 
 @interface JPTopicCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
@@ -25,6 +26,8 @@
 
 //图片帖子中间的内容
 @property(nonatomic,weak)JPTopicPictureView *pictureView;
+//声音帖子中间的内容
+@property(nonatomic,weak)JPTopicVoiceView *voiceView;
 @end
 
 @implementation JPTopicCell
@@ -44,6 +47,19 @@
         _pictureView=pictureView;
     }
     return _pictureView;
+}
+
+-(JPTopicVoiceView *)voiceView {
+    if (!_voiceView) {
+        JPTopicVoiceView *voiceView=[JPTopicVoiceView voiceView];
+        
+        //先添加到contentView上，这样voiceView就不会死了
+        [self.contentView addSubview:voiceView];
+        
+        //再赋值
+        _voiceView=voiceView;
+    }
+    return _voiceView;
 }
 
 - (void)awakeFromNib {
@@ -80,13 +96,22 @@
     //设置文本
     self.topicTextLabel.text=topic.text;
     
+    self.pictureView.hidden=YES;
+    self.voiceView.hidden=YES;
+    
     //根据模型类型（帖子类型）添加对应的内容到cell的中间（图片、视频）
     if (topic.type==JPPictureTopic) {
         self.pictureView.topic=topic;
         self.pictureView.frame=topic.pictureFrame;
         self.pictureView.hidden=NO;
+    }else if (topic.type==JPVoiceTopic){
+        self.voiceView.topic=topic;
+        self.voiceView.frame=topic.voiceFrame;
+        self.voiceView.hidden=NO;
+    }else if (topic.type==JPVideoTopic){
+    
     }else{
-        self.pictureView.hidden=YES;
+        
     }
     
 }
