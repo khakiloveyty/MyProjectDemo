@@ -20,15 +20,22 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fqx-B9-Tn9" userLabel="背景图片">
                     <rect key="frame" x="0.0" y="0.0" width="354" height="264"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhA-W4-fGM" userLabel="播放时长Label">
-                    <rect key="frame" x="312" y="0.0" width="42" height="21"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhA-W4-fGM" userLabel="播放次数Label">
+                    <rect key="frame" x="318" y="0.0" width="36" height="17"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXu-1n-QAd" userLabel="播放时长Label">
+                    <rect key="frame" x="318" y="247" width="36" height="17"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfW-27-hQV" userLabel="播放按钮">
-                    <rect key="frame" x="146" y="101" width="63" height="63"/>
+                    <rect key="frame" x="146" y="100" width="63" height="63"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="63" id="7oG-rJ-EiZ"/>
                         <constraint firstAttribute="width" constant="63" id="pra-25-bTi"/>
@@ -37,13 +44,6 @@
                     <state key="selected" image="playButtonPause" backgroundImage="playButton"/>
                     <state key="highlighted" backgroundImage="playButtonClick"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXu-1n-QAd" userLabel="播放次数Label">
-                    <rect key="frame" x="312" y="243" width="42" height="21"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -69,6 +69,11 @@
                     <exclude reference="V0s-HE-LVF"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="imageView" destination="fqx-B9-Tn9" id="VQK-Uz-sWq"/>
+                <outlet property="playcountLabel" destination="lhA-W4-fGM" id="jGN-tG-a1K"/>
+                <outlet property="voicetimeLabel" destination="yXu-1n-QAd" id="whb-ZP-RHU"/>
+            </connections>
             <point key="canvasLocation" x="165" y="263"/>
         </view>
     </objects>

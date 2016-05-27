@@ -60,6 +60,8 @@
     
 //    JPLog(@"下载完？%lf %@ %@",topic.pictureProgress,topic.name,self.imageView.image);
   
+    self.progressView.hidden=YES;
+    
     //立马显示最新的进度值（防止因为网速慢，导致显示的是其他cell的进度值）
     [self.progressView setProgress:topic.pictureProgress animated:NO];
 

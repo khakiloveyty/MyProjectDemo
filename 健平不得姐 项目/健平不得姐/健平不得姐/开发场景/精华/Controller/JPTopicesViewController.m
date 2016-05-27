@@ -100,6 +100,8 @@
             return ;
         }
         
+//        [responseObject writeToFile:@"/Users/iosapp/Desktop/百思不得姐数据.plist" atomically:YES];
+        
         //保存页数和maxtime
         self.page=0;
         self.maxtime=responseObject[@"info"][@"maxtime"];

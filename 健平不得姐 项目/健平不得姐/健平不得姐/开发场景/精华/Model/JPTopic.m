@@ -27,7 +27,7 @@
  
  */
 
-//MJExtension框架方法：将服务器返回的属性名转化为自定义的属性名
+//MJExtension框架方法：将【服务器返回的属性名】转化为【自定义的属性名】
 +(NSDictionary *)mj_replacedKeyFromPropertyName{
     /*
         @key：自定义的属性名
@@ -41,6 +41,19 @@
              @"big_image":@"image1",
              @"mid_image":@"image2"
              };
+}
+
+//MJExtension框架方法：定义自身某个【数组属性】的【元素类型】
++(NSDictionary *)mj_objectClassInArray{
+    
+    /*
+        @key：数组属性名
+        @value：元素类型（若不想导入该类型的头文件可直接使用字符串标明）
+     */
+    
+//    return @{@"top_cmt":[JPComment class]};
+    return @{@"top_cmt":@"JPComment"};
+    
 }
 
 -(NSString *)create_time{
@@ -145,6 +158,38 @@
             
         }else if (self.type==JPVideoTopic) {
             
+            //计算声音图片的frame
+            CGFloat videoX=JPTopicCellMargin;
+            CGFloat videoY=JPTopicCellTextY+textH+JPTopicCellMargin;
+            
+            //按【最大宽度】算出【比例缩放后】的高度
+            CGFloat videoWidth=maxSize.width;
+            CGFloat scale=self.imageHeight/self.imageWidth;
+            CGFloat videoHeiht=videoWidth*scale;
+            
+            _voiceFrame=CGRectMake(videoX, videoY, videoWidth, videoHeiht);
+            
+            //cell高度 += 声音图片高度 + 图片与下方控件的间距
+            _cellHeight+=videoHeiht+JPTopicCellMargin;
+            
+        }
+        
+        //如果有热门评论，添加热门评论控件的高度
+        if (self.top_cmt.count) {
+            //cell高度 += 热门评论顶部标题高度 + 热门评论内容内边距
+            _cellHeight+=JPTopicCellHotCommentTitleHeight+JPTopicCellHotCommentContentMargin;
+            
+            maxSize=CGSizeMake(maxSize.width-2*JPTopicCellHotCommentContentMargin, MAXFLOAT);
+            
+            for (JPComment *comment in self.top_cmt) {
+                CGFloat contentH=[[NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content] boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
+                
+                //cell高度 += 热门评论内容高度
+                _cellHeight+=contentH;
+            }
+            
+            //cell高度 += 热门评论内容内边距 + 热门评论与下方控件的间距
+            _cellHeight+=JPTopicCellHotCommentContentMargin+JPTopicCellMargin;
         }
         
         //cell高度 += 底部工具条高度 + cell压缩的间距（因为y值压缩了，高度增加了，总体要多增加一个间距）

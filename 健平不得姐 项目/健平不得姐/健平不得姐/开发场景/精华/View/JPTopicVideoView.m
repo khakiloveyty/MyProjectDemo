@@ -1,31 +1,31 @@
 //
-//  JPTopicVoiceView.m
+//  JPTopicVideoView.m
 //  健平不得姐
 //
 //  Created by ios app on 16/5/27.
 //  Copyright © 2016年 cb2015. All rights reserved.
 //
 
-#import "JPTopicVoiceView.h"
+#import "JPTopicVideoView.h"
 #import "JPTopic.h"
 #import "JPShowPictureViewController.h"
 
-@interface JPTopicVoiceView ()
+@interface JPTopicVideoView ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *voicetimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *videotimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playcountLabel;
 @end
 
-@implementation JPTopicVoiceView
+@implementation JPTopicVideoView
 
-+(instancetype)voiceView{
-    return [[[NSBundle mainBundle] loadNibNamed:@"JPTopicVoiceView" owner:nil options:nil] firstObject];
++(instancetype)videoView{
+    return [[[NSBundle mainBundle] loadNibNamed:@"JPTopicVideoView" owner:nil options:nil] firstObject];
 }
 
 -(void)awakeFromNib{
     self.autoresizingMask=UIViewAutoresizingNone;//不会随父视图的改变而改变（xib文件有可能会拉伸）
     //参考：http://www.cocoachina.com/ios/20141216/10652.html
-    
+
     //给图片添加监听器
     self.imageView.userInteractionEnabled=YES;//开启用户交互
     //添加点击事件：浏览图片
@@ -55,9 +55,9 @@
     self.playcountLabel.text=[NSString stringWithFormat:@"%zd播放",topic.playcount];
     
     //播放时长
-    NSInteger minute=topic.voicetime/60;
-    NSInteger second=topic.voicetime%60;
-    self.voicetimeLabel.text=[NSString stringWithFormat:@"%02zd:%02zd",minute,second];
+    NSInteger minute=topic.videotime/60;
+    NSInteger second=topic.videotime%60;
+    self.videotimeLabel.text=[NSString stringWithFormat:@"%02zd:%02zd",minute,second];
 }
 
 @end

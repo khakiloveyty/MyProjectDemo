@@ -22,6 +22,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //判断是否为gif图片
+    NSString *extension=self.topic.big_image.pathExtension;//取出图片URL的扩展名
+    BOOL isgif=[extension.lowercaseString isEqualToString:@"gif"];
+    
+    if (self.topic.type==JPPictureTopic && isgif==NO) {
+#warning 图片浏览处理
+        self.scrollView.minimumZoomScale = 1.0;
+        self.scrollView.maximumZoomScale = 2.0;
+    }
+    
     //设置下间距
     self.textLabel.text=self.topic.text;
     CGFloat textH=[self.topic.text boundingRectWithSize:CGSizeMake(Screen_Width-15-15, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size.height;

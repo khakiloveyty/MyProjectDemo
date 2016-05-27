@@ -114,7 +114,7 @@
     UICollectionView *titlesView=[[UICollectionView alloc] initWithFrame:CGRectMake(0, JPTitlesViewY, self.view.width, itemHeight) collectionViewLayout:layout];
     titlesView.delegate=self;
     titlesView.dataSource=self;
-    titlesView.backgroundColor=[UIColor colorWithWhite:1 alpha:0.8];
+    titlesView.backgroundColor=[UIColor colorWithWhite:1 alpha:0.9];
     titlesView.showsHorizontalScrollIndicator=NO;
     [self.view addSubview:titlesView];
     self.titlesView=titlesView;

@@ -11,23 +11,28 @@
 #import "NSDate+Extension.h"
 #import "JPTopicPictureView.h"
 #import "JPTopicVoiceView.h"
+#import "JPTopicVideoView.h"
 
 @interface JPTopicCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *createTimeLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *sinaVImageView;
-@property (weak, nonatomic) IBOutlet UILabel *topicTextLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView; //头像
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel; //名称控件
+@property (weak, nonatomic) IBOutlet UILabel *createTimeLabel; //创建时间控件
+@property (weak, nonatomic) IBOutlet UIImageView *sinaVImageView; //新浪vip图标
+@property (weak, nonatomic) IBOutlet UILabel *topicTextLabel; //帖子文本内容控件
+@property (weak, nonatomic) IBOutlet UIView *hotCommentView; //热门评论整体控件
+@property (weak, nonatomic) IBOutlet UILabel *hotCommentContentLabel; //热门评论内容控件
 
-@property (weak, nonatomic) IBOutlet UIButton *dingBtn;
-@property (weak, nonatomic) IBOutlet UIButton *caiBtn;
-@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
-@property (weak, nonatomic) IBOutlet UIButton *commentBtn;
+@property (weak, nonatomic) IBOutlet UIButton *dingBtn; //赞按钮
+@property (weak, nonatomic) IBOutlet UIButton *caiBtn; //踩按钮
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn; //转发按钮
+@property (weak, nonatomic) IBOutlet UIButton *commentBtn; //评论按钮
 
 //图片帖子中间的内容
 @property(nonatomic,weak)JPTopicPictureView *pictureView;
 //声音帖子中间的内容
 @property(nonatomic,weak)JPTopicVoiceView *voiceView;
+//视频帖子中间的内容
+@property(nonatomic,weak)JPTopicVideoView *videoView;
 @end
 
 @implementation JPTopicCell
@@ -62,6 +67,19 @@
     return _voiceView;
 }
 
+-(JPTopicVideoView *)videoView {
+    if (!_videoView) {
+        JPTopicVideoView *videoView=[JPTopicVideoView videoView];
+        
+        //先添加到contentView上，这样videoView就不会死了
+        [self.contentView addSubview:videoView];
+        
+        //再赋值
+        _videoView=videoView;
+    }
+    return _videoView;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
@@ -69,6 +87,7 @@
 
     self.backgroundView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
     
+    //设置没有点击高亮效果
     self.selectionStyle=UITableViewCellSelectionStyleNone;
 }
 
@@ -96,22 +115,58 @@
     //设置文本
     self.topicTextLabel.text=topic.text;
     
-    self.pictureView.hidden=YES;
-    self.voiceView.hidden=YES;
-    
     //根据模型类型（帖子类型）添加对应的内容到cell的中间（图片、视频）
     if (topic.type==JPPictureTopic) {
+        
+        self.pictureView.hidden=NO;
         self.pictureView.topic=topic;
         self.pictureView.frame=topic.pictureFrame;
-        self.pictureView.hidden=NO;
+        
+        self.voiceView.hidden=YES;
+        self.videoView.hidden=YES;
+        
     }else if (topic.type==JPVoiceTopic){
+        
+        self.voiceView.hidden=NO;
         self.voiceView.topic=topic;
         self.voiceView.frame=topic.voiceFrame;
-        self.voiceView.hidden=NO;
-    }else if (topic.type==JPVideoTopic){
-    
-    }else{
         
+        self.pictureView.hidden=YES;
+        self.videoView.hidden=YES;
+        
+    }else if (topic.type==JPVideoTopic){
+        
+        self.videoView.hidden=NO;
+        self.videoView.topic=topic;
+        self.videoView.frame=topic.voiceFrame;
+        
+        self.voiceView.hidden=YES;
+        self.pictureView.hidden=YES;
+        
+    }else{
+        self.pictureView.hidden=YES;
+        self.voiceView.hidden=YES;
+        self.videoView.hidden=YES;
+    }
+    
+    //设置热门评论
+    if (topic.top_cmt.count) {
+        
+        self.hotCommentView.hidden=NO;
+        
+        NSMutableString *commentContent=[NSMutableString string];
+        for (NSInteger i=0;i<topic.top_cmt.count;i++) {
+            JPComment *comment=topic.top_cmt[i];
+            
+            if (i!=0) [commentContent appendString:@"\n"];
+
+            [commentContent appendString:[NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content]];
+        }
+        
+        self.hotCommentContentLabel.text=commentContent;
+        
+    }else{
+        self.hotCommentView.hidden=YES;
     }
     
 }

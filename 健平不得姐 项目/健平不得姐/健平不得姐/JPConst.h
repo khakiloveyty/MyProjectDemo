@@ -33,3 +33,15 @@ UIKIT_EXTERN CGFloat const JPTopicCellPictureMaxHeight;
 
 /** 精华-帖子cell-图片的指定高度（图片超过最大高度时使用） */
 UIKIT_EXTERN CGFloat const JPTopicCellPictureOrdinaryHeight;
+
+/** JPUser-性别-男 */
+UIKIT_EXTERN NSString *const JPUserSexMan;
+
+/** JPUser-性别-女 */
+UIKIT_EXTERN NSString *const JPUserSexWoman;
+
+/** 精华-帖子cell-热门评论标题的高度 */
+UIKIT_EXTERN CGFloat const JPTopicCellHotCommentTitleHeight;
+
+/** 精华-帖子cell-热门评论内容内边距 */
+UIKIT_EXTERN CGFloat const JPTopicCellHotCommentContentMargin;

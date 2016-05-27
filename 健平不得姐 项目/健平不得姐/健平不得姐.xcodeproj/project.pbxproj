@@ -54,6 +54,10 @@
 		6F8D1AB01CEE00700056FB0C /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D1AAF1CEE00700056FB0C /* NSDate+Extension.m */; };
 		6F8D2C321CF7F15E00101AC6 /* JPTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D2C311CF7F15E00101AC6 /* JPTopicVoiceView.m */; };
 		6F8D2C341CF7F16800101AC6 /* JPTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8D2C331CF7F16800101AC6 /* JPTopicVoiceView.xib */; };
+		6F8D2C371CF821D000101AC6 /* JPTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D2C361CF821D000101AC6 /* JPTopicVideoView.m */; };
+		6F8D2C391CF821DD00101AC6 /* JPTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8D2C381CF821DD00101AC6 /* JPTopicVideoView.xib */; };
+		6F8D2C3C1CF83FB800101AC6 /* JPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D2C3B1CF83FB800101AC6 /* JPUser.m */; };
+		6F8D2C3F1CF8430000101AC6 /* JPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D2C3E1CF8430000101AC6 /* JPComment.m */; };
 		6F93178B1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93178A1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m */; };
 		6F93178E1CE9B9B3005B1CF3 /* JPRecommendTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F93178D1CE9B9B3005B1CF3 /* JPRecommendTag.m */; };
 		6F9317921CE9BB0B005B1CF3 /* JPRecommendTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9317901CE9BB0B005B1CF3 /* JPRecommendTagCell.m */; };
@@ -171,6 +175,13 @@
 		6F8D2C301CF7F15E00101AC6 /* JPTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTopicVoiceView.h; sourceTree = "<group>"; };
 		6F8D2C311CF7F15E00101AC6 /* JPTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTopicVoiceView.m; sourceTree = "<group>"; };
 		6F8D2C331CF7F16800101AC6 /* JPTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPTopicVoiceView.xib; sourceTree = "<group>"; };
+		6F8D2C351CF821D000101AC6 /* JPTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTopicVideoView.h; sourceTree = "<group>"; };
+		6F8D2C361CF821D000101AC6 /* JPTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTopicVideoView.m; sourceTree = "<group>"; };
+		6F8D2C381CF821DD00101AC6 /* JPTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPTopicVideoView.xib; sourceTree = "<group>"; };
+		6F8D2C3A1CF83FB800101AC6 /* JPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUser.h; sourceTree = "<group>"; };
+		6F8D2C3B1CF83FB800101AC6 /* JPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPUser.m; sourceTree = "<group>"; };
+		6F8D2C3D1CF8430000101AC6 /* JPComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPComment.h; sourceTree = "<group>"; };
+		6F8D2C3E1CF8430000101AC6 /* JPComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPComment.m; sourceTree = "<group>"; };
 		6F9317891CE9B2F0005B1CF3 /* JPRecommendTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPRecommendTagsViewController.h; sourceTree = "<group>"; };
 		6F93178A1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPRecommendTagsViewController.m; sourceTree = "<group>"; };
 		6F93178C1CE9B9B3005B1CF3 /* JPRecommendTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPRecommendTag.h; sourceTree = "<group>"; };
@@ -411,6 +422,10 @@
 				6F93178D1CE9B9B3005B1CF3 /* JPRecommendTag.m */,
 				6F8D1AA31CEDA6360056FB0C /* JPTopic.h */,
 				6F8D1AA41CEDA6360056FB0C /* JPTopic.m */,
+				6F8D2C3D1CF8430000101AC6 /* JPComment.h */,
+				6F8D2C3E1CF8430000101AC6 /* JPComment.m */,
+				6F8D2C3A1CF83FB800101AC6 /* JPUser.h */,
+				6F8D2C3B1CF83FB800101AC6 /* JPUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,6 +449,9 @@
 				6F8D2C301CF7F15E00101AC6 /* JPTopicVoiceView.h */,
 				6F8D2C311CF7F15E00101AC6 /* JPTopicVoiceView.m */,
 				6F8D2C331CF7F16800101AC6 /* JPTopicVoiceView.xib */,
+				6F8D2C351CF821D000101AC6 /* JPTopicVideoView.h */,
+				6F8D2C361CF821D000101AC6 /* JPTopicVideoView.m */,
+				6F8D2C381CF821DD00101AC6 /* JPTopicVideoView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -769,6 +787,7 @@
 				6F8D1AAD1CEDC6860056FB0C /* JPTopicCell.xib in Resources */,
 				6FE088331CF3156700531509 /* JPShowPictureViewController.xib in Resources */,
 				6F771D3C1CF445C500A40527 /* JPPublishView.xib in Resources */,
+				6F8D2C391CF821DD00101AC6 /* JPTopicVideoView.xib in Resources */,
 				6F89C1CC1CF2D88B00062F68 /* JPTopicPictureView.xib in Resources */,
 				6F6C228A1CE5E6D0000BE077 /* JPRecommendUserCell.xib in Resources */,
 				6F6C22761CE5ACA6000BE077 /* JPFriendTrendsViewController.xib in Resources */,
@@ -864,6 +883,7 @@
 				6F771D3B1CF445C500A40527 /* JPPublishView.m in Sources */,
 				6F25E55C1CEEC69C00587A75 /* JPAllViewController.m in Sources */,
 				6FE088321CF3156700531509 /* JPShowPictureViewController.m in Sources */,
+				6F8D2C371CF821D000101AC6 /* JPTopicVideoView.m in Sources */,
 				6F25E54F1CEEC2F400587A75 /* JPTopicesViewController.m in Sources */,
 				6F6C22801CE5CAF4000BE077 /* JPRecommendType.m in Sources */,
 				6F6C22561CE492D2000BE077 /* JPPostViewController.m in Sources */,
@@ -886,9 +906,11 @@
 				6F8D1AAC1CEDC6860056FB0C /* JPTopicCell.m in Sources */,
 				6F6C21E31CE47810000BE077 /* main.m in Sources */,
 				6F861B071CEB2A2E009DF540 /* JPPushGuideView.m in Sources */,
+				6F8D2C3F1CF8430000101AC6 /* JPComment.m in Sources */,
 				6F8D1AA51CEDA6360056FB0C /* JPTopic.m in Sources */,
 				6F25E55E1CEEC69C00587A75 /* JPVideoViewController.m in Sources */,
 				6F6C22531CE492D2000BE077 /* JPFriendTrendsViewController.m in Sources */,
+				6F8D2C3C1CF83FB800101AC6 /* JPUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
