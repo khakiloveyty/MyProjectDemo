@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html dir="ltr" class="client-js" lang="zh-cn"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>百思不得姐-推荐关注标签列表API</title>
+<title>百思不得姐 - 帖子的“评论”详情页"更多点赞的人"部分的内容</title>
 <meta charset="UTF-8">
 <meta name="generator" content="MediaWiki 1.18.2">
-<link rel="shortcut icon" href="http://open.weibo.com/favicon.ico">
+    <link rel="shortcut icon" href="css/bs1.jpg">
 <link rel="search" type="application/opensearchdescription+xml" href="http://open.weibo.com/wiki/opensearch_desc.php" title="微博API (zh-cn)">
 <link rel="alternate" type="application/atom+xml" title="微博API的Atom" href="http://open.weibo.com/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom">
 <link rel="stylesheet" href="css/load.css">
@@ -73,7 +73,7 @@
 	                        <!--</div>-->
 	                    <!--</li>-->
 	                    <li class="nav_item nav_current">
-	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E6%8E%A8%E8%8D%90%E5%85%B3%E6%B3%A8%E6%A0%87%E7%AD%BEAPI.html" title="">文档</a>
+	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E6%8E%A8%E8%8D%90%E5%85%B3%E6%B3%A8%E5%88%97%E8%A1%A8API.html" title="">文档</a>
 	                    </li>
 	                    <!--<li class="nav_item">-->
 	                        <!--<a class="nav_link" href="http://open.weibo.com/support" title="">支持</a>-->
@@ -164,7 +164,7 @@
 																				<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
 																					<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
 							<div dir="ltr" class="mw-content-ltr" lang="zh-cn"><h1 class="wiki_title"> <span class="mw-headline" id="statuses.2Ffriends_timeline">api/api_open</span></h1>
-<p>获取“推荐关注”中左侧标签的列表
+<p>获取进入帖子的“评论”详情页"更多点赞的人"部分的内容
 </p>
 <h2 class="wiki_title"> <span class="mw-headline" id="URL">URL</span></h2>
 <p><span style="text-transform:lowercase;font-weight:600"><a rel="nofollow" class="external free" href="http://api.budejie.com/api/api_open.php">http://api.budejie.com/api/api_open.php</a></span>
@@ -205,8 +205,9 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">category
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">praise
 </td></tr>
+
 <tr>
     <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">appname
     </td>
@@ -232,7 +233,7 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">subscribe
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">comment
 </td></tr>
 <tr>
     <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">client
@@ -243,6 +244,7 @@
     </td>
     <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">iphone
     </td></tr>
+<tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">device
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
@@ -251,6 +253,17 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">ios设备
 </td></tr>
+
+<tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">id
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所查看“评论”详情的帖子id
+</td></tr>
+<tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">jbk
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
@@ -259,6 +272,7 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">一般为“0”
 </td></tr>
+<tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">openudid
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
@@ -267,14 +281,33 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">19deb9dde5ccf65fe1623b59a5ebeff55bcbc319
 </td></tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">uid
+<tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">per
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所登陆的用户id,如果未登录则为空
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">默认5，例如：传入“2”则在返回值中返回2条相关数据
 </td></tr>
+<tr>
+    <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">sex
+    </td>
+    <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户的性别，m:男、f:女
+    </td></tr>
+<tr>
+    <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">uid
+    </td>
+    <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所登陆账号id，若未登录则为空
+    </td></tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">ver
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
@@ -283,8 +316,7 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所安装的app的版本
 </td>
-</tr>
-</tbody></table>
+</tr></tbody></table>
 <h2 class="wiki_title"> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9">注意事项</span></h2>
 <p>无
 </p>
@@ -293,19 +325,32 @@
 <!--</p>-->
 <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E7.BB.93.E6.9E.9C">返回结果 </span></h2>
 <div class="code_type" style="text-transform:uppercase;margin-bottom:5px;">JSON示例</div><br>
+
 <pre class="brush:js">
 {
-    &quot;total&quot;: 13,
-    &quot;list&quot;: [{
-        &quot;id&quot;: &quot;9&quot;,
-        &quot;name&quot;: &quot;电台&quot;,
-        &quot;count&quot;: &quot;78&quot;
-    }, {
-        &quot;id&quot;: &quot;16&quot;,
-        &quot;name&quot;: &quot;爱拍&quot;,
-        &quot;count&quot;: &quot;179&quot;
-    }]
+    &quot;info&quot;: {
+		&quot;count&quot;: 27,
+		&quot;pid&quot;: 14998861
+	},
+	&quot;list&quot;: [{
+		&quot;id&quot;: &quot;15086963&quot;,
+		&quot;userid&quot;: &quot;15086963&quot;,
+		&quot;username&quot;: &quot;Hedinghong1014&quot;,
+		&quot;sex&quot;: &quot;m&quot;,
+		&quot;profile_image&quot;: &quot;http:\/\/wimg.spriteapp.cn\/profile\/large\/2015\/06\/28\/558fc6915db3c_mini.jpg&quot;,
+		&quot;profile_image_large&quot;: &quot;http:\/\/wimg.spriteapp.cn\/profile\/large\/2015\/06\/28\/558fc6915db3c_profile.jpg&quot;,
+		&quot;introduction&quot;: &quot;&quot;,
+		&quot;background_image&quot;: &quot;http:\/\/ww1.sinaimg.cn\/large\/a4224489jw1ees48io87zj20hs0m8adw.jpg&quot;,
+		&quot;follow_count&quot;: &quot;0&quot;,
+		&quot;fans_count&quot;: &quot;0&quot;,
+		&quot;fans_add&quot;: &quot;0&quot;,
+		&quot;is_follow&quot;: &quot;0&quot;,
+		&quot;tiezi_count&quot;: &quot;0&quot;,
+		&quot;comment_count&quot;: &quot;0&quot;,
+		&quot;praise_time&quot;: &quot;1438256627&quot;
+	}]
 }
+
 </pre>
 
 <!--<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>-->
@@ -313,67 +358,159 @@
 <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E5.AD.97.E6.AE.B5.E8.AF.B4.E6.98.8E">返回字段说明</span></h2>
 <table class="parameters" style="border-color: #CCCCCC;" border="1" cellpadding="0" cellspacing="0" width="100%">
 
-<tbody><tr>
-<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="25%">返回值字段
-</th>
-<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="15%">字段类型
-</th>
-<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="60%">字段说明
-</th></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">total
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">左侧标签总数
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">list
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">array
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签数组
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">name
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签名称
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">count
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">此标签下的用户数
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">id
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签id
-</td></tr>
-</tbody></table>
+    <tbody><tr>
+        <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="25%">返回值字段
+        </th>
+        <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="15%">字段类型
+        </th>
+        <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="60%">字段说明
+        </th></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">info
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">object
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">详情对象
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">count
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所查看“评论”详情的帖子的评论总人数
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">list
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">array
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的"信息"数组
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">comment_count
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的评论总数
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">is_follow
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">是否是我关注的
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">sex
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">性别：f为女，m为男
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">fans_add
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">0
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">userid
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的id
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">tiezi_count
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞的人的发帖的数量
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">background_image
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">背景图片
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">profile_image
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">头像url地址
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">fans_count
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的粉丝总数
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">praise_time
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的赞此贴的时间
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">follow_count
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的关注了人的总数
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">id
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的id
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">profile_image_large
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">大头像url地址
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">introduction
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">描述
+        </td></tr>
+    <tr>
+        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">username
+        </td>
+        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+        </td>
+        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">点赞人的用户昵称
+        </td></tr>
+
+    </tbody></table>
 <h2 class="wiki_title"> <span class="mw-headline" id=".E5.85.B6.E4.BB.96">其他</span></h2>
 <p>无
 </p>
 <!--<h2 class="wiki_title"> <span class="mw-headline" id=".E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98">相关问题</span></h2>-->
 <!--<p></p><div id="relat_qa" data="friends_timeline"><p>无</p></div>-->
 <!--<p></p><p><br>-->
-<!--到<a rel="nofollow" class="external text" href="http://open.weibo.com/qa">问答系统</a> 查看更多问题或提问-->
+    <!--到<a rel="nofollow" class="external text" href="http://open.weibo.com/qa">问答系统</a> 查看更多问题或提问-->
 <!--</p><p><br>-->
 <!--</p>-->
 <!--<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]</div></span>-->
 <!--<p><br>-->
-<!--@SHOWGRADE-->
+    <!--@SHOWGRADE-->
 <!--</p><p><br>-->
-<!--@NOBTNS--><!--@NOHEADING-->
+    <!--@NOBTNS--><!--@NOHEADING-->
 <!--</p><p><br>-->
-<!--@SHOWGRADE-->
+    <!--@SHOWGRADE-->
 <!--</p>-->
-<!--
+<!-- 
 NewPP limit report
 Preprocessor node count: 613/1000000
 Post-expand include size: 34895/2097152 bytes
@@ -384,7 +521,7 @@ Expensive parser function count: 0/100
 <!-- Saved in parser cache with key wiki:pcache:idhash:825-0!*!0!!*!*!* and timestamp 20150614121528 -->
 </div><div class="printfooter">
 来自“<a href="http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233">http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233</a>”</div>
-							<div id="catlinks" class="catlinks catlinks-allhidden"></div>														<div class="wiki_plus_area_bottom"> 文档更新时间: 2015-06-15</div>						</div>
+							<div id="catlinks" class="catlinks catlinks-allhidden"></div>														<div class="wiki_plus_area_bottom"> 文档更新时间: 2015-07-30</div>						</div>
                     </div>
                 </div>
             </div>

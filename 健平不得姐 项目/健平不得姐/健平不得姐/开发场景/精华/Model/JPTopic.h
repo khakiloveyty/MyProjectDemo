@@ -45,6 +45,8 @@
 
 @property(nonatomic,strong)NSArray *top_cmt; //最热评论数组
 
+@property(nonatomic,copy)NSString *topicID; //帖子id ---> id
+
 //自定义额外的辅助属性
 @property(nonatomic,assign,readonly)CGFloat cellHeight;//对应的cell的高度
 

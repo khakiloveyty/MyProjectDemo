@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html dir="ltr" class="client-js" lang="zh-cn"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>百思不得姐 - 广告API</title>
+<title>百思不得姐 - 随机穿越API</title>
 <meta charset="UTF-8">
 <meta name="generator" content="MediaWiki 1.18.2">
-<link rel="shortcut icon" href="http://open.weibo.com/favicon.ico">
+    <link rel="shortcut icon" href="css/bs1.jpg">
 <link rel="search" type="application/opensearchdescription+xml" href="http://open.weibo.com/wiki/opensearch_desc.php" title="微博API (zh-cn)">
 <link rel="alternate" type="application/atom+xml" title="微博API的Atom" href="http://open.weibo.com/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom">
 <link rel="stylesheet" href="css/load.css">
@@ -28,14 +28,14 @@
 
 /* cache key: wiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
 </style>
-<script src="css/suda.js" async="" charset="utf-8" type="text/javascript"></script><script src="css/load.js"></script><script src="css/load_003.js"></script>
+<script src="css/suda.js" async="" charset="utf-8" type="text/javascript"></script><script src="css/load.js"></script><script src="css/load_004.js"></script>
 <script>if(window.mw){
 	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "2/statuses/friends_timeline", "wgTitle": "2/statuses/friends timeline", "wgCurRevisionId": 14233, "wgArticleId": 825, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
 }
 </script><script>if(window.mw){
 	mw.loader.load(["mediawiki.page.startup"]);
 }
-</script><script type="text/javascript" src="css/load_002.js"></script>
+</script><script type="text/javascript" src="css/load_003.js"></script>
 </head>
 <body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
 
@@ -73,7 +73,7 @@
 	                        <!--</div>-->
 	                    <!--</li>-->
 	                    <li class="nav_item nav_current">
-	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90%20-%20%E5%B9%BF%E5%91%8AAPI.html" title="">文档</a>
+	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%20%E9%9A%8F%E6%9C%BA%E7%A9%BF%E8%B6%8AAPI.html" title="">文档</a>
 	                    </li>
 	                    <!--<li class="nav_item">-->
 	                        <!--<a class="nav_link" href="http://open.weibo.com/support" title="">支持</a>-->
@@ -84,6 +84,7 @@
 	                    <!--<li class="nav_item">-->
 	                        <!--<a class="nav_link" node-type="manage_center" href="javascript:void(0);" {="" hidefocus="true" title="">我的应用</a>-->
 	                    <!--</li>-->
+	                    
 	                </ul>
 	            </div>
 	            <!--登录Start-->
@@ -162,11 +163,11 @@
                     	<div class="wiki_bodyContent" id="bodyContent">
 																				<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
 																					<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
-							<div dir="ltr" class="mw-content-ltr" lang="zh-cn"><h1 class="wiki_title"> <span class="mw-headline" id="statuses.2Ffriends_timeline">ad/get</span></h1>
-<p>获取进入程序后展示的广告页数据
+							<div dir="ltr" class="mw-content-ltr" lang="zh-cn"><h1 class="wiki_title"> <span class="mw-headline" id="statuses.2Ffriends_timeline">api/api_open</span></h1>
+<p>获取“我”板块“随机穿越”中的内容
 </p>
 <h2 class="wiki_title"> <span class="mw-headline" id="URL">URL</span></h2>
-<p><span style="text-transform:lowercase;font-weight:600"><a rel="nofollow" class="external free" href="http://sprite.spriteapp.com/ad/get.php">http://sprite.spriteapp.com/ad/get.php</a></span>
+<p><span style="text-transform:lowercase;font-weight:600"><a rel="nofollow" class="external free" href="http://api.budejie.com/api/api_open.php">http://api.budejie.com/api/api_open.php</a></span>
 </p>
 <h2 class="wiki_title"> <span class="mw-headline" id=".E6.94.AF.E6.8C.81.E6.A0.BC.E5.BC.8F">支持格式</span></h2>
 <p><span style="text-transform:uppercase;font-weight:600">JSON</span>
@@ -198,79 +199,145 @@
 <th style="text-align:center;font-weight:bolder;border:1px solid #cccccc" width="75%">说明
 </th></tr>
 <tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">unique
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">唯一编码
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">demo
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">a
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">1,2,3 获取哪些类型的广告(1,2,3种类型)
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">list
 </td></tr>
 <tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">gpsy
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">gps坐标系的y值
-</td></tr>
+    <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">appname
+    </td>
+    <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数为baisishequ 分享到朋友圈时候使用
+    </td></tr>
 <tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">gettemp
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">一般为1
-</td></tr>
+    <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">asid
+    </td>
+    <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">AC824640-5493-4DAD-B356-F84136BE8A55
+    </td></tr>
 <tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">uniquetime
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">唯一的时间标识
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">gpsx
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">gps坐标系的x值
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">entrytype
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">c
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">入口类型，返回显示在不同地方的广告，1为开屏广告，21为帖子流类型的广告
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">data
 </td></tr>
 <tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">ver1
+    <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">client
+    </td>
+    <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">iphone
+    </td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">device
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">1432886227 版本号
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">ios设备
+</td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">from
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">ios
+</td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">jbk
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">一般为“0”
+</td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">openudid
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">19deb9dde5ccf65fe1623b59a5ebeff55bcbc319
 </td></tr>
 <tr>
-</tbody></table>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">order
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">timewarp 这个是“随机穿越”的必要参数
+</td></tr>
+<tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">page
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">页码数，默认为0
+</td></tr>
+<tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">per
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">单页返回的记录条数，默认为20。
+</td></tr>
+
+<tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">sub_flag
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">1
+</td></tr>
+<tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">type
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">1为全部，10为图片，29为段子，31为音频，41为视频，默认为1
+</td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">uid
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所登陆的用户id,如果未登录则为空
+</td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">ver
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所安装的app的版本
+</td>
+</tr></tbody></table>
 <h2 class="wiki_title"> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9">注意事项</span></h2>
 <p>无
 </p>
@@ -279,211 +346,17 @@
 <!--</p>-->
 <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E7.BB.93.E6.9E.9C">返回结果 </span></h2>
 <div class="code_type" style="text-transform:uppercase;margin-bottom:5px;">JSON示例</div><br>
-                 <pre class="brush:js">
-{
-	&quot;status&quot;: 99,
-	&quot;return&quot;: {
-		&quot;message&quot;: &quot;&quot;,
-		&quot;time&quot;: 1434270921,
-		&quot;data&quot;: {
-                    &quot;posID&quot;: &quot;120&quot;,
-                    &quot;corpID&quot;: &quot;1&quot;,
-                    &quot;posType&quot;: &quot;42&quot;,
-                    &quot;maxResID&quot;: 6294,
-                    &quot;onlineParams&quot;: {
-				        &quot;silentsec&quot;: &quot;0&quot;
-			},
-			&quot;prepareDown&quot;: 1,
-			&quot;downWarn&quot;: &quot;0&quot;,
-			&quot;typeParams&quot;: [],
-			&quot;typeParamsDay&quot;: [],
-			&quot;typeParamsNight&quot;: [],
-			&quot;entrySet&quot;: {
-				&quot;entryName&quot;: &quot;[1]开屏广告【纵】&quot;,
-				&quot;playMode&quot;: &quot;1&quot;,
-				&quot;animeType&quot;: &quot;0&quot;,
-				&quot;wheelTime&quot;: &quot;0&quot;,
-				&quot;changeMode&quot;: &quot;1&quot;,
-				&quot;parentType&quot;: &quot;2&quot;,
-				&quot;showMode&quot;: &quot;1&quot;,
-				&quot;showInterval&quot;: &quot;1&quot;,
-				&quot;prepareRes&quot;: &quot;1&quot;,
-				&quot;entryParam&quot;: [],
-				&quot;playParam&quot;: [],
-				&quot;tempSet&quot;: {
-					&quot;33&quot;: {
-						&quot;showType&quot;: &quot;1&quot;,
-						&quot;tempId&quot;: 33,
-						&quot;tempVer&quot;: 1432886218
-					}
-				},
-				&quot;tempParams&quot;: {
-					&quot;33&quot;: {
-						&quot;tempId&quot;: 33,
-						&quot;picWidth&quot;: &quot;640&quot;,
-						&quot;picHeight&quot;: &quot;1136&quot;,
-						&quot;titleLen&quot;: &quot;0&quot;,
-						&quot;descLen&quot;: &quot;0&quot;,
-						&quot;showType&quot;: &quot;1&quot;,
-						&quot;thirdSource&quot;: &quot;0&quot;,
-						&quot;thirdParam&quot;: [],
-						&quot;tempVer&quot;: 1432886218,
-						&quot;adWidthType&quot;: &quot;1&quot;,
-						&quot;adWidthValue&quot;: &quot;1.000&quot;,
-						&quot;adHeightType&quot;: &quot;1&quot;,
-						&quot;adHeightValue&quot;: &quot;1.000&quot;,
-						&quot;adWidthAttach&quot;: &quot;0&quot;,
-						&quot;adHeightAttach&quot;: &quot;0&quot;,
-						&quot;closeMode&quot;: &quot;2&quot;,
-						&quot;closeTime&quot;: &quot;3&quot;,
-						&quot;butDefName&quot;: &quot;安装&quot;,
-						&quot;tempParam&quot;: {
-							&quot;xtype&quot;: &quot;1&quot;,
-							&quot;xvalue&quot;: &quot;0&quot;,
-							&quot;ytype&quot;: &quot;1&quot;,
-							&quot;yvalue&quot;: &quot;-39&quot;,
-							&quot;width&quot;: &quot;1&quot;,
-							&quot;height&quot;: &quot;1&quot;,
-							&quot;sizetype&quot;: &quot;0&quot;,
-							&quot;bordershow&quot;: &quot;0&quot;,
-							&quot;bordersize&quot;: &quot;0&quot;,
-							&quot;cornertype&quot;: &quot;0&quot;,
-							&quot;cornervalue&quot;: &quot;0&quot;,
-							&quot;shadowoffsetx&quot;: &quot;0&quot;,
-							&quot;shadowoffsety&quot;: &quot;0&quot;,
-							&quot;shadowopacity&quot;: &quot;0&quot;,
-							&quot;shadowradius&quot;: &quot;0&quot;
-						},
-						&quot;tempParamDay&quot;: [],
-						&quot;tempParamNight&quot;: [],
-						&quot;list&quot;: [{
-							&quot;setId&quot;: &quot;1764&quot;,
-							&quot;entryResId&quot;: &quot;33&quot;,
-							&quot;title&quot;: &quot;素材-图片&quot;,
-							&quot;type&quot;: &quot;3&quot;,
-							&quot;layIndex&quot;: &quot;0&quot;,
-							&quot;params&quot;: {
-								&quot;xtype&quot;: &quot;1&quot;,
-								&quot;xvalue&quot;: &quot;0&quot;,
-								&quot;ytype&quot;: &quot;1&quot;,
-								&quot;yvalue&quot;: &quot;0&quot;,
-								&quot;width&quot;: &quot;1&quot;,
-								&quot;height&quot;: &quot;0.88&quot;,
-								&quot;sizetype&quot;: &quot;0&quot;,
-								&quot;fittype&quot;: &quot;2&quot;,
-								&quot;hotclick&quot;: &quot;0&quot;,
-								&quot;clickevent&quot;: &quot;11&quot;
-							},
-							&quot;paramDay&quot;: [],
-							&quot;paramNight&quot;: []
-						}]
-					}
-				}
-			},
-			&quot;adPosType&quot;: [{
-				&quot;posTypeId&quot;: &quot;42&quot;,
-				&quot;typeName&quot;: null,
-				&quot;typeIcon&quot;: &quot;&quot;,
-				&quot;selected&quot;: 1,
-				&quot;moduleKey&quot;: &quot;&quot;,
-				&quot;sortIndex&quot;: &quot;0&quot;
-			}],
-			&quot;subEntryData&quot;: [],
-			&quot;subEntryList&quot;: [],
-			&quot;adResList&quot;: {
-				&quot;6294&quot;: {
-					&quot;adId&quot;: &quot;1117&quot;,
-					&quot;title&quot;: &quot;&quot;,
-					&quot;desc&quot;: &quot;&quot;,
-					&quot;pic&quot;: &quot;http:%/%/img.spriteapp.cn%/spritead%/20150610%/151607685471.jpg&quot;,
-					&quot;html&quot;: &quot;&quot;,
-					&quot;home&quot;: &quot;&quot;,
-					&quot;isGif&quot;: &quot;0&quot;,
-					&quot;other&quot;: [],
-					&quot;butName&quot;: &quot;&quot;,
-					&quot;gpsLevel&quot;: &quot;0&quot;,
-					&quot;header&quot;: &quot;1&quot;,
-					&quot;destType&quot;: &quot;0&quot;,
-					&quot;destAddr&quot;: &quot;store:%/%/SDK_URL@http:%/%/gad.netease.com%/mmad%/click?s=HbDP/B5Q8CSuxS6yQtValU5JhBM=&amp;project_id=10112586&amp;monitor_type=4&quot;,
-					&quot;checkNew&quot;: 1,
-					&quot;showAddr&quot;: &quot;&quot;,
-					&quot;votes&quot;: [],
-					&quot;interActive&quot;: &quot;&quot;,
-					&quot;tempId&quot;: &quot;33&quot;,
-					&quot;showType&quot;: &quot;1&quot;,
-					&quot;timesLove&quot;: 0,
-					&quot;timesHate&quot;: 0,
-					&quot;timesComment&quot;: 0,
-					&quot;timesForward&quot;: 0,
-					&quot;timesHome&quot;: 0,
-					&quot;timesVote&quot;: 0,
-					&quot;timesDown&quot;: 634221
-				}
-			},
-			&quot;prepareRes&quot;: {
-				&quot;pic&quot;: [&quot;http:%/%/img.spriteapp.cn%/spritead%/20150610%/151607685471.jpg&quot;],
-				&quot;html&quot;: []
-			},
-			&quot;prepareAddr&quot;: [&quot;store:%/%/gad.netease.com%/mmad%/click?s=HbDP/B5Q8CSuxS6yQtValU5JhBM=&amp;project_id=10112586&amp;monitor_type=4&quot;],
-			&quot;adResPlay&quot;: [&quot;6294&quot;]
-		}
-	}
-}
-                     </pre><br />
+参考，获取自定义类型的帖子<a rel="nofollow" class="external text" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E7%B2%BE%E5%8D%8E%E5%85%A8%E9%83%A8API.html#.E8.BF.94.E5.9B.9E.E7.BB.93.E6.9E.9C">详细</a>
 
+<br>
+<!--<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>-->
+<!--</p>-->
 <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E5.AD.97.E6.AE.B5.E8.AF.B4.E6.98.8E">返回字段说明</span></h2>
-<table class="parameters" style="border-color: #CCCCCC;" border="1" cellpadding="0" cellspacing="0" width="100%">
 
-<tbody><tr>
-<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="25%">返回值字段
-</th>
-<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="15%">字段类型
-</th>
-<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="60%">字段说明
-</th></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">status
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">99状态标识
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">prepareAddr
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">array
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">url地址
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">entryName
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">[1]开屏广告【纵】中1为广告类型，文字部分为广告的描述
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">pic
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">广告图片的地址
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">adId
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">所展示的广告的id
-</td></tr>
-<tr>
-<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">destAddr
-</td>
-<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">广告的链接地址
-</td></tr>
-</tbody></table>
+参考，获取自定义类型的帖子<a rel="nofollow" class="external text" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E7%B2%BE%E5%8D%8E%E5%85%A8%E9%83%A8API.html#.E8.BF.94.E5.9B.9E.E5.AD.97.E6.AE.B5.E8.AF.B4.E6.98.8E">详细</a>
+
+<br>
+
 <h2 class="wiki_title"> <span class="mw-headline" id=".E5.85.B6.E4.BB.96">其他</span></h2>
 <p>无
 </p>
@@ -493,8 +366,8 @@
 <!--到<a rel="nofollow" class="external text" href="http://open.weibo.com/qa">问答系统</a> 查看更多问题或提问-->
 <!--</p><p><br>-->
 <!--</p>-->
-<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]</div></span>
-<p><br>
+<!--<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]</div></span>-->
+<!--<p><br>-->
 <!--@SHOWGRADE-->
 <!--</p><p><br>-->
 <!--@NOBTNS--><!--@NOHEADING-->
@@ -509,7 +382,7 @@ Template argument size: 14204/2097152 bytes
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key wiki:pcache:idhash:825-0!*!0!!*!*!* and timestamp 20150614061339 -->
+<!-- Saved in parser cache with key wiki:pcache:idhash:825-0!*!0!!*!*!* and timestamp 20150614152722 -->
 </div><div class="printfooter">
 来自“<a href="http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233">http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233</a>”</div>
 							<div id="catlinks" class="catlinks catlinks-allhidden"></div>														<div class="wiki_plus_area_bottom"> 文档更新时间: 2015-06-15</div>						</div>
@@ -548,14 +421,14 @@ Expensive parser function count: 0/100
 <script>if(window.mw){
 	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
 }
-</script><script type="text/javascript" src="css/load_004.js"></script>
+</script><script type="text/javascript" src="css/load_002.js"></script>
 <script>if(window.mw){
 	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
 	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
 	
 	/* cache key: wiki:resourceloader:filter:minify-js:4:42c4e9caefe8ca663d220ee0c286ac74 */
 }
-</script><!-- Served in 0.468 secs. --><noscript>
+</script><!-- Served in 0.518 secs. --><noscript>
 <img width="0" height="0" src="http://beacon.sina.com.cn/a.gif?noScript" border="0" alt="" />
 </noscript>
 <script type="text/javascript" charset="utf-8">

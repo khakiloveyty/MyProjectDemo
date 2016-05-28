@@ -41,6 +41,8 @@
 		6F6C228D1CE5E6F0000BE077 /* JPRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C228C1CE5E6F0000BE077 /* JPRecommendUser.m */; };
 		6F771D3B1CF445C500A40527 /* JPPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F771D391CF445C500A40527 /* JPPublishView.m */; };
 		6F771D3C1CF445C500A40527 /* JPPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F771D3A1CF445C500A40527 /* JPPublishView.xib */; };
+		6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77424D1CF9330E008030D2 /* JPCommentViewController.m */; };
+		6F7742501CF9330E008030D2 /* JPCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F77424E1CF9330E008030D2 /* JPCommentViewController.xib */; };
 		6F861B011CEAE366009DF540 /* JPVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B001CEAE366009DF540 /* JPVerticalButton.m */; };
 		6F861B041CEAFE35009DF540 /* JPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B031CEAFE35009DF540 /* JPTextField.m */; };
 		6F861B071CEB2A2E009DF540 /* JPPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B061CEB2A2E009DF540 /* JPPushGuideView.m */; };
@@ -153,6 +155,9 @@
 		6F771D381CF445C500A40527 /* JPPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPublishView.h; sourceTree = "<group>"; };
 		6F771D391CF445C500A40527 /* JPPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPublishView.m; sourceTree = "<group>"; };
 		6F771D3A1CF445C500A40527 /* JPPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPPublishView.xib; sourceTree = "<group>"; };
+		6F77424C1CF9330E008030D2 /* JPCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCommentViewController.h; sourceTree = "<group>"; };
+		6F77424D1CF9330E008030D2 /* JPCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCommentViewController.m; sourceTree = "<group>"; };
+		6F77424E1CF9330E008030D2 /* JPCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPCommentViewController.xib; sourceTree = "<group>"; };
 		6F861AFF1CEAE366009DF540 /* JPVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPVerticalButton.h; sourceTree = "<group>"; };
 		6F861B001CEAE366009DF540 /* JPVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPVerticalButton.m; sourceTree = "<group>"; };
 		6F861B021CEAFE35009DF540 /* JPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTextField.h; sourceTree = "<group>"; };
@@ -411,6 +416,9 @@
 				6FE088311CF3156700531509 /* JPShowPictureViewController.xib */,
 				6F9317891CE9B2F0005B1CF3 /* JPRecommendTagsViewController.h */,
 				6F93178A1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m */,
+				6F77424C1CF9330E008030D2 /* JPCommentViewController.h */,
+				6F77424D1CF9330E008030D2 /* JPCommentViewController.m */,
+				6F77424E1CF9330E008030D2 /* JPCommentViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -795,6 +803,7 @@
 				6F6C21EE1CE47811000BE077 /* Assets.xcassets in Resources */,
 				6F9317931CE9BB0B005B1CF3 /* JPRecommendTagCell.xib in Resources */,
 				6F861B091CEB2A44009DF540 /* JPPushGuideView.xib in Resources */,
+				6F7742501CF9330E008030D2 /* JPCommentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +889,7 @@
 				6F6C22621CE49409000BE077 /* JPTabBarController.m in Sources */,
 				6F861B011CEAE366009DF540 /* JPVerticalButton.m in Sources */,
 				6F25E55D1CEEC69C00587A75 /* JPPictureViewController.m in Sources */,
+				6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */,
 				6F771D3B1CF445C500A40527 /* JPPublishView.m in Sources */,
 				6F25E55C1CEEC69C00587A75 /* JPAllViewController.m in Sources */,
 				6FE088321CF3156700531509 /* JPShowPictureViewController.m in Sources */,

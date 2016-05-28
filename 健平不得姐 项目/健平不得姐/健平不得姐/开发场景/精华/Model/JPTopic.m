@@ -39,7 +39,8 @@
              @"imageHeight":@"height",
              @"small_image":@"image0",
              @"big_image":@"image1",
-             @"mid_image":@"image2"
+             @"mid_image":@"image2",
+             @"topicID":@"id"
              };
 }
 

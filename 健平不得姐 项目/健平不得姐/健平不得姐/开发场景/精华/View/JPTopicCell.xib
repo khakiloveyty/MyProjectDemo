@@ -39,14 +39,17 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-7J-aBB" userLabel="关注">
-                        <rect key="frame" x="300" y="10" width="19" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMz-7J-aBB" userLabel="更多按钮">
+                        <rect key="frame" x="295" y="10" width="24" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="KC7-xK-U2Y"/>
-                            <constraint firstAttribute="width" constant="19" id="cjR-jw-XiX"/>
+                            <constraint firstAttribute="width" constant="24" id="cjR-jw-XiX"/>
                         </constraints>
-                        <state key="normal" image="cellFollowIcon"/>
-                        <state key="highlighted" image="cellFollowClickIcon"/>
+                        <state key="normal" image="cellmorebtnnormal"/>
+                        <state key="highlighted" image="cellmorebtnclick"/>
+                        <connections>
+                            <action selector="more:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hwp-cw-S43"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQE-xd-3pf" userLabel="底部View">
                         <rect key="frame" x="0.0" y="274" width="329" height="40"/>
@@ -244,8 +247,8 @@
         <image name="Profile_AddV_authen" width="14" height="14"/>
         <image name="cell-button-line" width="1" height="29"/>
         <image name="cell-content-line" width="299" height="1"/>
-        <image name="cellFollowClickIcon" width="19" height="20"/>
-        <image name="cellFollowIcon" width="19" height="20"/>
+        <image name="cellmorebtnclick" width="24" height="20"/>
+        <image name="cellmorebtnnormal" width="24" height="20"/>
         <image name="mainCellCai" width="20" height="20"/>
         <image name="mainCellCaiClick" width="20" height="20"/>
         <image name="mainCellComment" width="20" height="20"/>

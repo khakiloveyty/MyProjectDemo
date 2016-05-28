@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html dir="ltr" class="client-js" lang="zh-cn"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>百思不得姐 - 每日福利API</title>
+<title>百思不得姐-推荐标签API</title>
 <meta charset="UTF-8">
 <meta name="generator" content="MediaWiki 1.18.2">
-<link rel="shortcut icon" href="http://open.weibo.com/favicon.ico">
+    <link rel="shortcut icon" href="css/bs1.jpg">
 <link rel="search" type="application/opensearchdescription+xml" href="http://open.weibo.com/wiki/opensearch_desc.php" title="微博API (zh-cn)">
 <link rel="alternate" type="application/atom+xml" title="微博API的Atom" href="http://open.weibo.com/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom">
 <link rel="stylesheet" href="css/load.css">
@@ -28,14 +28,14 @@
 
 /* cache key: wiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
 </style>
-<script src="css/suda.js" async="" charset="utf-8" type="text/javascript"></script><script src="css/load.js"></script><script src="css/load_004.js"></script>
+<script src="css/suda.js" async="" charset="utf-8" type="text/javascript"></script><script src="css/load.js"></script><script src="css/load_003.js"></script>
 <script>if(window.mw){
 	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "2/statuses/friends_timeline", "wgTitle": "2/statuses/friends timeline", "wgCurRevisionId": 14233, "wgArticleId": 825, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
 }
 </script><script>if(window.mw){
 	mw.loader.load(["mediawiki.page.startup"]);
 }
-</script><script type="text/javascript" src="css/load_003.js"></script>
+</script><script type="text/javascript" src="css/load_002.js"></script>
 </head>
 <body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
 
@@ -65,7 +65,7 @@
 	                        <!--<div class="nav_more_layer" action-type="selection_menu" action-data="index=2">-->
 	                            <!--<div class="nav_more_link_container">-->
 	                                <!--<div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/development/pro" title="">轻应用</a></div>-->
-                             		<!--<div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/pay" title="">微博支付</a></div>                            	-->
+                             		<!--<div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/pay" title="">微博支付</a></div>-->
                               		<!--<div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/development/fenfu" title="">粉丝服务</a></div>-->
                               		<!--<div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/development/businessdata" title="">商业数据</a></div>-->
                               		<!--<div class="more_link_line"><a class="nav_more_link" href="http://open.weibo.com/wp/intro" title="">WP介绍</a></div>-->
@@ -73,7 +73,7 @@
 	                        <!--</div>-->
 	                    <!--</li>-->
 	                    <li class="nav_item nav_current">
-	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90%20-%20%E6%AF%8F%E6%97%A5%E7%A6%8F%E5%88%A9API.html" title="">文档</a>
+	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E6%8E%A8%E8%8D%90%E6%A0%87%E7%AD%BEAPI.html" title="">文档</a>
 	                    </li>
 	                    <!--<li class="nav_item">-->
 	                        <!--<a class="nav_link" href="http://open.weibo.com/support" title="">支持</a>-->
@@ -164,7 +164,7 @@
 																				<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
 																					<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
 							<div dir="ltr" class="mw-content-ltr" lang="zh-cn"><h1 class="wiki_title"> <span class="mw-headline" id="statuses.2Ffriends_timeline">api/api_open</span></h1>
-<p>获取“我”板块“每日福利”中的内容
+<p>获取“标签订阅”页面中“推荐标签”中的内容
 </p>
 <h2 class="wiki_title"> <span class="mw-headline" id="URL">URL</span></h2>
 <p><span style="text-transform:lowercase;font-weight:600"><a rel="nofollow" class="external free" href="http://api.budejie.com/api/api_open.php">http://api.budejie.com/api/api_open.php</a></span>
@@ -205,17 +205,25 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">list
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">tag_recommend
 </td></tr>
 <tr>
-    <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">appname
-    </td>
-    <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-    </td>
-    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-    </td>
-    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数为baisishequ 分享到朋友圈时候使用
-    </td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">action
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">sub
+</td></tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">appname
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">参数为baisishequ 分享到朋友圈时候使用
+</td></tr>
 <tr>
     <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">asid
     </td>
@@ -232,7 +240,7 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">data
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">topic
 </td></tr>
 <tr>
     <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">client
@@ -251,14 +259,6 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">ios设备
 </td></tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">from
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">ios
-</td></tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">jbk
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
@@ -266,6 +266,15 @@
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">一般为“0”
+</td></tr>
+<tr>
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">limit
+</td>
+<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">最多显示50个推荐标签
 </td></tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">openudid
 </td>
@@ -275,50 +284,13 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">19deb9dde5ccf65fe1623b59a5ebeff55bcbc319
 </td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">order
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">repost 这个是“每日福利”的关键参数
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">page
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">页码数，默认为第0页
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">per
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">单页返回的记录条数，默认为20。
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">time
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">week 加载的一周内的帖子
-</td></tr>
-<tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">type
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">加载的帖子的类型，1为全部，10为图片，29为段子，31为音频，41为视频
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc;color: #ff2528;">要求“推荐标签”中包含以下类型 1为全部，10为图片，29为段子，31为音频，41为视频<br>默认为0
 </td></tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">uid
 </td>
@@ -336,32 +308,99 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所安装的app的版本
 </td>
-</tr></tbody></table>
+</tr>
+</tbody></table>
+
+
 <h2 class="wiki_title"> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9">注意事项</span></h2>
 <p>无
 </p>
 <!--<h2 class="wiki_title"> <span class="mw-headline" id=".E8.B0.83.E7.94.A8.E6.A0.B7.E4.BE.8B.E5.8F.8A.E8.B0.83.E8.AF.95.E5.B7.A5.E5.85.B7">调用样例及调试工具</span></h2>-->
-<!--<p><a rel="nofollow" class="external text" href="http://open.weibo.com/tools/console?uri=statuses/friends_timeline&amp;httpmethod=GET&amp;">API测试工具</a>-->
+<!--<p><a rel="nofollow" class="external text" href="http://open.weibo.com/tools/console?uri=statuses/public_timeline&amp;httpmethod=GET&amp;%7B%7B%7BapiToolPara%7D%7D%7D">API测试工具</a>-->
 <!--</p>-->
 <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E7.BB.93.E6.9E.9C">返回结果 </span></h2>
 <div class="code_type" style="text-transform:uppercase;margin-bottom:5px;">JSON示例</div><br>
 
-    参考，获取自定义类型的帖子<a rel="nofollow" class="external text" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E7%B2%BE%E5%8D%8E%E5%85%A8%E9%83%A8API.html#.E8.BF.94.E5.9B.9E.E7.BB.93.E6.9E.9C">详细</a>
 
-                                <br>
+<pre class="brush:js">
+[{
+    "theme_id": "163",
+    "theme_name": "生活百科",
+    "image_list": "http:%/%/img.spriteapp.cn%/ugc%/2015%/04%/23%/160559_24190.jpg",
+    "sub_number": "36871",
+    "is_sub": 0,
+    "is_default": 0
+}, {
+    "theme_id": "148",
+    "theme_name": "婚礼",
+    "image_list": "http:%/%/img.spriteapp.cn%/ugc%/2014%/12%/08%/192523_53386.png",
+    "sub_number": "19814",
+    "is_sub": 0,
+    "is_default": 0
+}]
+</pre>
 
 
-<!--<p>参考<a rel="nofollow" class="external text" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E7%B2%BE%E5%8D%8E%E5%85%A8%E9%83%A8API.html#.E8.BF.94.E5.9B.9E.E7.BB.93.E6.9E.9C">详细</a>-->
-<!--</p>-->
-<h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E5.AD.97.E6.AE.B5.E8.AF.B4.E6.98.8E">返回字段说明</span></h2>
+    <!--<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>-->
+    <!--</p>-->
+    <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E5.AD.97.E6.AE.B5.E8.AF.B4.E6.98.8E">返回字段说明</span></h2>
+    <table class="parameters" style="border-color: #CCCCCC;" border="1" cellpadding="0" cellspacing="0" width="100%">
 
-参考，获取自定义类型的帖子<a rel="nofollow" class="external text" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E7%B2%BE%E5%8D%8E%E5%85%A8%E9%83%A8API.html#.E8.BF.94.E5.9B.9E.E5.AD.97.E6.AE.B5.E8.AF.B4.E6.98.8E">详细</a>
+    <tbody><tr>
+    <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="25%">返回值字段
+    </th>
+    <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="15%">字段类型
+    </th>
+    <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="60%">字段说明
+    </th></tr>
+    <tr>
+    <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">is_sub
+    </td>
+    <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">是否含有子标签
+    </td></tr>
+    <tr>
+    <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">theme_id
+    </td>
+    <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">此标签的id
+    </td></tr>
+    <tr>
+    <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">theme_name
+    </td>
+    <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签名称
+    </td></tr>
+    <tr>
+    <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">sub_number
+    </td>
+    <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">此标签的订阅量
+    </td></tr>
+    <tr>
+    <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">is_default
+    </td>
+    <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">是否是默认的推荐标签
+    </td></tr>
+    <tr>
+    <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">image_list
+    </td>
+    <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+    </td>
+    <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">推荐标签的图片url地址
+    </td></tr>
 
-<br>
+    </tbody></table>
 
 <h2 class="wiki_title"> <span class="mw-headline" id=".E5.85.B6.E4.BB.96">其他</span></h2>
 <p>无
-</p><br/><br/>
+</p>
 <!--<h2 class="wiki_title"> <span class="mw-headline" id=".E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98">相关问题</span></h2>-->
 <!--<p></p><div id="relat_qa" data="friends_timeline"><p>无</p></div>-->
 <!--<p></p><p><br>-->
@@ -384,7 +423,7 @@ Template argument size: 14204/2097152 bytes
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key wiki:pcache:idhash:825-0!*!0!!*!*!* and timestamp 20150614152722 -->
+<!-- Saved in parser cache with key wiki:pcache:idhash:825-0!*!0!!*!*!* and timestamp 20150614090043 -->
 </div><div class="printfooter">
 来自“<a href="http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233">http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233</a>”</div>
 							<div id="catlinks" class="catlinks catlinks-allhidden"></div>														<div class="wiki_plus_area_bottom"> 文档更新时间: 2015-06-15</div>						</div>
@@ -423,14 +462,14 @@ Expensive parser function count: 0/100
 <script>if(window.mw){
 	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
 }
-</script><script type="text/javascript" src="css/load_002.js"></script>
+</script><script type="text/javascript" src="css/load_004.js"></script>
 <script>if(window.mw){
 	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
 	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
 	
 	/* cache key: wiki:resourceloader:filter:minify-js:4:42c4e9caefe8ca663d220ee0c286ac74 */
 }
-</script><!-- Served in 0.518 secs. --><noscript>
+</script><!-- Served in 0.484 secs. --><noscript>
 <img width="0" height="0" src="http://beacon.sina.com.cn/a.gif?noScript" border="0" alt="" />
 </noscript>
 <script type="text/javascript" charset="utf-8">

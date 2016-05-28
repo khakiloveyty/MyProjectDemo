@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html dir="ltr" class="client-js" lang="zh-cn"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>百思不得姐 - 推荐关注用户列表API</title>
+<title>百思不得姐-标签订阅API</title>
 <meta charset="UTF-8">
 <meta name="generator" content="MediaWiki 1.18.2">
-<link rel="shortcut icon" href="http://open.weibo.com/favicon.ico">
+    <link rel="shortcut icon" href="css/bs1.jpg">
 <link rel="search" type="application/opensearchdescription+xml" href="http://open.weibo.com/wiki/opensearch_desc.php" title="微博API (zh-cn)">
 <link rel="alternate" type="application/atom+xml" title="微博API的Atom" href="http://open.weibo.com/wiki/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom">
 <link rel="stylesheet" href="css/load.css">
@@ -28,14 +28,14 @@
 
 /* cache key: wiki:resourceloader:filter:minify-css:4:c88e2bcd56513749bec09a7e29cb3ffa */
 </style>
-<script src="css/suda.js" async="" charset="utf-8" type="text/javascript"></script><script src="css/load.js"></script><script src="css/load_004.js"></script>
+<script src="css/suda.js" async="" charset="utf-8" type="text/javascript"></script><script src="css/load.js"></script><script src="css/load_003.js"></script>
 <script>if(window.mw){
 	mw.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "2/statuses/friends_timeline", "wgTitle": "2/statuses/friends timeline", "wgCurRevisionId": 14233, "wgArticleId": 825, "wgIsArticle": true, "wgAction": "view", "wgUserName": null, "wgUserGroups": ["*"], "wgCategories": [], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": []});
 }
 </script><script>if(window.mw){
 	mw.loader.load(["mediawiki.page.startup"]);
 }
-</script><script type="text/javascript" src="css/load_003.js"></script>
+</script><script type="text/javascript" src="css/load_002.js"></script>
 </head>
 <body class="mediawiki ltr sitedir-ltr B_wiki_main  skin-monobook">
 
@@ -73,7 +73,7 @@
 	                        <!--</div>-->
 	                    <!--</li>-->
 	                    <li class="nav_item nav_current">
-	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E6%8E%A8%E8%8D%90%E5%85%B3%E6%B3%A8%E5%88%97%E8%A1%A8API.html" title="">文档</a>
+	                        <a class="nav_link" href="%E7%99%BE%E6%80%9D%E4%B8%8D%E5%BE%97%E5%A7%90-%E6%A0%87%E7%AD%BE%E8%AE%A2%E9%98%85API.html" title="">文档</a>
 	                    </li>
 	                    <!--<li class="nav_item">-->
 	                        <!--<a class="nav_link" href="http://open.weibo.com/support" title="">支持</a>-->
@@ -164,7 +164,7 @@
 																				<div id="mw-js-message" class="js-messagebox" style="display:none"></div>
 																					<div id="jump-to-nav">跳转到： <a href="#column-one">导航</a>, <a href="#searchInput">搜索</a></div>
 							<div dir="ltr" class="mw-content-ltr" lang="zh-cn"><h1 class="wiki_title"> <span class="mw-headline" id="statuses.2Ffriends_timeline">api/api_open</span></h1>
-<p>获取默认进入“推荐关注”后右侧板块显示的用户数据内容
+<p>获取“标签订阅”页面中所有标签的信息
 </p>
 <h2 class="wiki_title"> <span class="mw-headline" id="URL">URL</span></h2>
 <p><span style="text-transform:lowercase;font-weight:600"><a rel="nofollow" class="external free" href="http://api.budejie.com/api/api_open.php">http://api.budejie.com/api/api_open.php</a></span>
@@ -176,7 +176,7 @@
 <p><span style="text-transform:uppercase;font-weight:600">GET</span>
 </p>
 <h2 class="wiki_title"> <span class="mw-headline" id=".E6.98.AF.E5.90.A6.E9.9C.80.E8.A6.81.E7.99.BB.E5.BD.95">是否需要登录</span></h2>
-<p><span style="text-transform:lowercase;font-weight:600">是</span>
+<p><span style="text-transform:lowercase;font-weight:600">否</span>
     <!--<br>-->
 <!--关于登录授权，参见 <a href="http://open.weibo.com/wiki/%E6%8E%88%E6%9D%83%E6%9C%BA%E5%88%B6%E8%AF%B4%E6%98%8E" title="授权机制说明">如何登录授权</a>-->
 </p>
@@ -199,22 +199,13 @@
 <th style="text-align:center;font-weight:bolder;border:1px solid #cccccc" width="75%">说明
 </th></tr>
 <tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">source
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">采用OAuth授权方式不需要此参数，其他授权方式为必填参数，数值为应用的AppKey。
-</td></tr>
-<tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">a
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">true
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">friend_recommend
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">tags_list
 </td></tr>
 <tr>
     <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">appname
@@ -241,8 +232,9 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">user
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">subscribe
 </td></tr>
+
 <tr>
     <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">client
     </td>
@@ -260,24 +252,13 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">ios设备
 </td></tr>
-
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">last_record
+<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">jbk
 </td>
 <td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
 </td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">目前所加载的最后一条用户的id,默认为空
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">last_flag
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">list，上拉加载后传入当前的所在的标签名称，例:“推荐”则为toplist
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">一般为“0”
 </td></tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">openudid
 </td>
@@ -286,15 +267,6 @@
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">string
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">19deb9dde5ccf65fe1623b59a5ebeff55bcbc319
-</td></tr>
-<tr>
-<td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">pre
-</td>
-<td style="text-align:center;text-transform:lowercase;border:1px solid #cccccc">false
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">int
-</td>
-<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">50,例如：传入50则为显示推荐中的前50名用户
 </td></tr>
 <td style="text-align:center;font-weight:bolder;border:1px solid #cccccc">uid
 </td>
@@ -312,7 +284,8 @@
 </td>
 <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">当前所安装的app的版本
 </td>
-</tr></tbody></table>
+</tr>
+</tbody></table>
 <h2 class="wiki_title"> <span class="mw-headline" id=".E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9">注意事项</span></h2>
 <p>无
 </p>
@@ -322,129 +295,124 @@
 <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E7.BB.93.E6.9E.9C">返回结果 </span></h2>
 <div class="code_type" style="text-transform:uppercase;margin-bottom:5px;">JSON示例</div><br>
 
-<pre class="brush:js">
-{
-    &quot;list&quot;: [],
-    &quot;top_list&quot;: [{
-        &quot;uid&quot;: &quot;437&quot;,
-        &quot;screen_name&quot;: &quot;Gif小视频大叔&quot;,
-        &quot;social_name&quot;: &quot;&quot;,
-        &quot;header&quot;: &quot;http:%/%/img.spriteapp.cn%/profile%/large%/2015%/05%/09%/554e07de47786_mini.jpg&quot;,
-        &quot;gender&quot;: &quot;m&quot;,
-        &quot;fans_count&quot;: &quot;5533&quot;,
-        &quot;introduction&quot;: &quot;这个用户很懒，什么也没有留下！&quot;,
-        &quot;plat_flag&quot;: 2,
-        &quot;is_follow&quot;: 0,
-        &quot;id&quot;: &quot;437&quot;,
-        &quot;tiezi_count&quot;: 0
-    }],
-    &quot;info&quot;: {
-        &quot;last_flag&quot;: &quot;top_list&quot;,
-        &quot;last_coord&quot;: &quot;8719733&quot;
-    }
-}
 
-</pre>
+
 
 <!--<p>关于错误返回值与错误代码，参见 <a href="http://open.weibo.com/wiki/Error_code" title="Error code">错误代码说明</a>-->
 <!--</p>-->
+<pre class="brush:js">
+{
+	&quot;sub_tags&quot;: [],
+	&quot;def_tags&quot;: [{
+		&quot;theme_id&quot;: &quot;55&quot;,
+		&quot;theme_name&quot;: &quot;微视频&quot;,
+		&quot;image_list&quot;: &quot;http:%/%/img.spriteapp.cn%/ugc%/2015%/01%/23%/180558_65251.jpg&quot;,
+		&quot;sub_number&quot;: &quot;1133364&quot;,
+		&quot;is_sub&quot;: 0,
+		&quot;is_default&quot;: 1
+	}],
+    &quot;rec_tags&quot;: [{
+		&quot;theme_id&quot;: &quot;163&quot;,
+		&quot;theme_name&quot;: &quot;生活百科&quot;,
+		&quot;image_list&quot;: &quot;http:%/%/img.spriteapp.cn%/ugc%/2015%/04%/23%/160559_24190.jpg&quot;,
+		&quot;sub_number&quot;: &quot;36824&quot;,
+		&quot;is_sub&quot;: 0,
+		&quot;is_default&quot;: 0
+	}]
+}
+
+
+</pre><br />
 <h2 class="wiki_title"> <span class="mw-headline" id=".E8.BF.94.E5.9B.9E.E5.AD.97.E6.AE.B5.E8.AF.B4.E6.98.8E">返回字段说明</span></h2>
 <table class="parameters" style="border-color: #CCCCCC;" border="1" cellpadding="0" cellspacing="0" width="100%">
 
-    <tbody><tr>
-        <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="25%">返回值字段
-        </th>
-        <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="15%">字段类型
-        </th>
-        <th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="60%">字段说明
-        </th></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">uid
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">推荐的用户id
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">fans_count
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">String
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">此用户的被关注数量
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">is_follow
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">是否是已经关注的对象,1为是 0为否
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">gender
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户的性别
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">plat_flag
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">平台标记
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">screen_name
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户的昵称
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">header
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户头像的url
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">id
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">用户id
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">introduction
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">个性标签、描述
-        </td></tr>
-    <tr>
-        <td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">tiezi_count
-        </td>
-        <td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
-        </td>
-        <td style="text-align:left;padding-left:5px;border:1px solid #cccccc">发过的帖子总数
-        </td></tr>
-    </tbody></table>
+<tbody><tr>
+<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="25%">返回值字段
+</th>
+<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="15%">字段类型
+</th>
+<th style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc" width="60%">字段说明
+</th></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">def_tags
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">array
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">已经订阅的标签数组
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">sub_number
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">订阅的数量
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">rec_tags
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">array
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">推荐订阅（recommendation）的标签数组
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">is_sub
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">是否是子标签
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">theme_id
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签的id
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">theme_name
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签的名字
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">sub_number
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">订阅数量
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">is_default
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">int
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">是否是默认关注的标签
+</td></tr>
+<tr>
+<td style="text-align:left;padding-left:5px;font-weight:bolder;border:1px solid #cccccc">image_list
+</td>
+<td style="text-align:left;padding-left:5px;text-transform:lowercase;border:1px solid #cccccc">string
+</td>
+<td style="text-align:left;padding-left:5px;border:1px solid #cccccc">标签图片的url地址
+</td></tr>
+</tbody></table>
 <h2 class="wiki_title"> <span class="mw-headline" id=".E5.85.B6.E4.BB.96">其他</span></h2>
 <p>无
 </p>
 <!--<h2 class="wiki_title"> <span class="mw-headline" id=".E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98">相关问题</span></h2>-->
 <!--<p></p><div id="relat_qa" data="friends_timeline"><p>无</p></div>-->
 <!--<p></p><p><br>-->
-    <!--到<a rel="nofollow" class="external text" href="http://open.weibo.com/qa">问答系统</a> 查看更多问题或提问-->
+<!--到<a rel="nofollow" class="external text" href="http://open.weibo.com/qa">问答系统</a> 查看更多问题或提问-->
 <!--</p><p><br>-->
 <!--</p>-->
 <!--<span style="display:none;"><div class="wiki_plus_area"><span class="tit">Language:</span> [[{{{2/uri}}}|中文]]</div></span>-->
 <!--<p><br>-->
-    <!--@SHOWGRADE-->
+<!--@SHOWGRADE-->
 <!--</p><p><br>-->
-    <!--@NOBTNS--><!--@NOHEADING-->
+<!--@NOBTNS--><!--@NOHEADING-->
 <!--</p><p><br>-->
-    <!--@SHOWGRADE-->
+<!--@SHOWGRADE-->
 <!--</p>-->
 <!-- 
 NewPP limit report
@@ -454,7 +422,7 @@ Template argument size: 14204/2097152 bytes
 Expensive parser function count: 0/100
 -->
 
-<!-- Saved in parser cache with key wiki:pcache:idhash:825-0!*!0!!*!*!* and timestamp 20150614121528 -->
+<!-- Saved in parser cache with key wiki:pcache:idhash:825-0!*!0!!*!*!* and timestamp 20150614090043 -->
 </div><div class="printfooter">
 来自“<a href="http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233">http://open.weibo.com/wiki/index.php?title=2/statuses/friends_timeline&amp;oldid=14233</a>”</div>
 							<div id="catlinks" class="catlinks catlinks-allhidden"></div>														<div class="wiki_plus_area_bottom"> 文档更新时间: 2015-06-15</div>						</div>
@@ -493,14 +461,14 @@ Expensive parser function count: 0/100
 <script>if(window.mw){
 	mw.loader.load(["mediawiki.user", "mediawiki.util", "mediawiki.page.ready", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax"]);
 }
-</script><script type="text/javascript" src="css/load_002.js"></script>
+</script><script type="text/javascript" src="css/load_004.js"></script>
 <script>if(window.mw){
 	mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,
 	"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"zh-cn","language":"zh-cn","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;mw.user.tokens.set({"editToken":"+\\","watchToken":false});;mw.loader.state({"user.options":"ready","user.tokens":"ready"});
 	
 	/* cache key: wiki:resourceloader:filter:minify-js:4:42c4e9caefe8ca663d220ee0c286ac74 */
 }
-</script><!-- Served in 0.512 secs. --><noscript>
+</script><!-- Served in 0.484 secs. --><noscript>
 <img width="0" height="0" src="http://beacon.sina.com.cn/a.gif?noScript" border="0" alt="" />
 </noscript>
 <script type="text/javascript" charset="utf-8">

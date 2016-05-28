@@ -9,8 +9,10 @@
 #import "JPTopicesViewController.h"
 #import "JPTopic.h"
 #import "JPTopicCell.h"
+#import "JPCommentViewController.h"
 
 @interface JPTopicesViewController ()
+
 @property(nonatomic,strong)AFHTTPSessionManager *manager;
 @property(nonatomic,strong)NSMutableArray *topices;
 
@@ -19,6 +21,7 @@
 @property(nonatomic,copy)NSString *maxtime;
 
 @property(nonatomic,strong)NSMutableDictionary *params;//用来保存最后发送请求的参数
+
 @end
 
 @implementation JPTopicesViewController
@@ -180,6 +183,17 @@
     cell.topic=self.topices[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    JPCommentViewController *commentVC=[[JPCommentViewController alloc] init];
+    commentVC.topic=self.topices[indexPath.row];
+    
+    [self.navigationController pushViewController:commentVC animated:YES];
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

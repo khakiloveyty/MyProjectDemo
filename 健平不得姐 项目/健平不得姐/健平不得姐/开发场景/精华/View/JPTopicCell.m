@@ -83,12 +83,19 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.autoresizingMask=UIViewAutoresizingNone;//不会随父视图的改变而改变（xib文件有可能会拉伸）
+    //参考：http://www.cocoachina.com/ios/20141216/10652.html
+    
     self.backgroundColor=[UIColor clearColor];
 
     self.backgroundView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
     
     //设置没有点击高亮效果
     self.selectionStyle=UITableViewCellSelectionStyleNone;
+}
+
++(instancetype)cell{
+    return [[[NSBundle mainBundle] loadNibNamed:@"JPTopicCell" owner:nil options:nil] firstObject];
 }
 
 -(void)setTopic:(JPTopic *)topic{
@@ -116,7 +123,7 @@
     self.topicTextLabel.text=topic.text;
     
     //根据模型类型（帖子类型）添加对应的内容到cell的中间（图片、视频）
-    if (topic.type==JPPictureTopic) {
+    if (topic.type==JPPictureTopic) {       // -------------------- 图片
         
         self.pictureView.hidden=NO;
         self.pictureView.topic=topic;
@@ -125,7 +132,7 @@
         self.voiceView.hidden=YES;
         self.videoView.hidden=YES;
         
-    }else if (topic.type==JPVoiceTopic){
+    }else if (topic.type==JPVoiceTopic){    // -------------------- 音频
         
         self.voiceView.hidden=NO;
         self.voiceView.topic=topic;
@@ -134,7 +141,7 @@
         self.pictureView.hidden=YES;
         self.videoView.hidden=YES;
         
-    }else if (topic.type==JPVideoTopic){
+    }else if (topic.type==JPVideoTopic){    // -------------------- 视频
         
         self.videoView.hidden=NO;
         self.videoView.topic=topic;
@@ -143,7 +150,7 @@
         self.voiceView.hidden=YES;
         self.pictureView.hidden=YES;
         
-    }else{
+    }else{                                  // -------------------- 段子
         self.pictureView.hidden=YES;
         self.voiceView.hidden=YES;
         self.videoView.hidden=YES;
@@ -231,6 +238,27 @@
     frame.size.height-=JPTopicCellMargin;
     
     [super setFrame:frame];
+}
+
+- (IBAction)more:(id)sender {
+    
+    UIAlertController *alertC=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *collectAction=[UIAlertAction actionWithTitle:@"收藏" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        JPLog(@"收藏");
+    }];
+    
+    UIAlertAction *reportAction=[UIAlertAction actionWithTitle:@"举报" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        JPLog(@"举报");
+    }];
+    
+    UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertC addAction:collectAction];
+    [alertC addAction:reportAction];
+    [alertC addAction:cancelAction];
+    
+    [KeyWindow.rootViewController presentViewController:alertC animated:YES completion:nil];
 }
 
 @end

@@ -21,10 +21,13 @@
 +(UIBarButtonItem *)itemWithTarget:(id)target andAction:(SEL)action andImageName:(NSString *)imageName andHighImageName:(NSString *)highImageName{
     
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];//自定义按钮样式
+    
     [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:highImageName] forState:UIControlStateHighlighted];
+
     button.size=button.currentBackgroundImage.size;//按钮大小跟图片大小一致
     //button.currentBackgroundImage.size：获取按钮当前背景图片的size
+    
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     return [[UIBarButtonItem alloc]initWithCustomView:button];
