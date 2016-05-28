@@ -9,8 +9,7 @@
 #import "JPCommentViewController.h"
 #import "JPTopic.h"
 #import "JPTopicCell.h"
-
-static NSInteger const JPSectionHeaderLabelTag=100;
+#import "JPCommentHeaderView.h"
 
 @interface JPCommentViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -252,50 +251,13 @@ static NSInteger const JPSectionHeaderLabelTag=100;
     //UITableViewHeaderFooterView：tableView的section头和尾视图
     //跟UITableViewCell相似，可循环利用（其实差不多一个样）
     
-    //先从缓存池中取
-    UITableViewHeaderFooterView *headerView=[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"commentHeaderView"];
-    
-    UILabel *headerLabel=nil; //拿出headerView中的label
-    
-    if (!headerView) {      //如果缓存池没有headerView，创建
-        
-        headerView=[[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:@"commentHeaderView"];
-        headerView.contentView.backgroundColor=JPGlobalColor;
-        
-        //创建label（UITableViewHeaderFooterView跟UITableViewCell一样不能设置它的frame，只能设置子视图）
-        headerLabel=[[UILabel alloc] init];
-        headerLabel.textColor=JPRGB(67, 67, 67);
-        headerLabel.width=200;
-        headerLabel.x=JPTopicCellMargin;
-        
-        //设置label高度
-        headerLabel.autoresizingMask=UIViewAutoresizingFlexibleHeight;
-        //autoresizingMask：自动设置尺寸
-        //UIViewAutoresizingFlexibleHeight：自动跟随着父控件的高度进行拉伸（就是跟父控件的高度一致）
-        
-        //设置label标识
-        headerLabel.tag=JPSectionHeaderLabelTag;
-        
-        //添加label
-        [headerView.contentView addSubview:headerLabel];
-        
-        /*
-         
-         headerView.view已经不能使用了，只能用headerView.contentView来代替（背景颜色、添加子视图）
-         
-         */
-        
-    }else{                  //否则，将缓存池中取出来的headerView里面的label根据标识拿出来
-        
-        headerLabel=[headerView viewWithTag:JPSectionHeaderLabelTag];
-        
-    }
+    JPCommentHeaderView *headerView=[JPCommentHeaderView headerViewWithTableView:tableView]; 
     
     //设置【新建/从缓存池取出来】的label的内容
     if (section==0 && self.hotComments.count) {
-        headerLabel.text=@"最热评论";
+        headerView.title=@"最热评论";
     }else{
-        headerLabel.text=@"最新评论";
+        headerView.title=@"最新评论";
     }
     
     return headerView;

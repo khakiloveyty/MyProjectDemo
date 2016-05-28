@@ -43,6 +43,7 @@
 		6F771D3C1CF445C500A40527 /* JPPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F771D3A1CF445C500A40527 /* JPPublishView.xib */; };
 		6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77424D1CF9330E008030D2 /* JPCommentViewController.m */; };
 		6F7742501CF9330E008030D2 /* JPCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F77424E1CF9330E008030D2 /* JPCommentViewController.xib */; };
+		6F7742531CF9A983008030D2 /* JPCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7742521CF9A983008030D2 /* JPCommentHeaderView.m */; };
 		6F861B011CEAE366009DF540 /* JPVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B001CEAE366009DF540 /* JPVerticalButton.m */; };
 		6F861B041CEAFE35009DF540 /* JPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B031CEAFE35009DF540 /* JPTextField.m */; };
 		6F861B071CEB2A2E009DF540 /* JPPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B061CEB2A2E009DF540 /* JPPushGuideView.m */; };
@@ -158,6 +159,8 @@
 		6F77424C1CF9330E008030D2 /* JPCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCommentViewController.h; sourceTree = "<group>"; };
 		6F77424D1CF9330E008030D2 /* JPCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCommentViewController.m; sourceTree = "<group>"; };
 		6F77424E1CF9330E008030D2 /* JPCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPCommentViewController.xib; sourceTree = "<group>"; };
+		6F7742511CF9A983008030D2 /* JPCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCommentHeaderView.h; sourceTree = "<group>"; };
+		6F7742521CF9A983008030D2 /* JPCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCommentHeaderView.m; sourceTree = "<group>"; };
 		6F861AFF1CEAE366009DF540 /* JPVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPVerticalButton.h; sourceTree = "<group>"; };
 		6F861B001CEAE366009DF540 /* JPVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPVerticalButton.m; sourceTree = "<group>"; };
 		6F861B021CEAFE35009DF540 /* JPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTextField.h; sourceTree = "<group>"; };
@@ -460,6 +463,8 @@
 				6F8D2C351CF821D000101AC6 /* JPTopicVideoView.h */,
 				6F8D2C361CF821D000101AC6 /* JPTopicVideoView.m */,
 				6F8D2C381CF821DD00101AC6 /* JPTopicVideoView.xib */,
+				6F7742511CF9A983008030D2 /* JPCommentHeaderView.h */,
+				6F7742521CF9A983008030D2 /* JPCommentHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -909,6 +914,7 @@
 				6F93178E1CE9B9B3005B1CF3 /* JPRecommendTag.m in Sources */,
 				6F861B041CEAFE35009DF540 /* JPTextField.m in Sources */,
 				6F89C1CA1CF2C6E600062F68 /* JPTopicPictureView.m in Sources */,
+				6F7742531CF9A983008030D2 /* JPCommentHeaderView.m in Sources */,
 				6F6C22551CE492D2000BE077 /* JPMeViewController.m in Sources */,
 				6F6C22541CE492D2000BE077 /* JPEssenceViewController.m in Sources */,
 				6F8D1AA81CEDBC620056FB0C /* JPConst.m in Sources */,
