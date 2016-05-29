@@ -10,6 +10,7 @@
 #import "JPTopic.h"
 #import "JPTopicCell.h"
 #import "JPCommentHeaderView.h"
+#import "JPCommentCell.h"
 
 @interface JPCommentViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -72,6 +73,14 @@
     self.tableView.contentInset=UIEdgeInsetsMake(JPTitlesViewY, 0, 0, 0);
     //滚动条的内边距
     self.tableView.scrollIndicatorInsets=self.tableView.contentInset;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"JPCommentCell" bundle:nil] forCellReuseIdentifier:@"JPCommentCell"];
+    
+    //设置cell的高度
+    //1.cell里面的约束要确定 ---> 上方跟下方必须要连好线，确定cell与子控件的高度关系
+    self.tableView.estimatedRowHeight=44; //2.给tableview一个cell的估算高度
+    self.tableView.rowHeight=UITableViewAutomaticDimension; //3.让tableview自动计算cell高度
+    //123三个步骤缺一不可（iOS8才可以使用该方法，并且要cell内部子控件全部确定好才好使用，太复杂的cell就别用这方法了，例如JPTopicCell）
     
     //监听键盘的弹出/收回（UIKeyboardWillChangeFrameNotification：键盘弹出/收回都会发送这个通知）
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
@@ -318,15 +327,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    JPCommentCell *cell=[tableView dequeueReusableCellWithIdentifier:@"JPCommentCell"];
     
-    if (!cell) {
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    
-    JPComment *comment=[self commentInIndexPath:indexPath];
-    
-    cell.textLabel.text=comment.content;
+    cell.comment=[self commentInIndexPath:indexPath];
     
     return cell;
 }
@@ -344,12 +347,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 50;
     
 }
 

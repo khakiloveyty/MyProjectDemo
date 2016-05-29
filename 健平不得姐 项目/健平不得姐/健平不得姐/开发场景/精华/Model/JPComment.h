@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class JPUser;
+#import "JPUser.h"
 
 @interface JPComment : NSObject
 @property(nonatomic,copy)NSString *content; //评论内容

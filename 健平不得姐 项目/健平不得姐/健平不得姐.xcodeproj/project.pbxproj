@@ -44,6 +44,8 @@
 		6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77424D1CF9330E008030D2 /* JPCommentViewController.m */; };
 		6F7742501CF9330E008030D2 /* JPCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F77424E1CF9330E008030D2 /* JPCommentViewController.xib */; };
 		6F7742531CF9A983008030D2 /* JPCommentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7742521CF9A983008030D2 /* JPCommentHeaderView.m */; };
+		6F85C7D11CFABF9200505325 /* JPCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F85C7CF1CFABF9200505325 /* JPCommentCell.m */; };
+		6F85C7D21CFABF9200505325 /* JPCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F85C7D01CFABF9200505325 /* JPCommentCell.xib */; };
 		6F861B011CEAE366009DF540 /* JPVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B001CEAE366009DF540 /* JPVerticalButton.m */; };
 		6F861B041CEAFE35009DF540 /* JPTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B031CEAFE35009DF540 /* JPTextField.m */; };
 		6F861B071CEB2A2E009DF540 /* JPPushGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F861B061CEB2A2E009DF540 /* JPPushGuideView.m */; };
@@ -161,6 +163,9 @@
 		6F77424E1CF9330E008030D2 /* JPCommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPCommentViewController.xib; sourceTree = "<group>"; };
 		6F7742511CF9A983008030D2 /* JPCommentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCommentHeaderView.h; sourceTree = "<group>"; };
 		6F7742521CF9A983008030D2 /* JPCommentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCommentHeaderView.m; sourceTree = "<group>"; };
+		6F85C7CE1CFABF9200505325 /* JPCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPCommentCell.h; sourceTree = "<group>"; };
+		6F85C7CF1CFABF9200505325 /* JPCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPCommentCell.m; sourceTree = "<group>"; };
+		6F85C7D01CFABF9200505325 /* JPCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPCommentCell.xib; sourceTree = "<group>"; };
 		6F861AFF1CEAE366009DF540 /* JPVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPVerticalButton.h; sourceTree = "<group>"; };
 		6F861B001CEAE366009DF540 /* JPVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPVerticalButton.m; sourceTree = "<group>"; };
 		6F861B021CEAFE35009DF540 /* JPTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTextField.h; sourceTree = "<group>"; };
@@ -465,6 +470,9 @@
 				6F8D2C381CF821DD00101AC6 /* JPTopicVideoView.xib */,
 				6F7742511CF9A983008030D2 /* JPCommentHeaderView.h */,
 				6F7742521CF9A983008030D2 /* JPCommentHeaderView.m */,
+				6F85C7CE1CFABF9200505325 /* JPCommentCell.h */,
+				6F85C7CF1CFABF9200505325 /* JPCommentCell.m */,
+				6F85C7D01CFABF9200505325 /* JPCommentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -809,6 +817,7 @@
 				6F9317931CE9BB0B005B1CF3 /* JPRecommendTagCell.xib in Resources */,
 				6F861B091CEB2A44009DF540 /* JPPushGuideView.xib in Resources */,
 				6F7742501CF9330E008030D2 /* JPCommentViewController.xib in Resources */,
+				6F85C7D21CFABF9200505325 /* JPCommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,6 +929,7 @@
 				6F8D1AA81CEDBC620056FB0C /* JPConst.m in Sources */,
 				6F25E55F1CEEC69C00587A75 /* JPVoiceViewController.m in Sources */,
 				6F8D1AAC1CEDC6860056FB0C /* JPTopicCell.m in Sources */,
+				6F85C7D11CFABF9200505325 /* JPCommentCell.m in Sources */,
 				6F6C21E31CE47810000BE077 /* main.m in Sources */,
 				6F861B071CEB2A2E009DF540 /* JPPushGuideView.m in Sources */,
 				6F8D2C3F1CF8430000101AC6 /* JPComment.m in Sources */,

@@ -9,7 +9,6 @@
 //#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h> //Foundation没有CGFloat，使用UIKit，UIKit包括了Foundation
 #import "JPComment.h"
-#import "JPUser.h"
 
 @interface JPTopic : NSObject
 
