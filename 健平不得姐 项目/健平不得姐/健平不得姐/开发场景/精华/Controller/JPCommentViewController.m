@@ -24,6 +24,8 @@
 @property(nonatomic,copy)NSString *lastcid;
 @property(nonatomic,strong)NSMutableDictionary *params;//用来保存最后发送请求的参数
 
+@property(nonatomic,strong)NSArray *save_top_cmt; //用来保存self.topic.top_comt数组（因为该页面的表头视图不需要最热评论这个模块）
+
 @end
 
 @implementation JPCommentViewController
@@ -75,6 +77,15 @@
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    //如果有最热评论模块
+    if (self.save_top_cmt.count) {
+        //返回最热评论数组（回去还是要显示最热评论模块的）
+        self.topic.top_cmt=self.save_top_cmt;
+        //因为cellHeight属性的getter方法使用了懒加载模式，将cellHeight清零重新再算，把最热评论模块的高度加上去
+        [self.topic setValue:@0 forKeyPath:@"cellHeight"];
+    }
+    
 }
 
 //键盘弹出/收回响应方法
@@ -98,8 +109,18 @@
     
 }
 
-//设置表头视图
+//设置表头视图（使用JPTopicCell）
 -(void)setupHeader{
+    
+    //由于这个页面的表头视图不需要用到JPTopicCell上最热评论那个模块，所以要清空self.topic中最热评论数组
+    if (self.topic.top_cmt.count) {
+        self.save_top_cmt=self.topic.top_cmt; //将最热评论数组先保存起来
+        self.topic.top_cmt=nil; //清空
+        
+        [self.topic setValue:@0 forKeyPath:@"cellHeight"];
+        //因为cellHeight属性的getter方法使用了懒加载模式，所以使用KVC将self.topic的cellHeight清零（cellHeight属性被设置为readonly，所以要使用KVC设置），重新运算一次（因为把最热评论数组清空了，清零就可以重新再算，这个页面就不会算上最热评论模块的高度）
+    }
+    
     //创建表头视图
     UIView *headerView=[[UIView alloc] init];
     headerView.width=Screen_Width;
@@ -228,7 +249,18 @@
 
 #pragma mark - Table view data source
 
+/*
+ 
+ 注意：判断section头视图的标题和数据的来源
+ 
+  * 情况1：有最热评论和最新评论（有最热评论就肯定有最新评论），两个section都要显示，且section头视图标题和section数据要相对应
+  * 情况2：没有最热评论只有最新评论，只显示一个section，且只有最新评论数据
+  * 情况3：最热评论和最新评论都没有，没有section
+ 
+ */
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    //先判断有多少个section
     if (self.hotComments.count) {
         return 2;
     }else if (self.hotComments.count==0 && self.latesComments.count) {
@@ -239,6 +271,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //判断第一个section对应的是哪种评论（如果有最热评论数据就是最热评论，否则肯定是最新评论）
     if (section==0 && self.hotComments.count) {
         return self.hotComments.count;
     }else{
@@ -253,6 +286,7 @@
     
     JPCommentHeaderView *headerView=[JPCommentHeaderView headerViewWithTableView:tableView]; 
     
+    //判断第一个section对应的是哪种评论（如果有最热评论数据就是最热评论，否则肯定是最新评论）
     //设置【新建/从缓存池取出来】的label的内容
     if (section==0 && self.hotComments.count) {
         headerView.title=@"最热评论";
@@ -278,6 +312,7 @@
     return cell;
 }
 
+//判断数据来源
 -(JPComment *)commentInIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0 && self.hotComments.count) {
         return (JPComment *)self.hotComments[indexPath.row];
