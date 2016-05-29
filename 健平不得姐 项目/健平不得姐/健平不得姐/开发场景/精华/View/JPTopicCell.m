@@ -157,20 +157,12 @@
     }
     
     //设置热门评论
-    if (topic.top_cmt.count) {
-        
+    if (topic.top_cmt) {
+    
         self.hotCommentView.hidden=NO;
         
-        NSMutableString *commentContent=[NSMutableString string];
-        for (NSInteger i=0;i<topic.top_cmt.count;i++) {
-            JPComment *comment=topic.top_cmt[i];
-            
-            if (i!=0) [commentContent appendString:@"\n"];
-
-            [commentContent appendString:[NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content]];
-        }
-        
-        self.hotCommentContentLabel.text=commentContent;
+        //已经不使用数组类型来保存最热评论（因为总是只有一个），不需要遍历叠加了
+        self.hotCommentContentLabel.text=[NSString stringWithFormat:@"%@ : %@",topic.top_cmt.user.username,topic.top_cmt.content];
         
     }else{
         self.hotCommentView.hidden=YES;

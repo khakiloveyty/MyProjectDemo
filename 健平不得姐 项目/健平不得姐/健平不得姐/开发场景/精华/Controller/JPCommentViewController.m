@@ -24,7 +24,9 @@
 @property(nonatomic,copy)NSString *lastcid;
 @property(nonatomic,strong)NSMutableDictionary *params;//用来保存最后发送请求的参数
 
-@property(nonatomic,strong)NSArray *save_top_cmt; //用来保存self.topic.top_comt数组（因为该页面的表头视图不需要最热评论这个模块）
+//@property(nonatomic,strong)NSArray *save_top_cmt; //用来保存self.topic.top_comt数组（因为该页面的表头视图不需要最热评论这个模块）
+
+@property(nonatomic,strong)JPComment *save_top_cmt;//用来保存self.topic.top_comt模型（因为该页面的表头视图不需要最热评论这个模块）
 
 @end
 
@@ -78,9 +80,17 @@
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
+//    //如果有最热评论模块
+//    if (self.save_top_cmt.count) {
+//        //返回最热评论数组（回去还是要显示最热评论模块的）
+//        self.topic.top_cmt=self.save_top_cmt;
+//        //因为cellHeight属性的getter方法使用了懒加载模式，将cellHeight清零重新再算，把最热评论模块的高度加上去
+//        [self.topic setValue:@0 forKeyPath:@"cellHeight"];
+//    }
+    
     //如果有最热评论模块
-    if (self.save_top_cmt.count) {
-        //返回最热评论数组（回去还是要显示最热评论模块的）
+    if (self.save_top_cmt) {
+        //返回最热评论模型（回去还是要显示最热评论模块的）
         self.topic.top_cmt=self.save_top_cmt;
         //因为cellHeight属性的getter方法使用了懒加载模式，将cellHeight清零重新再算，把最热评论模块的高度加上去
         [self.topic setValue:@0 forKeyPath:@"cellHeight"];
@@ -112,13 +122,22 @@
 //设置表头视图（使用JPTopicCell）
 -(void)setupHeader{
     
-    //由于这个页面的表头视图不需要用到JPTopicCell上最热评论那个模块，所以要清空self.topic中最热评论数组
-    if (self.topic.top_cmt.count) {
-        self.save_top_cmt=self.topic.top_cmt; //将最热评论数组先保存起来
+//    //由于这个页面的表头视图不需要用到JPTopicCell上最热评论那个模块，所以要清空self.topic中最热评论数组
+//    if (self.topic.top_cmt.count) {
+//        self.save_top_cmt=self.topic.top_cmt; //将最热评论数组先保存起来
+//        self.topic.top_cmt=nil; //清空
+//        
+//        [self.topic setValue:@0 forKeyPath:@"cellHeight"];
+//        //因为cellHeight属性的getter方法使用了懒加载模式，所以使用KVC将self.topic的cellHeight清零（cellHeight属性被设置为readonly，所以要使用KVC设置），重新运算一次（因为把最热评论数组清空了，清零就可以重新再算，这个页面就不会算上最热评论模块的高度）
+//    }
+    
+    //由于这个页面的表头视图不需要用到JPTopicCell上最热评论那个模块，所以要清空self.topic中最热评论模型
+    if (self.topic.top_cmt) {
+        self.save_top_cmt=self.topic.top_cmt; //将最热评论模型先保存起来
         self.topic.top_cmt=nil; //清空
         
         [self.topic setValue:@0 forKeyPath:@"cellHeight"];
-        //因为cellHeight属性的getter方法使用了懒加载模式，所以使用KVC将self.topic的cellHeight清零（cellHeight属性被设置为readonly，所以要使用KVC设置），重新运算一次（因为把最热评论数组清空了，清零就可以重新再算，这个页面就不会算上最热评论模块的高度）
+        //因为cellHeight属性的getter方法使用了懒加载模式，所以使用KVC将self.topic的cellHeight清零（cellHeight属性被设置为readonly，所以要使用KVC设置），重新运算一次（因为把最热评论模型清空了，清零就可以重新再算，这个页面就不会算上最热评论模块的高度）
     }
     
     //创建表头视图

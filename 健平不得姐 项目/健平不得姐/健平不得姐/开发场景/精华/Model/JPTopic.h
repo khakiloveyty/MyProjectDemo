@@ -43,7 +43,8 @@
 @property(nonatomic,assign)NSInteger videotime; //视频的时长（单位：秒）
 @property(nonatomic,copy)NSString *videouri; //视频的播放地址
 
-@property(nonatomic,strong)NSArray *top_cmt; //最热评论数组
+//@property(nonatomic,strong)NSArray *top_cmt; //最热评论数组
+@property(nonatomic,strong)JPComment *top_cmt; //最热评论模型 ---> top_cmt[0]（因为返回的这个数组总是只有一个元素，所以不需要使用到数组类型）
 
 @property(nonatomic,copy)NSString *topicID; //帖子id ---> id
 

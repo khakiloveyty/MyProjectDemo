@@ -40,7 +40,12 @@
              @"small_image":@"image0",
              @"big_image":@"image1",
              @"mid_image":@"image2",
-             @"topicID":@"id"
+             @"topicID":@"id",
+             
+             @"top_cmt":@"top_cmt[0]"
+             //映射：top_cmt[0]拿到这个数组的第一个元素
+             //因为这个数组总是只有一个元素，所以只需要拿到它的第一个元素
+             
              };
 }
 
@@ -176,20 +181,20 @@
         }
         
         //如果有热门评论，添加热门评论控件的高度
-        if (self.top_cmt.count) {
-            //cell高度 += 热门评论顶部标题高度 + 热门评论内容内边距
+        if (self.top_cmt) {
+                
+            //cell高度 += 热门评论标题高度 + 热门评论内容上方内边距
             _cellHeight+=JPTopicCellHotCommentTitleHeight+JPTopicCellHotCommentContentMargin;
             
-            maxSize=CGSizeMake(maxSize.width-2*JPTopicCellHotCommentContentMargin, MAXFLOAT);
+            maxSize=CGSizeMake(maxSize.width-2*JPTopicCellHotCommentContentMargin, MAXFLOAT); //评论内容需要添加左右内边距
             
-            for (JPComment *comment in self.top_cmt) {
-                CGFloat contentH=[[NSString stringWithFormat:@"%@ : %@",comment.user.username,comment.content] boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
-                
-                //cell高度 += 热门评论内容高度
-                _cellHeight+=contentH;
-            }
+            //已经不使用数组类型来保存最热评论（因为总是只有一个），不需要遍历叠加了
+            CGFloat contentH=[[NSString stringWithFormat:@"%@ : %@",self.top_cmt.user.username,self.top_cmt.content] boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
             
-            //cell高度 += 热门评论内容内边距 + 热门评论与下方控件的间距
+            //cell高度 += 热门评论内容高度
+            _cellHeight+=contentH;
+            
+            //cell高度 += 热门评论内容下方内边距 + 热门评论与下方控件的间距
             _cellHeight+=JPTopicCellHotCommentContentMargin+JPTopicCellMargin;
         }
         
@@ -206,6 +211,13 @@
     }
     
     return _cellHeight;
+    
+    /*
+     
+     * 总的来说，如果全部元素都有，则：
+     * cell高度 = 文字label的y值 + 文字label高度 + 控件之间的间距 + 图片高度 + 控件之间的间距 + 热门评论标题高度 + 热门评论内容上方内边距 + 热门评论内容高度 + 热门评论内容下方内边距 + 控件之间的间距 + 底部工具条高度 + cell压缩的间距
+     
+     */
     
 }
 
