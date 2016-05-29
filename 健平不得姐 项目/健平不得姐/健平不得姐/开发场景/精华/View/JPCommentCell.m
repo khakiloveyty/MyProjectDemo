@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *voiceBtn;
 
 @end
 
@@ -44,6 +45,12 @@
     }
     self.likeCountLabel.text=likeCount;
     
+    if (comment.voiceuri.length) {
+        self.voiceBtn.hidden=NO;
+        [self.voiceBtn setTitle:[NSString stringWithFormat:@"%zd''",comment.voicetime] forState:UIControlStateNormal];
+    }else{
+        self.voiceBtn.hidden=YES;
+    }
 }
 
 @end

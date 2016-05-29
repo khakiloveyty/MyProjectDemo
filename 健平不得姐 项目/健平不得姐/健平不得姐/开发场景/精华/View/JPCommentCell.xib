@@ -34,12 +34,6 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJZ-6A-k2r" userLabel="评论内容">
-                        <rect key="frame" x="55" y="40" width="246" height="79"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSO-rb-OgM" userLabel="点赞按钮">
                         <rect key="frame" x="311" y="10" width="30" height="30"/>
                         <constraints>
@@ -58,14 +52,36 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffr-fA-3T6" userLabel="音频按钮">
+                        <rect key="frame" x="55" y="40" width="62" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="62" id="Ws0-X2-OO8"/>
+                            <constraint firstAttribute="height" constant="22" id="xFg-CE-4w3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <inset key="imageEdgeInsets" minX="43" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="12''" image="play-voice-stop" backgroundImage="play-voice-bg">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="highlighted" backgroundImage="play-voice-bg-select"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJZ-6A-k2r" userLabel="评论内容">
+                        <rect key="frame" x="55" y="40" width="246" height="79"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="Zkk-O5-UUe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5d3-Cn-K3e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1ka-7l-shl"/>
-                    <constraint firstItem="Jiv-vN-aum" firstAttribute="leading" secondItem="CJZ-6A-k2r" secondAttribute="trailing" constant="10" id="35A-Pp-PkU"/>
                     <constraint firstItem="ALX-M8-5c6" firstAttribute="top" secondItem="5d3-Cn-K3e" secondAttribute="top" id="6Ul-RG-uGo"/>
                     <constraint firstItem="ALX-M8-5c6" firstAttribute="leading" secondItem="5d3-Cn-K3e" secondAttribute="trailing" id="Asl-qh-maq"/>
                     <constraint firstItem="FW3-1p-ziA" firstAttribute="leading" secondItem="ALX-M8-5c6" secondAttribute="trailing" id="CdG-3p-30X"/>
                     <constraint firstItem="CJZ-6A-k2r" firstAttribute="top" secondItem="FW3-1p-ziA" secondAttribute="bottom" constant="10" id="Eh1-tk-sFc"/>
+                    <constraint firstItem="ffr-fA-3T6" firstAttribute="top" secondItem="CJZ-6A-k2r" secondAttribute="top" id="GhF-MR-aXg"/>
                     <constraint firstItem="Jiv-vN-aum" firstAttribute="top" secondItem="OSO-rb-OgM" secondAttribute="bottom" constant="10" id="H9t-Gz-idS"/>
                     <constraint firstItem="FW3-1p-ziA" firstAttribute="top" secondItem="ALX-M8-5c6" secondAttribute="top" id="Udk-uV-Sb5"/>
                     <constraint firstItem="FW3-1p-ziA" firstAttribute="bottom" secondItem="ALX-M8-5c6" secondAttribute="bottom" id="Ue2-RT-6Pf"/>
@@ -74,14 +90,10 @@
                     <constraint firstItem="CJZ-6A-k2r" firstAttribute="leading" secondItem="5d3-Cn-K3e" secondAttribute="trailing" constant="10" id="dvD-kq-Jwp"/>
                     <constraint firstItem="OSO-rb-OgM" firstAttribute="trailing" secondItem="Jiv-vN-aum" secondAttribute="trailing" id="eEJ-lo-QYx"/>
                     <constraint firstItem="OSO-rb-OgM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hhA-Pu-0bN"/>
+                    <constraint firstItem="ffr-fA-3T6" firstAttribute="leading" secondItem="CJZ-6A-k2r" secondAttribute="leading" id="lCE-qr-T78"/>
                     <constraint firstItem="5d3-Cn-K3e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mGv-E9-1QX"/>
                     <constraint firstItem="Jiv-vN-aum" firstAttribute="leading" secondItem="CJZ-6A-k2r" secondAttribute="trailing" id="w6b-cg-zja"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="35A-Pp-PkU"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="CJZ-6A-k2r" id="45Q-qe-F1a"/>
@@ -89,6 +101,7 @@
                 <outlet property="profileImageView" destination="5d3-Cn-K3e" id="9fe-7p-oj3"/>
                 <outlet property="sexImageView" destination="ALX-M8-5c6" id="go8-qh-hKh"/>
                 <outlet property="usernameLabel" destination="FW3-1p-ziA" id="zvZ-mG-TYb"/>
+                <outlet property="voiceBtn" destination="ffr-fA-3T6" id="9un-az-xy6"/>
             </connections>
             <point key="canvasLocation" x="320.5" y="474"/>
         </tableViewCell>
@@ -97,5 +110,8 @@
         <image name="Profile_womanIcon" width="13" height="13"/>
         <image name="commentLikeButton" width="18" height="18"/>
         <image name="commentLikeButtonClick" width="19" height="19"/>
+        <image name="play-voice-bg" width="62" height="22"/>
+        <image name="play-voice-bg-select" width="74" height="24"/>
+        <image name="play-voice-stop" width="12" height="12"/>
     </resources>
 </document>
