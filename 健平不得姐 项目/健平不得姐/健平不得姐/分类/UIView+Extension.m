@@ -90,4 +90,32 @@
     return self.frame.origin;
 }
 
+-(BOOL)isShowingOnKeyWindow{
+    
+    /*
+       判断该视图是否在主窗口上的条件：
+         * 1.没有隐藏
+         * 2.透明度大于0.01
+         * 3.它的窗口要在主窗口上（就例如tabbarController，切换另一个控制器，上一个控制器的view就看不见了，因为不在keyWindow上了）
+         * 4.显示在主窗口的范围之内（即跟主窗口的bounds有相交）
+     */
+    
+    UIWindow *keyWindow=[UIApplication sharedApplication].keyWindow;
+    
+    //判断子视图是否在主窗口上需要转换坐标系
+    CGRect onKeyWindowframe=[self.superview convertRect:self.frame toView:keyWindow];
+    //参数1：原来坐标系（一般取它的父控件）
+    //参数2：要转换的控件
+    //参数3：目标坐标系（默认为主窗口，即可以填nil）
+    
+    return !self.isHidden                                               // ---- 条件1
+        && self.alpha>0.01                                              // ---- 条件2
+        && self.window==keyWindow                                       // ---- 条件3
+        && CGRectIntersectsRect(keyWindow.bounds, onKeyWindowframe);    // ---- 条件4
+        //CGRectIntersectsRect(rect1,rect2)：判断rect1和rect2是否相交
+    
+    //严谨一点：添加subview.window==keyWindow条件（防止这种情况：在这里创建个scrollView没有添加到父控件上，其他的条件也能符合）
+    
+}
+
 @end

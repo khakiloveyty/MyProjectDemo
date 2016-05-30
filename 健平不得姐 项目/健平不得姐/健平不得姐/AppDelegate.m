@@ -27,11 +27,11 @@
     self.window.backgroundColor=[UIColor whiteColor];
     
     JPTabBarController *tabBarController=[[JPTabBarController alloc] init];
-    
     self.window.rootViewController=tabBarController;
     
     [self.window makeKeyAndVisible];
     
+    //判断版本号：是否展示提示页面
     [JPPushGuideView showPushGuideView];
     
     return YES;

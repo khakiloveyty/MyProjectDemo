@@ -61,6 +61,7 @@
     [self setValue:tabBar forKeyPath:@"tabBar"];
     //[self setValue:tabBar forKeyPath:@"tabBar"]; 这行代码过后，tabBar的delegate就是JPTabBarController
     //说明：所以不用再设置tabBar.delegate=self;
+    
 }
 
 //设置控制器的tabBar样式（要有扩展性：不要在方法中创建控制器，因为有些控制器创建的方式不同，有些是init，有些是initWith...等等）
