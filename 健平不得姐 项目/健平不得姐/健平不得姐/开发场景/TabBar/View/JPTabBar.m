@@ -12,6 +12,7 @@
 
 @interface JPTabBar()
 @property(nonatomic,weak)UIButton *plusButton;
+@property(nonatomic,weak)UIView *fengexianView;
 @end
 
 @implementation JPTabBar
@@ -30,17 +31,30 @@
         [plusButton setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
         
         //设置按钮尺寸跟图片大小一致
-        plusButton.size=plusButton.currentBackgroundImage.size;
-        
+//        plusButton.size=plusButton.currentBackgroundImage.size;
+    
         //监听按钮：弹出发布页面
         [plusButton addTarget:self action:@selector(plusClick) forControlEvents:UIControlEventTouchUpInside];
         
-        self.plusButton=plusButton;
-        
         [self addSubview:plusButton];//initWithFrame之后则执行layoutSubviews
+        self.plusButton=plusButton;
         
         //设置背景图
         self.backgroundImage=[UIImage imageNamed:@"tabbar-light"];
+        
+        
+        
+        /** 个人的尝试 --- 修改中间按钮尺寸 */
+        plusButton.size=CGSizeMake(plusButton.currentBackgroundImage.size.width*1.5, plusButton.currentBackgroundImage.size.height*1.5);
+
+        /** 个人的尝试 --- 自定义分隔线 */
+        UIView *fengexianView=[[UIView alloc] init];
+        fengexianView.backgroundColor=[UIColor whiteColor];
+        fengexianView.size=CGSizeMake(Screen_Width, 2);
+        [self addSubview:fengexianView];
+        self.fengexianView=fengexianView;
+        
+        [self setShadowImage:[UIImage new]];
         
     }
     return self;
@@ -61,7 +75,14 @@
     
     //设置“+”按钮位置
     self.plusButton.centerX=self.width*0.5;
-    self.plusButton.centerY=self.height*0.5;
+//    self.plusButton.centerY=self.height*0.5;
+    
+    /** 个人的尝试 --- 设置分隔线和中间按钮的位置，并设置它们的下标为最上面（将自带的分隔线盖住） */
+    self.plusButton.centerY=15;
+    self.fengexianView.x=0;
+    self.fengexianView.y=-0.5;
+    [self insertSubview:self.plusButton atIndex:self.subviews.count-1];
+    [self insertSubview:self.fengexianView belowSubview:self.plusButton];
     
     //设置其他tabbarButton的位置和尺寸
     //long count=self.subviews.count;//获取tabbar上的子视图（还包括tabbar的背景视图和tabbar上面的分割线，所以这里有7个，要作判断）

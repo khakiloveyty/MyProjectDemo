@@ -28,7 +28,7 @@ static CGFloat const JPSpringFactor=9;
     成员变量：_名字
     全局变量：名字_
     带const的常量：前缀+名字
-    局部变量和属性：名字
+    局部变量和属性：名字      
  */
 
 static UIWindow *window_; //自定义窗口
