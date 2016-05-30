@@ -16,4 +16,5 @@
 @property(nonatomic,assign)NSInteger voicetime; //音频时长（单位：秒）
 @property(nonatomic,copy)NSString *voiceuri; //音频地址
 @property(nonatomic,strong)JPUser *user; //用户
+@property(nonatomic,copy)NSString *commentID; //评论ID ---> id
 @end

@@ -11,6 +11,18 @@
 
 @implementation JPComment
 
+//MJExtension框架方法：将【服务器返回的属性名】转化为【自定义的属性名】
++(NSDictionary *)mj_replacedKeyFromPropertyName{
+    /*
+     @key：自定义的属性名
+     @value：服务器返回的属性名
+     */
+    
+    return @{
+             @"commentID":@"id"
+             };
+}
+
 -(NSString *)ctime{
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     formatter.dateFormat=@"yyyy-MM-dd HH:mm:ss";//按服务器返回的格式设置

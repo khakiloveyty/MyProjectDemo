@@ -28,6 +28,7 @@
     
     //调用父类的setProgress方法（去执行相应的进度方法）
     [super setProgress:progress animated:animated];
+    
     //设置进度文字（BUG：有可能出现 -0 的情况，替换成空字符串）
     self.progressLabel.text=[[NSString stringWithFormat:@"%.0f%%",progress*100] stringByReplacingOccurrencesOfString:@"-" withString:@""];
 }

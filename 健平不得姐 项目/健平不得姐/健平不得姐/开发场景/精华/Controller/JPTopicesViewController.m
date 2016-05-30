@@ -120,6 +120,9 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         JPLog(@"失败");
+        if (self.params != params) {
+            return ;
+        }
         //结束刷新
         [self.tableView.mj_header endRefreshing];
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];
@@ -162,6 +165,9 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         JPLog(@"失败");
+        if (self.params != params) {
+            return ;
+        }
         //结束刷新
         [self.tableView.mj_footer endRefreshing];
         [SVProgressHUD showErrorWithStatus:@"加载数据失败"];

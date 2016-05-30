@@ -23,7 +23,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.autoresizingMask=UIViewAutoresizingNone;//不会随父视图的改变而改变（xib文件有可能会拉伸）
+    //参考：http://www.cocoachina.com/ios/20141216/10652.html
+    
+    self.backgroundColor=[UIColor clearColor];
+    
+    self.backgroundView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
+    
+    //设置没有点击高亮效果
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
 }
 
 -(void)setComment:(JPComment *)comment{
@@ -51,6 +60,15 @@
     }else{
         self.voiceBtn.hidden=YES;
     }
+}
+
+//设置cell内间距
+-(void)setFrame:(CGRect)frame{
+    
+    frame.origin.x=JPTopicCellMargin;
+    frame.size.width-=2*JPTopicCellMargin;
+    
+    [super setFrame:frame];
 }
 
 @end
