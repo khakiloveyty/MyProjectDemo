@@ -97,12 +97,12 @@
          * 1.没有隐藏
          * 2.透明度大于0.01
          * 3.它的窗口要在主窗口上（就例如tabbarController，切换另一个控制器，上一个控制器的view就看不见了，因为不在keyWindow上了）
-         * 4.显示在主窗口的范围之内（即跟主窗口的bounds有相交）
+         * 4.显示在主窗口的范围之内（即跟主窗口的bounds要有相交）
      */
     
     UIWindow *keyWindow=[UIApplication sharedApplication].keyWindow;
     
-    //判断子视图是否在主窗口上需要转换坐标系
+    //判断子视图是否在主窗口上需要转换坐标系（要在相同坐标系下才可以进行判断，这里是将self的坐标转换为相对于keyWindow上的坐标）
     CGRect onKeyWindowframe=[self.superview convertRect:self.frame toView:keyWindow];
     //参数1：原来坐标系（一般取它的父控件）
     //参数2：要转换的控件
