@@ -23,6 +23,8 @@
 
 @property(nonatomic,strong)NSMutableDictionary *params;//用来保存最后发送请求的参数
 
+@property(nonatomic,assign)NSUInteger lastSelectedIndex;
+
 @end
 
 @implementation JPTopicesViewController
@@ -54,6 +56,31 @@
     //设置刷新控件
     [self setupRefresh];
     
+    //监听通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarSelected) name:JPTabBarDidSelectedNotification object:nil];
+}
+
+#pragma mark - JPTabBarDidSelectedNotification
+-(void)tabBarSelected{
+    
+    //先判断是否重复点击同一个控制器（拿上一个index来判断现在点击的index，相同就继续，不相同切换回来就不操作）
+    if (self.lastSelectedIndex==self.tabBarController.selectedIndex) {
+        
+        //再判断当前的view是否显示在主窗口（目前精华模块有五个控制器，只刷新显示在主窗口的控制器）
+        if (self.view.isShowingOnKeyWindow) {
+            [self.tableView.mj_header beginRefreshing];
+        }
+        
+        //self.tabBarController.selectedViewController==self.navigationController
+        //PS：不需要判断【重复点击】的是不是精华这个模块的导航栏控制器，因为如果不是的话self.view.isShowingOnKeyWindow肯定为NO，因为tabBarController显示其他控制器时精华模块的self.window为nil
+    }
+    
+    //保存现在点击的index
+    self.lastSelectedIndex=self.tabBarController.selectedIndex;
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - 初始化tableview

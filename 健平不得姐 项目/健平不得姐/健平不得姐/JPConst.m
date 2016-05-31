@@ -35,3 +35,6 @@ CGFloat const JPTopicCellHotCommentTitleHeight=20;
 
 /** 精华-帖子cell-热门评论内容内边距 */
 CGFloat const JPTopicCellHotCommentContentMargin=5;
+
+/** 点击tabBar的通知 - 通知名称 */
+NSString *const JPTabBarDidSelectedNotification=@"JPTabBarDidSelectedNotification";

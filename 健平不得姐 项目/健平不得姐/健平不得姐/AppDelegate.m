@@ -10,7 +10,7 @@
 #import "JPTabBarController.h"
 #import "JPPushGuideView.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -27,6 +27,8 @@
     self.window.backgroundColor=[UIColor whiteColor];
     
     JPTabBarController *tabBarController=[[JPTabBarController alloc] init];
+    tabBarController.delegate=self;
+    
     self.window.rootViewController=tabBarController;
     
     [self.window makeKeyAndVisible];
@@ -65,6 +67,15 @@
     [manger cancelAll];
     //2.清除内存中的所有图片
     [manger.imageCache clearMemory];
+}
+
+#pragma mark - UITabBarControllerDelegate
+//选择tabBarController的子控制器时的回调
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
+    //发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:JPTabBarDidSelectedNotification object:nil userInfo:nil];
+    
 }
 
 @end
