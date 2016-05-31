@@ -27,7 +27,7 @@
     self.window.backgroundColor=[UIColor whiteColor];
     
     JPTabBarController *tabBarController=[[JPTabBarController alloc] init];
-    tabBarController.delegate=self;
+//    tabBarController.delegate=self;
     
     self.window.rootViewController=tabBarController;
     
@@ -69,13 +69,13 @@
     [manger.imageCache clearMemory];
 }
 
-#pragma mark - UITabBarControllerDelegate
-//选择tabBarController的子控制器时的回调
--(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    
-    //发出通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:JPTabBarDidSelectedNotification object:nil userInfo:nil];
-    
-}
+//#pragma mark - UITabBarControllerDelegate
+////选择tabBarController的子控制器时的回调
+//-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+//    
+//    //发出通知
+//    [[NSNotificationCenter defaultCenter] postNotificationName:JPTabBarDidSelectedNotification object:nil userInfo:nil];
+//    
+//}
 
 @end

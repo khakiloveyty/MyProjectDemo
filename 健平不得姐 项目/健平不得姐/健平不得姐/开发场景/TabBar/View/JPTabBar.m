@@ -90,7 +90,9 @@
     CGFloat tabbarBtnWidth=self.width/5; //tabbar上有4个控制器和1个按钮
     CGFloat tabbarBtnX=0;//初始化tabbarButton的x位置
     
-    for (UIView *child in self.subviews) {
+    static BOOL added=NO; //用来标记按钮是否已经添加过监听器
+    
+    for (UIControl *child in self.subviews) {
         //self.subviews 系统自带属性：包含子控制器的视图，还有tabbar的背景视图和tabbar上面的分割线
         
         Class class=NSClassFromString(@"UITabBarButton");//获取此类类型用于判断
@@ -103,10 +105,22 @@
             if (tabbarBtnX==2) {
                 tabbarBtnX+=1;
             }
+            
+            if (added==NO) {
+                //添加监听器
+                [child addTarget:self action:@selector(tabBarBtnClick) forControlEvents:UIControlEventTouchUpInside];
+            }
         }
     }
     
+    added=YES; //全部添加完了，改为YES，以后不再添加
+    
     //[super layoutSubviews]; //不能放在这里，因为会再一次根据系统的规格布局
+}
+
+-(void)tabBarBtnClick{
+    //发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:JPTabBarDidSelectedNotification object:nil userInfo:nil];
 }
 
 /*
