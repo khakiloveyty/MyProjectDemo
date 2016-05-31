@@ -21,6 +21,22 @@
 
 @implementation JPCommentCell
 
+/**
+ * < UIMenuController >
+ * 让cell有资格成为第一响应者（有些控件是不能成为第一响应者，需要重写该方法）
+ */
+-(BOOL)canBecomeFirstResponder{
+    return YES;
+}
+
+/**
+ * < UIMenuController >
+ * 让cell能执行哪些操作（比如copy、paste等）
+ */
+-(BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+    return NO; //自定义操作，不需要系统自带的方法
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     

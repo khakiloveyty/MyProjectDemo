@@ -131,6 +131,12 @@
     [self.manager invalidateSessionCancelingTasks:YES];
     
     //个人推荐第二种：反正退出页面了不会再请求的了，而且因为我在【请求失败的block中】调用了HUD，如果使用第一种方法就会弹出这个HUD，我不想在手动结束请求时出现这个HUD
+    
+    //清空菜单控制器的自定义选项
+    UIMenuController *menuC=[UIMenuController sharedMenuController];
+    if (menuC.menuItems.count) {
+        menuC.menuItems=nil;
+    }
 }
 
 //键盘弹出/收回响应方法
@@ -425,12 +431,69 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    //先获取菜单控制器
+    UIMenuController *menuC=[UIMenuController sharedMenuController];
+    
+    //判断是否已经显示
+    if (menuC.isMenuVisible) {                  //如果已经显示
+        
+        [menuC setMenuVisible:NO animated:YES]; //就隐藏
+        
+    }else{
+        
+        JPCommentCell *cell=[tableView cellForRowAtIndexPath:indexPath];
+        
+        //成为第一响应者才能显示菜单控制器
+        [cell becomeFirstResponder];
+        
+        //显示菜单控制器
+        CGRect targetRect=CGRectMake(0, 40, cell.width, cell.height-40-10);
+        [menuC setTargetRect:targetRect inView:cell];
+        
+        //创建自定义操作选项 ------ 需要控制器去实现响应方法
+        UIMenuItem *ding=[[UIMenuItem alloc] initWithTitle:@"顶" action:@selector(ding:)];
+        UIMenuItem *replay=[[UIMenuItem alloc] initWithTitle:@"回复" action:@selector(replay:)];
+        UIMenuItem *report=[[UIMenuItem alloc] initWithTitle:@"举报" action:@selector(report:)];
+        menuC.menuItems=@[ding,replay,report];
+        
+        [menuC setMenuVisible:YES animated:YES];
+    }
+    
+    /*
+     
+     说明：* UIMenuController依赖于第一响应者，当所在控件不是第一响应者会自动消失。
+          * 如果已经有个cell被点击了，那个cell是第一响应者，当点击另一个cell时，点击的那个cell会成为第一响应者，之前那个cell会先放弃第一响应者，它的UIMenuController会自动消失，然后才来到这个方法重新显示。
+     
+     */
     
 }
 
-//当tableview开始滚动时收起键盘
+#pragma UIMenuItem的响应方法
+//顶
+-(void)ding:(UIMenuController *)menu{
+    NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
+    NSLog(@"顶 --- %@",[self commentInIndexPath:indexPath].user.username);
+}
+
+//回复
+-(void)replay:(UIMenuController *)menu{
+    NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
+    NSLog(@"回复 --- %@",[self commentInIndexPath:indexPath].user.username);
+}
+
+//举报
+-(void)report:(UIMenuController *)menu{
+    NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
+    NSLog(@"举报 --- %@",[self commentInIndexPath:indexPath].user.username);
+}
+
+#pragma UIScrollerViewDelegate
+
+//当tableview开始滚动时收起键盘和隐藏菜单控制器
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [self.view endEditing:YES];
+    //隐藏UIMenuController
+    [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
 }
 
 @end

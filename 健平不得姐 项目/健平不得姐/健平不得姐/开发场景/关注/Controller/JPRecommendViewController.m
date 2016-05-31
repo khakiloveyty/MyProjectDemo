@@ -17,12 +17,15 @@
 #define JPSelectedType self.recommendTypes[self.leftTableView.indexPathForSelectedRow.row]
 
 @interface JPRecommendViewController ()<UITabBarDelegate,UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property(nonatomic,strong)NSMutableArray *recommendTypes;
+
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
 
 @property(nonatomic,strong)NSMutableDictionary *params;//用来保存最后发送请求的参数
 @property(nonatomic,strong)AFHTTPSessionManager *manager;
+
 @end
 
 @implementation JPRecommendViewController
@@ -118,7 +121,7 @@
     params[@"a"]=@"list";
     params[@"c"]=@"subscribe";
     params[@"category_id"]=@(recommendType.ID);
-    params[@"page"]=@(1);
+    params[@"page"]=@1;
     
     //保存现在的参数（用来对比）
     self.params=params;
