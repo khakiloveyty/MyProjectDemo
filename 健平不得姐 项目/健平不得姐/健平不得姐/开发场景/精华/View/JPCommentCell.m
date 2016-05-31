@@ -54,7 +54,7 @@
 -(void)setComment:(JPComment *)comment{
     _comment=comment;
     
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:comment.user.profile_image] placeholderImage:[UIImage imageNamed:JPDefaultUserIcon]];
+    [self.profileImageView setCircleHeaderImage:comment.user.profile_image];
     
     self.sexImageView.image=[comment.user.sex isEqualToString:JPUserSexMan]?[UIImage imageNamed:@"Profile_manIcon"]:[UIImage imageNamed:@"Profile_womanIcon"];
     
@@ -81,8 +81,8 @@
 //设置cell内间距
 -(void)setFrame:(CGRect)frame{
     
-    frame.origin.x=JPTopicCellMargin;
-    frame.size.width-=2*JPTopicCellMargin;
+//    frame.origin.x=JPTopicCellMargin;
+//    frame.size.width-=2*JPTopicCellMargin;
     
     [super setFrame:frame];
 }

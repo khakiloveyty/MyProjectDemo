@@ -70,6 +70,8 @@
 		6F9317931CE9BB0B005B1CF3 /* JPRecommendTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F9317911CE9BB0B005B1CF3 /* JPRecommendTagCell.xib */; };
 		6F9317DE1CE9E50C005B1CF3 /* JPLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9317DC1CE9E50C005B1CF3 /* JPLoginRegisterViewController.m */; };
 		6F9317DF1CE9E50C005B1CF3 /* JPLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F9317DD1CE9E50C005B1CF3 /* JPLoginRegisterViewController.xib */; };
+		6F94E6341CFD74C7005D407C /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6331CFD74C7005D407C /* UIImage+Extension.m */; };
+		6F94E63A1CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6391CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m */; };
 		6FE088321CF3156700531509 /* JPShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE088301CF3156700531509 /* JPShowPictureViewController.m */; };
 		6FE088331CF3156700531509 /* JPShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE088311CF3156700531509 /* JPShowPictureViewController.xib */; };
 		6FE088361CF319B700531509 /* JPProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE088351CF319B700531509 /* JPProgressView.m */; };
@@ -208,6 +210,10 @@
 		6F9317DB1CE9E50C005B1CF3 /* JPLoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLoginRegisterViewController.h; sourceTree = "<group>"; };
 		6F9317DC1CE9E50C005B1CF3 /* JPLoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLoginRegisterViewController.m; sourceTree = "<group>"; };
 		6F9317DD1CE9E50C005B1CF3 /* JPLoginRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		6F94E6321CFD74C7005D407C /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		6F94E6331CFD74C7005D407C /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		6F94E6381CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JPCircleHeaderImage.h"; sourceTree = "<group>"; };
+		6F94E6391CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JPCircleHeaderImage.m"; sourceTree = "<group>"; };
 		6FE0882F1CF3156700531509 /* JPShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPShowPictureViewController.h; sourceTree = "<group>"; };
 		6FE088301CF3156700531509 /* JPShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPShowPictureViewController.m; sourceTree = "<group>"; };
 		6FE088311CF3156700531509 /* JPShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPShowPictureViewController.xib; sourceTree = "<group>"; };
@@ -338,6 +344,10 @@
 				6F6C22691CE5704F000BE077 /* UIBarButtonItem+Extension.m */,
 				6F8D1AAE1CEE00700056FB0C /* NSDate+Extension.h */,
 				6F8D1AAF1CEE00700056FB0C /* NSDate+Extension.m */,
+				6F94E6321CFD74C7005D407C /* UIImage+Extension.h */,
+				6F94E6331CFD74C7005D407C /* UIImage+Extension.m */,
+				6F94E6381CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.h */,
+				6F94E6391CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
@@ -902,6 +912,7 @@
 				6F9317921CE9BB0B005B1CF3 /* JPRecommendTagCell.m in Sources */,
 				6F6C227D1CE5BA1F000BE077 /* Foundation+Log.m in Sources */,
 				6F93178B1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m in Sources */,
+				6F94E63A1CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m in Sources */,
 				6F9317DE1CE9E50C005B1CF3 /* JPLoginRegisterViewController.m in Sources */,
 				6F25E5601CEEC69C00587A75 /* JPWordViewController.m in Sources */,
 				6F6C22651CE49414000BE077 /* JPTabBar.m in Sources */,
@@ -917,6 +928,7 @@
 				6F25E54F1CEEC2F400587A75 /* JPTopicesViewController.m in Sources */,
 				6F6C22801CE5CAF4000BE077 /* JPRecommendType.m in Sources */,
 				6F6C22561CE492D2000BE077 /* JPPostViewController.m in Sources */,
+				6F94E6341CFD74C7005D407C /* UIImage+Extension.m in Sources */,
 				6F6C228D1CE5E6F0000BE077 /* JPRecommendUser.m in Sources */,
 				6F6C22841CE5CEEC000BE077 /* JPRecommendTypeCell.m in Sources */,
 				6F6C226A1CE5704F000BE077 /* UIBarButtonItem+Extension.m in Sources */,

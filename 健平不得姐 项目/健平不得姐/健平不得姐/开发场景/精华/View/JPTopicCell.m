@@ -102,7 +102,7 @@
     _topic=topic;
     
     //设置头像
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:JPDefaultUserIcon]];
+    [self.profileImageView setCircleHeaderImage:topic.profile_image];
     
     //设置新浪加V标记是否显示
     self.sinaVImageView.hidden=!topic.isSina_v;
@@ -224,8 +224,8 @@
 //设置cell内间距
 -(void)setFrame:(CGRect)frame{
     
-    frame.origin.x=JPTopicCellMargin;
-    frame.size.width-=2*JPTopicCellMargin;
+//    frame.origin.x=JPTopicCellMargin;
+//    frame.size.width-=2*JPTopicCellMargin;
     frame.origin.y+=JPTopicCellMargin;
     frame.size.height-=JPTopicCellMargin;
     

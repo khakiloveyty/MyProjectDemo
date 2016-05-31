@@ -78,12 +78,18 @@
  
 }
 
-//让当前控制器对应的状态栏为白色
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
+////让当前控制器对应的状态栏为白色
+//-(UIStatusBarStyle)preferredStatusBarStyle{
+//    return UIStatusBarStyleLightContent;
+//}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleLightContent; //修改状态栏为轻色系
 }
 
 - (IBAction)close:(id)sender {
+    [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleDefault; //返回时恢复状态栏原来样式
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

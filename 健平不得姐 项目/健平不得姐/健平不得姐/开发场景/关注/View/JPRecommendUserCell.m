@@ -43,7 +43,7 @@
     }
     self.fansCountLabel.text=fansCount;
     
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:recommmendUser.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.headerImageView setCircleHeaderImage:recommmendUser.header];
 }
 
 @end

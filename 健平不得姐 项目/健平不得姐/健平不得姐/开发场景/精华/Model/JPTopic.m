@@ -104,7 +104,8 @@
     if (!_cellHeight) {
         
         //cell的内容最大尺寸
-        CGSize maxSize=CGSizeMake([UIScreen mainScreen].bounds.size.width-4*JPTopicCellMargin, MAXFLOAT);
+//        CGSize maxSize=CGSizeMake([UIScreen mainScreen].bounds.size.width-4*JPTopicCellMargin, MAXFLOAT);
+        CGSize maxSize=CGSizeMake([UIScreen mainScreen].bounds.size.width-2*JPTopicCellMargin, MAXFLOAT);
         
         //文字label的高度
         

@@ -32,7 +32,10 @@
 -(void)setRecommendTag:(JPRecommendTag *)recommendTag{
     _recommendTag=recommendTag;
     
-    [self.imageListImageView sd_setImageWithURL:[NSURL URLWithString:recommendTag.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.imageListImageView sd_setImageWithURL:[NSURL URLWithString:recommendTag.image_list] placeholderImage:[[UIImage imageNamed:JPDefaultUserIcon] circleImage] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) self.imageListImageView.image=[image circleImage];
+    }];
+    
     self.themeNameLabel.text=recommendTag.theme_name;
     
     NSString *subsCount=nil;
@@ -49,8 +52,8 @@
 -(void)setFrame:(CGRect)frame{
     
     //拦截frame，修改（不管外面怎么修改，都会来到这里，可以在这里写死frame，最终使用这里所修改的frame）
-    frame.origin.x=5;
-    frame.size.width-=2*5;
+//    frame.origin.x=5;
+//    frame.size.width-=2*5;
     frame.size.height-=1;
     
     [super setFrame:frame];//让父类使用修改过的frame并保存起来
