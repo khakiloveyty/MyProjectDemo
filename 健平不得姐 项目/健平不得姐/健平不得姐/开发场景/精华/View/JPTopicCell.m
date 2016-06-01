@@ -119,8 +119,13 @@
     [self setButtonTitle:self.shareBtn count:topic.repost placeholder:@"转发"];
     [self setButtonTitle:self.commentBtn count:topic.comment placeholder:@"评论"];
     
-    //设置文本
-    self.topicTextLabel.text=topic.text;
+    //设置文本内容
+    NSMutableParagraphStyle *parag=[[NSMutableParagraphStyle alloc]init];
+    if (topic.isOneLineTopicText==NO) {
+        parag.lineSpacing=JPTopicTextSpace; //如果超过一行，则加上行高
+    }
+    NSMutableAttributedString *attrStr=[[NSMutableAttributedString alloc] initWithString:topic.text attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:JPTopicTextFont],NSParagraphStyleAttributeName:parag}];
+    self.topicTextLabel.attributedText=attrStr;
     
     //根据模型类型（帖子类型）添加对应的内容到cell的中间（图片、视频）
     if (topic.type==JPPictureTopic) {       // -------------------- 图片

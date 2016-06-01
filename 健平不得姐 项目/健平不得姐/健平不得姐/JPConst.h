@@ -13,6 +13,15 @@ typedef enum{
 /** 用户头像的占位图片 */
 UIKIT_EXTERN NSString *const JPDefaultUserIcon;
 
+/** 精华 - 帖子文字大小 */
+UIKIT_EXTERN CGFloat const JPTopicTextFont;
+
+/** 精华 - 帖子文本行高 */
+UIKIT_EXTERN CGFloat const JPTopicTextSpace;
+
+/** 精华 - 帖子文字只有一行时的高度 */
+UIKIT_EXTERN CGFloat const JPTopicTextOneLineHeight;
+
 /** 精华 - 顶部标签栏的高度 */
 UIKIT_EXTERN CGFloat const JPTitlesViewHeight;
 

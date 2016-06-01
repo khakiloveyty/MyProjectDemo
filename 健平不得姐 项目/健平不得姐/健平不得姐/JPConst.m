@@ -3,6 +3,15 @@
 /** 用户头像的占位图片 */
 NSString *const JPDefaultUserIcon=@"defaultUserIcon";
 
+/** 精华 - 帖子文字大小 */
+CGFloat const JPTopicTextFont=17;
+
+/** 精华 - 帖子文本行高 */
+CGFloat const JPTopicTextSpace=10;
+
+/** 精华 - 帖子文字只有一行时的高度 */
+CGFloat const JPTopicTextOneLineHeight=24+JPTopicTextSpace;
+
 /** 精华-顶部标签栏的高度 */
 CGFloat const JPTitlesViewHeight=40;
 

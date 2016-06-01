@@ -51,11 +51,12 @@
 @property(nonatomic,assign,readonly)CGFloat cellHeight;//对应的cell的高度
 
 @property(nonatomic,assign,readonly)CGRect pictureFrame;//图片帖子的图片frame
-@property(nonatomic,assign,getter=isBigPicture)BOOL bigPicture;//是否为大图
+@property(nonatomic,assign,readonly,getter=isBigPicture)BOOL bigPicture;//是否为大图
 @property(nonatomic,assign)CGFloat pictureProgress;//图片的下载进度值
 
 @property(nonatomic,assign,readonly)CGRect voiceFrame;//声音帖子的图片frame
 
 @property(nonatomic,assign,readonly)CGRect videoFrame;//视频帖子的图片frame
 
+@property(nonatomic,assign,readonly,getter=isOneLineTopicText)BOOL oneLineTopicText;//帖子文本是不是只有一行
 @end

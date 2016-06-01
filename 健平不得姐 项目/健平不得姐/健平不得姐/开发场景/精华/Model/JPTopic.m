@@ -111,7 +111,16 @@
         
         //CGFloat textH=[topic.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:maxSize].height;
         
-        CGFloat textH=[self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size.height;
+        NSMutableParagraphStyle *parag=[[NSMutableParagraphStyle alloc]init];
+        parag.lineSpacing=JPTopicTextSpace;
+        
+        CGFloat textH=[self.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:JPTopicTextFont],NSParagraphStyleAttributeName:parag} context:nil].size.height;
+        
+        //如果只有一行，就不需要加上行高
+        if (textH<=JPTopicTextOneLineHeight) {
+            _oneLineTopicText=YES;
+            textH-=JPTopicTextSpace;
+        }
         
         //boundingRectWithSize：根据文字内容算出文字所占的尺寸（sizeWithFont已过期）
         // *参数1：最大尺寸（限宽、限高）
@@ -136,7 +145,7 @@
             //如果图片高度超出最大值，则让它变为指定数值
             if (pictureHeiht>JPTopicCellPictureMaxHeight) {
                 pictureHeiht=JPTopicCellPictureOrdinaryHeight;
-                self.bigPicture=YES;
+                _bigPicture=YES;
             }
             
             //计算图片的frame

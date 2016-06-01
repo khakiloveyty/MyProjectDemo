@@ -8,7 +8,7 @@
 
 #import "JPTabBarController.h"
 #import "JPEssenceViewController.h"
-#import "JPPostViewController.h"
+#import "JPNewTopicViewController.h"
 #import "JPFriendTrendsViewController.h"
 #import "JPMeViewController.h"
 #import "JPTabBar.h"
@@ -47,8 +47,8 @@
     JPEssenceViewController *essence=[[JPEssenceViewController alloc]init];
     [self addChildVcWithController:essence Title:@"精华" andImageName:@"tabBar_essence_icon" andSelectedImageName:@"tabBar_essence_click_icon"];
     
-    JPPostViewController *post=[[JPPostViewController alloc]init];
-    [self addChildVcWithController:post Title:@"新帖" andImageName:@"tabBar_new_icon" andSelectedImageName:@"tabBar_new_click_icon"];
+    JPNewTopicViewController *new=[[JPNewTopicViewController alloc]init];
+    [self addChildVcWithController:new Title:@"新帖" andImageName:@"tabBar_new_icon" andSelectedImageName:@"tabBar_new_click_icon"];
     
     JPFriendTrendsViewController *friendTrends=[[JPFriendTrendsViewController alloc] init];
     [self addChildVcWithController:friendTrends Title:@"关注" andImageName:@"tabBar_friendTrends_icon" andSelectedImageName:@"tabBar_friendTrends_click_icon"];

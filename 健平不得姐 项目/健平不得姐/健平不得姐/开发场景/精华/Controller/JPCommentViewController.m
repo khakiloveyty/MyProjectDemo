@@ -21,9 +21,8 @@
 @property(nonatomic,strong)NSArray *hotComments; //最热评论（数量固定）
 @property(nonatomic,strong)NSMutableArray *latesComments; //最新评论
 
-/** 当加载第一页以上的数据时需要这两个参数 */
+/** 当加载第一页以上的数据时需要这个参数 */
 @property(nonatomic,assign)NSInteger page; //页数
-@property(nonatomic,copy)NSString *lastcid; //最后一个评论的id
 
 @property(nonatomic,strong)NSMutableDictionary *params;//用来保存最后发送请求的参数
 
@@ -223,8 +222,8 @@
     //上拉刷新
     self.tableView.mj_footer=[MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreComments)];
     
-    //若没有帖子数就隐藏上拉刷新控件（如果是xib创建的这个控制器不是tableViewController，不会第一时间执行数据源方法，所以先在这里判断是否需要隐藏上拉刷新控件）
-    self.tableView.mj_footer.hidden=(self.latesComments.count==0);
+    //若没有帖子数就隐藏上拉刷新控件（如果是xib创建的这个控制器不是tableViewController，不会第一时间执行数据源方法，所以先在这里隐藏上拉刷新控件）
+    self.tableView.mj_footer.hidden=YES;
 }
 
 -(void)loadNewComments{
@@ -261,13 +260,18 @@
             return ;
         }
         
+#warning 百思不得姐【评论接口】问题：当没有评论数据时，responseObject会是个数组类型
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            [self.tableView.mj_header endRefreshing];
+            return;
+        } //说明没有评论数据
+        
         //字典 ---> 模型
         self.hotComments=[JPComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         self.latesComments=[JPComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
         
-        //保存页数和lastcid
+        //保存页数
         self.page=1;
-        self.lastcid=[[self.latesComments lastObject] commentID];
         
         //刷新表格
         [self.tableView reloadData];
@@ -315,7 +319,7 @@
     params[@"c"]=@"comment";
     params[@"data_id"]=self.topic.topicID;
     params[@"page"]=@(self.page+1);
-    params[@"lastcid"]=self.lastcid;
+    params[@"lastcid"]=[[self.latesComments lastObject] commentID]; //当前最后一条评论的id
     self.params=params;
     
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
@@ -324,13 +328,18 @@
             return ;
         }
         
+#warning 百思不得姐【评论接口】问题：当没有评论数据时，responseObject会是个数组类型
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            self.tableView.mj_footer.hidden=YES;
+            return;
+        } //说明没有评论数据
+        
         //字典 ---> 模型
         NSArray *moreComments=[JPComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
         [self.latesComments addObjectsFromArray:moreComments];
         
-        //保存页数和lastcid
+        //保存页数
         self.page+=1;
-        self.lastcid=[[self.latesComments lastObject] commentID];
         
         //刷新表格
         [self.tableView reloadData];
@@ -468,7 +477,7 @@
     
 }
 
-#pragma UIMenuItem的响应方法
+#pragma mark - UIMenuItem的响应方法
 //顶
 -(void)ding:(UIMenuController *)menu{
     NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
@@ -487,7 +496,7 @@
     NSLog(@"举报 --- %@",[self commentInIndexPath:indexPath].user.username);
 }
 
-#pragma UIScrollerViewDelegate
+#pragma mark - UIScrollerViewDelegate
 
 //当tableview开始滚动时收起键盘和隐藏菜单控制器
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

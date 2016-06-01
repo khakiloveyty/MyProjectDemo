@@ -11,6 +11,7 @@
 #import "JPTopicCell.h"
 #import "JPCommentViewController.h"
 #import "JPTopWindow.h"
+#import "JPNewTopicViewController.h"
 
 @interface JPTopicesViewController ()
 
@@ -56,7 +57,7 @@
     //设置刷新控件
     [self setupRefresh];
     
-    //监听通知
+    //监听tabBar点击通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarSelected) name:JPTabBarDidSelectedNotification object:nil];
 }
 
@@ -115,6 +116,18 @@
     self.tableView.mj_footer=[MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopices)];
 }
 
+#pragma mark - a参数处理
+-(NSString *)a{
+    
+    /**
+     * 根据父控制器来设置a参数（因为精华和新帖这两个模块都是添加这个控制器）
+     * 疑问：为什么不使用JPEssenceViewController来比较？
+     *      因为JPNewTopicViewController是继承于JPEssenceViewController，isKindOfClass是用来判断参数1和参数2是否同一个类型，或者参数1是不是继承于参数2，如果用JPEssenceViewController来比较则都是YES。
+     */
+    
+    return [self.parentViewController isKindOfClass:[JPNewTopicViewController class]] ? @"newlist":@"list";
+}
+
 #pragma mark - 数据处理
 -(void)loadNewTopices{
     
@@ -123,7 +136,7 @@
     
     //发送请求
     NSMutableDictionary *params=[NSMutableDictionary dictionary];
-    params[@"a"]=@"list";
+    params[@"a"]=self.a;
     params[@"c"]=@"data";
     params[@"type"]=@(self.type);
     //每次都保存一次参数，以记录最新发送的请求的参数
@@ -168,7 +181,7 @@
     
     //发送请求
     NSMutableDictionary *params=[NSMutableDictionary dictionary];
-    params[@"a"]=@"list";
+    params[@"a"]=self.a;
     params[@"c"]=@"data";
     params[@"type"]=@(self.type);
     params[@"page"]=@(self.page+1);

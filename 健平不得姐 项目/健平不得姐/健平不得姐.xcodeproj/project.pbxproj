@@ -23,7 +23,6 @@
 		6F6C22531CE492D2000BE077 /* JPFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C223E1CE492D2000BE077 /* JPFriendTrendsViewController.m */; };
 		6F6C22541CE492D2000BE077 /* JPEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C22441CE492D2000BE077 /* JPEssenceViewController.m */; };
 		6F6C22551CE492D2000BE077 /* JPMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C224A1CE492D2000BE077 /* JPMeViewController.m */; };
-		6F6C22561CE492D2000BE077 /* JPPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C22501CE492D2000BE077 /* JPPostViewController.m */; };
 		6F6C22591CE492FD000BE077 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C22581CE492FD000BE077 /* UIView+Extension.m */; };
 		6F6C22621CE49409000BE077 /* JPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C22611CE49409000BE077 /* JPTabBarController.m */; };
 		6F6C22651CE49414000BE077 /* JPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C22641CE49414000BE077 /* JPTabBar.m */; };
@@ -72,6 +71,7 @@
 		6F9317DF1CE9E50C005B1CF3 /* JPLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F9317DD1CE9E50C005B1CF3 /* JPLoginRegisterViewController.xib */; };
 		6F94E6341CFD74C7005D407C /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6331CFD74C7005D407C /* UIImage+Extension.m */; };
 		6F94E63A1CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6391CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m */; };
+		6F94E6421CFE7EFE005D407C /* JPNewTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6411CFE7EFE005D407C /* JPNewTopicViewController.m */; };
 		6FE088321CF3156700531509 /* JPShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE088301CF3156700531509 /* JPShowPictureViewController.m */; };
 		6FE088331CF3156700531509 /* JPShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FE088311CF3156700531509 /* JPShowPictureViewController.xib */; };
 		6FE088361CF319B700531509 /* JPProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE088351CF319B700531509 /* JPProgressView.m */; };
@@ -130,8 +130,6 @@
 		6F6C22441CE492D2000BE077 /* JPEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEssenceViewController.m; sourceTree = "<group>"; };
 		6F6C22491CE492D2000BE077 /* JPMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMeViewController.h; sourceTree = "<group>"; };
 		6F6C224A1CE492D2000BE077 /* JPMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMeViewController.m; sourceTree = "<group>"; };
-		6F6C224F1CE492D2000BE077 /* JPPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPostViewController.h; sourceTree = "<group>"; };
-		6F6C22501CE492D2000BE077 /* JPPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPostViewController.m; sourceTree = "<group>"; };
 		6F6C22571CE492FD000BE077 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		6F6C22581CE492FD000BE077 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		6F6C22601CE49409000BE077 /* JPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTabBarController.h; sourceTree = "<group>"; };
@@ -214,6 +212,8 @@
 		6F94E6331CFD74C7005D407C /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		6F94E6381CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JPCircleHeaderImage.h"; sourceTree = "<group>"; };
 		6F94E6391CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JPCircleHeaderImage.m"; sourceTree = "<group>"; };
+		6F94E6401CFE7EFE005D407C /* JPNewTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNewTopicViewController.h; sourceTree = "<group>"; };
+		6F94E6411CFE7EFE005D407C /* JPNewTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNewTopicViewController.m; sourceTree = "<group>"; };
 		6FE0882F1CF3156700531509 /* JPShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPShowPictureViewController.h; sourceTree = "<group>"; };
 		6FE088301CF3156700531509 /* JPShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPShowPictureViewController.m; sourceTree = "<group>"; };
 		6FE088311CF3156700531509 /* JPShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPShowPictureViewController.xib; sourceTree = "<group>"; };
@@ -536,8 +536,8 @@
 		6F6C224E1CE492D2000BE077 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6F6C224F1CE492D2000BE077 /* JPPostViewController.h */,
-				6F6C22501CE492D2000BE077 /* JPPostViewController.m */,
+				6F94E6401CFE7EFE005D407C /* JPNewTopicViewController.h */,
+				6F94E6411CFE7EFE005D407C /* JPNewTopicViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -914,6 +914,7 @@
 				6F93178B1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m in Sources */,
 				6F94E63A1CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m in Sources */,
 				6F9317DE1CE9E50C005B1CF3 /* JPLoginRegisterViewController.m in Sources */,
+				6F94E6421CFE7EFE005D407C /* JPNewTopicViewController.m in Sources */,
 				6F25E5601CEEC69C00587A75 /* JPWordViewController.m in Sources */,
 				6F6C22651CE49414000BE077 /* JPTabBar.m in Sources */,
 				6F6C22621CE49409000BE077 /* JPTabBarController.m in Sources */,
@@ -927,7 +928,6 @@
 				6F8D2C371CF821D000101AC6 /* JPTopicVideoView.m in Sources */,
 				6F25E54F1CEEC2F400587A75 /* JPTopicesViewController.m in Sources */,
 				6F6C22801CE5CAF4000BE077 /* JPRecommendType.m in Sources */,
-				6F6C22561CE492D2000BE077 /* JPPostViewController.m in Sources */,
 				6F94E6341CFD74C7005D407C /* UIImage+Extension.m in Sources */,
 				6F6C228D1CE5E6F0000BE077 /* JPRecommendUser.m in Sources */,
 				6F6C22841CE5CEEC000BE077 /* JPRecommendTypeCell.m in Sources */,
