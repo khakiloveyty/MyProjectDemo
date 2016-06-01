@@ -68,7 +68,7 @@ static UIWindow *window_; //自定义窗口
     //添加按钮
     
     CGFloat btnW=72;        //按钮宽度
-    CGFloat btnH=btnW+35;   //按钮高度
+    CGFloat btnH=btnW+35;   //按钮高度（35是留给图片下方label的高度）
     
     int maxCols=3; //最大列数
     

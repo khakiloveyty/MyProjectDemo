@@ -63,17 +63,12 @@
 
 //初始化设置
 -(void)setupBasic{
-    self.automaticallyAdjustsScrollViewInsets=NO;
     
     self.title=@"评论";
     
     self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithTarget:self andAction:@selector(rightBarButtonClick) andImageName:@"comment_nav_item_share_icon" andHighImageName:@"comment_nav_item_share_icon_click"];
     
     self.tableView.backgroundColor=JPGlobalColor;
-    
-    self.tableView.contentInset=UIEdgeInsetsMake(JPTitlesViewY, 0, JPTopicCellMargin, 0);
-    //滚动条的内边距
-    self.tableView.scrollIndicatorInsets=self.tableView.contentInset;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"JPCommentCell" bundle:nil] forCellReuseIdentifier:@"JPCommentCell"];
     
@@ -187,11 +182,13 @@
     //将JPTopicCell添加到表头视图
     JPTopicCell *cell=[JPTopicCell cell];
     cell.topic=self.topic;
-    //给cell一个固定的frame
-    cell.frame=CGRectMake(0, 0, headerView.width, self.topic.cellHeight);
-    [headerView addSubview:cell];
     
-    headerView.height=self.topic.cellHeight+JPTopicCellMargin;
+    //给cell一个固定的frame
+    cell.frame=CGRectMake(0, 0, headerView.width, cell.topic.cellHeight);
+    //如果只设置尺寸不设置y值，调用[JPTopicCell cell]时会调用一次setFrame方法，因为cell里面的y值使用了+=计算，然后再设置尺寸时再调用一次setFrame方法，因为y值没设置，所以再叠加一次，所以位置尺寸要一起设置。
+    
+    [headerView addSubview:cell];
+    headerView.height=self.topic.cellHeight;
     
     self.tableView.tableHeaderView=headerView;
     
@@ -199,12 +196,12 @@
      
      tableHeaderView是个特殊控件，会不断调用该控件的setFrame方法
         * 由于重写了JPTopicCell的setFrame方法，它的高度使用了-=计算
-        * 作为cell时tableview的cell，会根据heightForRowAtIndexPath方法决定高度（高度是协议方法返回的高度，其他为固定值：x为0，y为0，width为tableview的width），每次调用setFrame方法时传过来的高度都是个固定值，所以不会减少。
+        * 作为cell时tableview的cell，会根据heightForRowAtIndexPath方法决定高度（高度是协议方法返回的高度，其他为固定值：x为0，y为经过高度协议方法计算而得出的值，width为tableview的width），每次调用setFrame方法时传过来的高度都是个固定值，所以不会减少。
         * 作为tableHeaderView，【没有heightForRowAtIndexPath方法返回的高度值】，每次调用setFrame方法时（不断调用）传过来的高度都是【上一次的高度】，所以会越减越小
      
      
       解决方法：
-        * 直接给cell一个固定的frame，保证每次调用setFrame方法时传过来的高度都是【计算好的高度】
+        * 先创建一个父视图（headerView）作为tableHeaderView，再将cell放到父控件上面，这样就不会重复调用cell的高度-=计算。
      
      */
 }
@@ -503,6 +500,11 @@
     [self.view endEditing:YES];
     //隐藏UIMenuController
     [[UIMenuController sharedMenuController] setMenuVisible:NO animated:YES];
+}
+
+#warning 不知道为什么这个页面点击顶部回不到顶部，offset会有很大偏差！！！
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    JPLog(@"%lf",scrollView.contentOffset.y);
 }
 
 @end

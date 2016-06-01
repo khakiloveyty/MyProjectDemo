@@ -37,9 +37,10 @@ static UIWindow *topWindow_;
     for (UIScrollView *subview in superview.subviews) {
         
         if ([subview isKindOfClass:[UIScrollView class]] && subview.isShowingOnKeyWindow) {
-                
+            
             CGPoint offset=subview.contentOffset; //取出偏移量
             offset.y=-subview.contentInset.top;   //只修改竖直方向的偏移量，水平方向保持原来数值
+            
             [subview setContentOffset:offset animated:YES];
             
             //取出偏移量只修改该y值，不然会乱套

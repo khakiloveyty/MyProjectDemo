@@ -53,7 +53,7 @@
     JPFriendTrendsViewController *friendTrends=[[JPFriendTrendsViewController alloc] init];
     [self addChildVcWithController:friendTrends Title:@"关注" andImageName:@"tabBar_friendTrends_icon" andSelectedImageName:@"tabBar_friendTrends_click_icon"];
     
-    JPMeViewController *me=[[JPMeViewController alloc] init];
+    JPMeViewController *me=[[JPMeViewController alloc] initWithStyle:UITableViewStyleGrouped];
     [self addChildVcWithController:me Title:@"我" andImageName:@"tabBar_me_icon" andSelectedImageName:@"tabBar_me_click_icon"];
     
     //更换自定义的TabBar

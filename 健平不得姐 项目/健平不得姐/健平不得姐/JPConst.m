@@ -7,7 +7,7 @@ NSString *const JPDefaultUserIcon=@"defaultUserIcon";
 CGFloat const JPTopicTextFont=17;
 
 /** 精华 - 帖子文本行高 */
-CGFloat const JPTopicTextSpace=10;
+CGFloat const JPTopicTextSpace=8;
 
 /** 精华 - 帖子文字只有一行时的高度 */
 CGFloat const JPTopicTextOneLineHeight=24+JPTopicTextSpace;
