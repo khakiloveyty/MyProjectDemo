@@ -39,6 +39,10 @@
 		6F6C228A1CE5E6D0000BE077 /* JPRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F6C22881CE5E6D0000BE077 /* JPRecommendUserCell.xib */; };
 		6F6C228D1CE5E6F0000BE077 /* JPRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C228C1CE5E6F0000BE077 /* JPRecommendUser.m */; };
 		6F6E89161CFC128C001AECCD /* JPTopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E89151CFC128C001AECCD /* JPTopWindow.m */; };
+		6F75E3D81D0007A1005F6B9A /* JPPostWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F75E3D71D0007A1005F6B9A /* JPPostWordViewController.m */; };
+		6F75E3DC1D000BD4005F6B9A /* JPPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F75E3DA1D000BD4005F6B9A /* JPPublishViewController.m */; };
+		6F75E3DD1D000BD4005F6B9A /* JPPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F75E3DB1D000BD4005F6B9A /* JPPublishViewController.xib */; };
+		6F75E3EC1D002AB9005F6B9A /* JPPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F75E3EB1D002AB9005F6B9A /* JPPlaceholderTextView.m */; };
 		6F771D3B1CF445C500A40527 /* JPPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F771D391CF445C500A40527 /* JPPublishView.m */; };
 		6F771D3C1CF445C500A40527 /* JPPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F771D3A1CF445C500A40527 /* JPPublishView.xib */; };
 		6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77424D1CF9330E008030D2 /* JPCommentViewController.m */; };
@@ -164,6 +168,13 @@
 		6F6C228C1CE5E6F0000BE077 /* JPRecommendUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPRecommendUser.m; sourceTree = "<group>"; };
 		6F6E89141CFC128C001AECCD /* JPTopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTopWindow.h; sourceTree = "<group>"; };
 		6F6E89151CFC128C001AECCD /* JPTopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTopWindow.m; sourceTree = "<group>"; };
+		6F75E3D61D0007A1005F6B9A /* JPPostWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPostWordViewController.h; sourceTree = "<group>"; };
+		6F75E3D71D0007A1005F6B9A /* JPPostWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPostWordViewController.m; sourceTree = "<group>"; };
+		6F75E3D91D000BD4005F6B9A /* JPPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPublishViewController.h; sourceTree = "<group>"; };
+		6F75E3DA1D000BD4005F6B9A /* JPPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPublishViewController.m; sourceTree = "<group>"; };
+		6F75E3DB1D000BD4005F6B9A /* JPPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPPublishViewController.xib; sourceTree = "<group>"; };
+		6F75E3EA1D002AB9005F6B9A /* JPPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPlaceholderTextView.h; sourceTree = "<group>"; };
+		6F75E3EB1D002AB9005F6B9A /* JPPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPlaceholderTextView.m; sourceTree = "<group>"; };
 		6F771D381CF445C500A40527 /* JPPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPublishView.h; sourceTree = "<group>"; };
 		6F771D391CF445C500A40527 /* JPPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPublishView.m; sourceTree = "<group>"; };
 		6F771D3A1CF445C500A40527 /* JPPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPPublishView.xib; sourceTree = "<group>"; };
@@ -653,8 +664,8 @@
 			isa = PBXGroup;
 			children = (
 				6F771D351CF4458D00A40527 /* Controller */,
-				6F771D361CF4458D00A40527 /* Model */,
 				6F771D371CF4458D00A40527 /* View */,
+				6F771D361CF4458D00A40527 /* Model */,
 			);
 			path = "发布";
 			sourceTree = "<group>";
@@ -662,9 +673,14 @@
 		6F771D351CF4458D00A40527 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6F75E3D91D000BD4005F6B9A /* JPPublishViewController.h */,
+				6F75E3DA1D000BD4005F6B9A /* JPPublishViewController.m */,
+				6F75E3DB1D000BD4005F6B9A /* JPPublishViewController.xib */,
 				6F771D381CF445C500A40527 /* JPPublishView.h */,
 				6F771D391CF445C500A40527 /* JPPublishView.m */,
 				6F771D3A1CF445C500A40527 /* JPPublishView.xib */,
+				6F75E3D61D0007A1005F6B9A /* JPPostWordViewController.h */,
+				6F75E3D71D0007A1005F6B9A /* JPPostWordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -679,6 +695,8 @@
 		6F771D371CF4458D00A40527 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6F75E3EA1D002AB9005F6B9A /* JPPlaceholderTextView.h */,
+				6F75E3EB1D002AB9005F6B9A /* JPPlaceholderTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -849,6 +867,7 @@
 				6F94E6561CFF05D4005D407C /* JPWebViewController.xib in Resources */,
 				6F8D2C341CF7F16800101AC6 /* JPTopicVoiceView.xib in Resources */,
 				6F6C227B1CE5B47A000BE077 /* JPRecommendViewController.xib in Resources */,
+				6F75E3DD1D000BD4005F6B9A /* JPPublishViewController.xib in Resources */,
 				6F8D1AAD1CEDC6860056FB0C /* JPTopicCell.xib in Resources */,
 				6FE088331CF3156700531509 /* JPShowPictureViewController.xib in Resources */,
 				6F771D3C1CF445C500A40527 /* JPPublishView.xib in Resources */,
@@ -950,8 +969,10 @@
 				6F861B011CEAE366009DF540 /* JPVerticalButton.m in Sources */,
 				6F25E55D1CEEC69C00587A75 /* JPPictureViewController.m in Sources */,
 				6F6E89161CFC128C001AECCD /* JPTopWindow.m in Sources */,
+				6F75E3EC1D002AB9005F6B9A /* JPPlaceholderTextView.m in Sources */,
 				6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */,
 				6F771D3B1CF445C500A40527 /* JPPublishView.m in Sources */,
+				6F75E3DC1D000BD4005F6B9A /* JPPublishViewController.m in Sources */,
 				6F25E55C1CEEC69C00587A75 /* JPAllViewController.m in Sources */,
 				6FE088321CF3156700531509 /* JPShowPictureViewController.m in Sources */,
 				6F8D2C371CF821D000101AC6 /* JPTopicVideoView.m in Sources */,
@@ -974,6 +995,7 @@
 				6F89C1CA1CF2C6E600062F68 /* JPTopicPictureView.m in Sources */,
 				6F7742531CF9A983008030D2 /* JPCommentHeaderView.m in Sources */,
 				6F6C22551CE492D2000BE077 /* JPMeViewController.m in Sources */,
+				6F75E3D81D0007A1005F6B9A /* JPPostWordViewController.m in Sources */,
 				6F6C22541CE492D2000BE077 /* JPEssenceViewController.m in Sources */,
 				6F94E64E1CFED3D7005D407C /* JPMeSquareButton.m in Sources */,
 				6F8D1AA81CEDBC620056FB0C /* JPConst.m in Sources */,

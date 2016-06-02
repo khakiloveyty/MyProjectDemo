@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "JPTabBarController.h"
 #import "JPPushGuideView.h"
+#import "KMCGeigerCounter.h"
+#import "JPTopWindow.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -35,6 +37,12 @@
     
     //判断版本号：是否展示提示页面
     [JPPushGuideView showPushGuideView];
+    
+    //在应用顶部添加窗口
+    //作用：点击这个窗口让所有scrollView能回滚到最上面（注意：Xcode7需要所有UIWindow必须有一个rootViewController，不然在这里调用会崩溃）
+    [JPTopWindow show];
+    
+//    [KMCGeigerCounter sharedGeigerCounter].enabled = YES;
     
     return YES;
 }

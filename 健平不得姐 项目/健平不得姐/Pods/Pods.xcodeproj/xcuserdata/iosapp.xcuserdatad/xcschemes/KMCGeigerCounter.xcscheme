@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9FB723985A13202AFFA8287A'
-               BlueprintName = 'Pods'
+               BlueprintIdentifier = '9FE227382A2D4887545A077B'
+               BlueprintName = 'KMCGeigerCounter'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods.a'>
+               BuildableName = 'libKMCGeigerCounter.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

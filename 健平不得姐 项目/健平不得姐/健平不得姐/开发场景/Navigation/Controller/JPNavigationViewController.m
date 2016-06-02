@@ -18,17 +18,41 @@
 //在第一次使用这个类时自动调用initialize方法（只调用一次，来设置全局属性）
 + (void)initialize{
     
-    //当导航栏用在JPNavigationViewController这个控制器类，appearance设置才会生效
+    //appearanceWhenContainedInInstancesOfClasses：当导航栏用在JPNavigationViewController这个控制器类，appearance设置才会生效
     UINavigationBar *bar=[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[self class]]];//获取导航栏全局*属于这个类*的UINavigationBar
     
     //设置导航栏的背景图
     [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
     
+    //设置导航栏标题字体属性
+    [bar setTitleTextAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:20]}];
+    
+    
+    
+    //获取左右按钮的全局设置
+    UIBarButtonItem *item=[UIBarButtonItem appearance];
+    
+    //左右按钮样式
+    NSMutableDictionary *itemNormalAttrs=[NSMutableDictionary dictionary];
+    itemNormalAttrs[NSForegroundColorAttributeName]=[UIColor blackColor];
+    itemNormalAttrs[NSFontAttributeName]=[UIFont systemFontOfSize:17];
+    
+    [item setTitleTextAttributes:itemNormalAttrs forState:UIControlStateNormal];
+    
+    //设置不能点击样式（不知道为什么不能用同一个字典，会把普通样式也变成灰色）
+//    itemAttrs[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
+    
+    NSMutableDictionary *itemDisabledAttrs=[NSMutableDictionary dictionary];
+    itemDisabledAttrs[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
+    itemDisabledAttrs[NSFontAttributeName]=[UIFont systemFontOfSize:17];
+    
+    [item setTitleTextAttributes:itemDisabledAttrs forState:UIControlStateDisabled];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //使用了自定义的leftBarbuttonItem左滑返回手势会失效，需要重新设置代理：
+    self.interactivePopGestureRecognizer.delegate=(id<UIGestureRecognizerDelegate>)self;
 }
 
 /*

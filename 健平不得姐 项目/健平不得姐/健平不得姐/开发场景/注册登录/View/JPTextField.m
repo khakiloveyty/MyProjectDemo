@@ -29,6 +29,7 @@ static NSString *const JPPlaceholderColorKeyPath=@"_placeholderLabel.textColor";
 //
 //}
 
+//获取属性
 +(void)getProperties{
     
     unsigned int count=0;
@@ -48,6 +49,7 @@ static NSString *const JPPlaceholderColorKeyPath=@"_placeholderLabel.textColor";
     
 }
 
+//获取成员变量
 +(void)getIvars{
     /*
      

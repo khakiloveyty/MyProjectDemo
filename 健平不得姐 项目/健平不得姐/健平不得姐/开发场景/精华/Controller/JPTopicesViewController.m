@@ -10,7 +10,6 @@
 #import "JPTopic.h"
 #import "JPTopicCell.h"
 #import "JPCommentViewController.h"
-#import "JPTopWindow.h"
 #import "JPNewTopicViewController.h"
 
 @interface JPTopicesViewController ()
@@ -46,10 +45,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //在应用顶部添加窗口
-    //作用：点击这个窗口让所有scrollView能回滚到最上面（本来要在appdelegate的applicationDidBecomeActive方法中调用，但xcode7不知道为什么不允许这样子做，只好放这里，反正这方法只调用一次就行）
-    [JPTopWindow show];
     
     //初始化tableview
     [self setupTableView];

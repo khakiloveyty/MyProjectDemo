@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KMCGeigerCounter.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,6 +57,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0843346EE2C494B1BCACF210DBA8A92C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58C33E34F33AEA075EC18A0591159D0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5CBA0E657E738BFFDBF5B5A6ED6BF0CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
 		<dict>
 			<key>primary</key>
@@ -67,12 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A33E03A39716C7AD4C2DE7D4F532136</key>
+		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
+		<key>B4A33E50FE298C5B4651A2C450DEA5D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,17 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DD698673F17186D85BD634D6726B94EB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD8E08F538660E3779F54B8350BB642A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FAC718B85C7E312F83787F5258B240E6</key>
+		<key>F7FC7E115368C429BB90A4564B03CF5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

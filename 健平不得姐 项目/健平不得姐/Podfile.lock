@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - DACircularProgress (2.3.1)
+  - KMCGeigerCounter (0.2.2)
   - MJExtension (3.0.10)
   - MJRefresh (3.0.8)
   - NJKWebViewProgress (0.2.3):
@@ -31,6 +32,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - DACircularProgress
+  - KMCGeigerCounter
   - MJExtension
   - MJRefresh (~> 3.0.7)
   - NJKWebViewProgress
@@ -50,6 +52,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  KMCGeigerCounter: f8cc3c4aa19fc6f8cec168fb03b364b84c118a7a
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d

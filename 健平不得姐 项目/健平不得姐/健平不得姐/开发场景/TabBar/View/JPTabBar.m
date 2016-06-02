@@ -8,7 +8,9 @@
 
 #import "JPTabBar.h"
 #import "UIView+Extension.h"
-#import "JPPublishView.h"
+//#import "JPPublishView.h"
+#import "JPPublishViewController.h"
+#import "JPPostWordViewController.h"
 
 @interface JPTabBar()
 @property(nonatomic,weak)UIButton *plusButton;
@@ -62,7 +64,15 @@
 
 //推出发布页面
 -(void)plusClick{
-    [JPPublishView show];
+//    [JPPublishView show];
+    
+//    JPPublishViewController *publish = [[JPPublishViewController alloc] init];
+//    [KeyWindow.rootViewController presentViewController:publish animated:NO completion:nil];
+    
+    UITabBarController *tabBarController=(UITabBarController *)KeyWindow.rootViewController;
+    UINavigationController *navi=(UINavigationController *)tabBarController.selectedViewController;
+    JPPostWordViewController *postWordVC=[[JPPostWordViewController alloc] init];
+    [navi pushViewController:postWordVC animated:YES];
 }
 
 /* 设置子控件的frame要写在layoutSubviews方法中 */

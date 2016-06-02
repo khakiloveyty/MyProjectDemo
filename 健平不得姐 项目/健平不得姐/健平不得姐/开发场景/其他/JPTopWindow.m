@@ -18,6 +18,7 @@ static UIWindow *topWindow_;
     topWindow_.backgroundColor=[UIColor clearColor];
     topWindow_.frame=CGRectMake(0, 0, Screen_Width, 20);
     topWindow_.windowLevel=UIWindowLevelAlert;
+    topWindow_.rootViewController=[UIViewController new];
     
     [topWindow_ addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(windowClick)]];
     //注意：在类方法中的self指的是类本身，target为self时，选择的方法要设置为类方法
