@@ -505,6 +505,7 @@
 #warning 不知道为什么这个页面点击顶部回不到顶部，offset会有很大偏差！！！
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     JPLog(@"%lf",scrollView.contentOffset.y);
+    [scrollView setContentOffset:CGPointMake(0, -scrollView.contentInset.top)];
 }
 
 @end

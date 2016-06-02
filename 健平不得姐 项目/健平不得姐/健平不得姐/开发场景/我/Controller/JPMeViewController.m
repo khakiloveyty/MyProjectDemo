@@ -53,9 +53,9 @@
     
     //设置表尾视图
     JPMeFooterView *footerView=[[JPMeFooterView alloc] init];
+    footerView.height=200;
     footerView.delegate=self;
     self.tableView.tableFooterView=footerView;
-    
 }
 
 -(void)leftBtnClick{
@@ -68,12 +68,6 @@
 
 -(void)moon{
     JPLog(@"haha");
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.tableView.contentSize=CGSizeMake(0, CGRectGetMaxY(self.tableView.tableFooterView.frame)+35);
-    JPLog(@"%lf",self.tableView.contentSize.height);
 }
 
 #pragma mark - Table view data source
@@ -109,8 +103,10 @@
 #pragma mark - JPMeFooterViewDelegate
 
 -(void)requestSuccess{
-    self.tableView.contentSize=CGSizeMake(0, CGRectGetMaxY(self.tableView.tableFooterView.frame)+35);
-    JPLog(@"%lf",self.tableView.contentSize.height);
+    //tableFooterView高度改变了，要重新设置tableFooterView才可以让tableView知道tableFooterView的新高度
+    JPMeFooterView *footerView=(JPMeFooterView *)self.tableView.tableFooterView;
+    self.tableView.tableFooterView=nil;
+    self.tableView.tableFooterView=footerView;
 }
 
 @end

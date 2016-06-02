@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="goBackItem" destination="wiE-SB-QWv" id="6WU-PT-pJ4"/>
                 <outlet property="goForwardItem" destination="7Dd-hA-foT" id="A3n-pc-kQV"/>
+                <outlet property="progressView" destination="R8Z-uT-cid" id="3b8-YV-V33"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="lig-2f-fmN" id="8Uu-vM-0rF"/>
             </connections>
@@ -28,12 +29,12 @@
                         <constraint firstAttribute="height" constant="44" id="l5U-8l-MqV"/>
                     </constraints>
                     <items>
-                        <barButtonItem title="←" id="wiE-SB-QWv">
+                        <barButtonItem enabled="NO" title="←" id="wiE-SB-QWv">
                             <connections>
                                 <action selector="goBack:" destination="-1" id="uaj-8z-J4o"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="→" id="7Dd-hA-foT">
+                        <barButtonItem enabled="NO" title="→" id="7Dd-hA-foT">
                             <connections>
                                 <action selector="goForward:" destination="-1" id="NhE-bM-KWl"/>
                             </connections>
@@ -46,16 +47,25 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R8Z-uT-cid">
+                    <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Dlw-cp-J6V"/>
+                    </constraints>
+                </progressView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xex-5X-Nos" secondAttribute="bottom" id="3lE-20-cnT"/>
                 <constraint firstAttribute="trailing" secondItem="lig-2f-fmN" secondAttribute="trailing" id="5uJ-mh-CO5"/>
                 <constraint firstItem="lig-2f-fmN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6jz-qZ-Sp8"/>
+                <constraint firstItem="R8Z-uT-cid" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Aup-rn-WB5"/>
                 <constraint firstItem="lig-2f-fmN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="I9x-9S-tzO"/>
                 <constraint firstAttribute="trailing" secondItem="xex-5X-Nos" secondAttribute="trailing" id="IN8-Jr-ZqT"/>
+                <constraint firstAttribute="trailing" secondItem="R8Z-uT-cid" secondAttribute="trailing" id="S6t-iH-J01"/>
                 <constraint firstItem="xex-5X-Nos" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rnR-sk-t0S"/>
                 <constraint firstItem="xex-5X-Nos" firstAttribute="top" secondItem="lig-2f-fmN" secondAttribute="bottom" id="sYr-B4-6PV"/>
+                <constraint firstItem="R8Z-uT-cid" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="twX-NO-KR7"/>
             </constraints>
         </view>
     </objects>

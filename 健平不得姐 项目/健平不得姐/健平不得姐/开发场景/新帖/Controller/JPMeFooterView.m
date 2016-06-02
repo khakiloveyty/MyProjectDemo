@@ -71,7 +71,7 @@
     }
     
     //设置总高度
-    self.height=btnH*((squares.count+maxCols-1)/maxCols);
+    self.height=btnH*((squares.count+maxCols-1)/maxCols)+35;
     
     //刷新tableView的contentSize
     [self.delegate requestSuccess];
