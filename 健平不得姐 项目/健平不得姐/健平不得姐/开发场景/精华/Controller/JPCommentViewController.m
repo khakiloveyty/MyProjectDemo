@@ -180,7 +180,7 @@
     headerView.width=Screen_Width;
     
     //将JPTopicCell添加到表头视图
-    JPTopicCell *cell=[JPTopicCell cell];
+    JPTopicCell *cell=[JPTopicCell viewLoadFromNib];
     cell.topic=self.topic;
     
     //给cell一个固定的frame

@@ -43,7 +43,7 @@
  */
 -(JPTopicPictureView *)pictureView {
     if (!_pictureView) {
-        JPTopicPictureView *pictureView=[JPTopicPictureView pictureView];
+        JPTopicPictureView *pictureView=[JPTopicPictureView viewLoadFromNib];
         
         //先添加到contentView上，这样pictureView就不会死了
         [self.contentView addSubview:pictureView];
@@ -56,7 +56,7 @@
 
 -(JPTopicVoiceView *)voiceView {
     if (!_voiceView) {
-        JPTopicVoiceView *voiceView=[JPTopicVoiceView voiceView];
+        JPTopicVoiceView *voiceView=[JPTopicVoiceView viewLoadFromNib];
         
         //先添加到contentView上，这样voiceView就不会死了
         [self.contentView addSubview:voiceView];
@@ -69,7 +69,7 @@
 
 -(JPTopicVideoView *)videoView {
     if (!_videoView) {
-        JPTopicVideoView *videoView=[JPTopicVideoView videoView];
+        JPTopicVideoView *videoView=[JPTopicVideoView viewLoadFromNib];
         
         //先添加到contentView上，这样videoView就不会死了
         [self.contentView addSubview:videoView];
@@ -92,10 +92,6 @@
     
     //设置没有点击高亮效果
     self.selectionStyle=UITableViewCellSelectionStyleNone;
-}
-
-+(instancetype)cell{
-    return [[[NSBundle mainBundle] loadNibNamed:@"JPTopicCell" owner:nil options:nil] firstObject];
 }
 
 -(void)setTopic:(JPTopic *)topic{

@@ -58,7 +58,11 @@ UIKIT_EXTERN CGFloat const JPTopicCellHotCommentContentMargin;
 /** 点击tabBar的通知 - 通知名称 */
 UIKIT_EXTERN NSString *const JPTabBarDidSelectedNotification;
 
+/** 发布 - 发段子 - 添加标签 - 内容视图内边距 */
+UIKIT_EXTERN CGFloat const JPAddTagViewMargin;
 
+/** 发布 - 发段子 - 标签高度 */
+UIKIT_EXTERN CGFloat const JPTagHeight;
 
 
 
@@ -75,9 +79,13 @@ UIKIT_EXTERN NSString *const JPTabBarDidSelectedNotification;
 #define Screen_Width [UIScreen mainScreen].bounds.size.width
 #define Screen_Height [UIScreen mainScreen].bounds.size.height
 
+#define JPTagFont [UIFont systemFontOfSize:14]
+
 #define JPRGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #define JPRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define JPGlobalColor JPRGB(223, 223, 223)
+#define JPTagColor JPRGB(74, 139, 209)
+
 //随机色 arc4random_uniform(256)：0~255的随机数
 #define JPRandomColor JPRGB(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
 

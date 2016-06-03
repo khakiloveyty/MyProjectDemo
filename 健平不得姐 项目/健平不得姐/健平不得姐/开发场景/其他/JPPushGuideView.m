@@ -10,10 +10,6 @@
 
 @implementation JPPushGuideView
 
-+(instancetype)pushGuideView{
-    return [[[NSBundle mainBundle] loadNibNamed:@"JPPushGuideView" owner:nil options:nil] firstObject];
-}
-
 +(void)showPushGuideView{
     //进入主界面
     NSString *key=@"CFBundleShortVersionString";
@@ -28,7 +24,7 @@
     if (![currentVersion isEqualToString:lastVersion]) { //如果版本号不一样
         UIWindow *window=[UIApplication sharedApplication].keyWindow;
         
-        JPPushGuideView *pushGuideView=[self pushGuideView];
+        JPPushGuideView *pushGuideView=[self viewLoadFromNib];
         pushGuideView.frame=window.bounds;
         [window addSubview:pushGuideView];
         

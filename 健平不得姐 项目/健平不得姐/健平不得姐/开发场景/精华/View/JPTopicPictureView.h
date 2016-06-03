@@ -10,6 +10,5 @@
 @class JPTopic;
 
 @interface JPTopicPictureView : UIView
-+(instancetype)pictureView;
 @property(nonatomic,strong)JPTopic *topic;
 @end

@@ -20,10 +20,6 @@ static CGFloat const JPSpringFactor=9;
 
 @implementation JPPublishView
 
-+(instancetype)publishView{
-    return [[[NSBundle mainBundle] loadNibNamed:@"JPPublishView" owner:nil options:nil] firstObject];
-}
-
 /*
  命名规范：
     成员变量：_名字
@@ -46,7 +42,7 @@ static UIWindow *window_; //自定义窗口
     //UIWindowLevel 窗口级别（默认是UIWindowLevelNormal）
     //UIWindowLevelNormal(普通级别) < UIWindowLevelStatusBar(状态栏的级别) < UIWindowLevelAlert(警告框的级别)
     
-    JPPublishView *publishView=[self publishView];
+    JPPublishView *publishView=[self viewLoadFromNib];
     //因为publishView是xib文件创建出来的，所以它的初始尺寸是xib文件里的尺寸，所以要自己设置尺寸
     publishView.frame=window_.bounds;
     [window_ addSubview:publishView];

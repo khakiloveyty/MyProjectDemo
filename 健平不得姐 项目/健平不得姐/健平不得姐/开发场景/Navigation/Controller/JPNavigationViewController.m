@@ -32,16 +32,24 @@
     //获取左右按钮的全局设置
     UIBarButtonItem *item=[UIBarButtonItem appearance];
     
-    //左右按钮样式
+    //普通样式
     NSMutableDictionary *itemNormalAttrs=[NSMutableDictionary dictionary];
     itemNormalAttrs[NSForegroundColorAttributeName]=[UIColor blackColor];
     itemNormalAttrs[NSFontAttributeName]=[UIFont systemFontOfSize:17];
     
     [item setTitleTextAttributes:itemNormalAttrs forState:UIControlStateNormal];
     
-    //设置不能点击样式（不知道为什么不能用同一个字典，会把普通样式也变成灰色）
-//    itemAttrs[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
     
+    //高亮样式
+    NSMutableDictionary *itemHighlightedAttrs=[NSMutableDictionary dictionary];
+    itemHighlightedAttrs[NSForegroundColorAttributeName]=[UIColor redColor];
+    itemHighlightedAttrs[NSFontAttributeName]=[UIFont systemFontOfSize:17];
+    
+    [item setTitleTextAttributes:itemHighlightedAttrs forState:UIControlStateHighlighted];
+    
+    
+    //不能点击样式（不知道为什么不能用同一个字典，会把普通样式也变成灰色）
+//    itemAttrs[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
     NSMutableDictionary *itemDisabledAttrs=[NSMutableDictionary dictionary];
     itemDisabledAttrs[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
     itemDisabledAttrs[NSFontAttributeName]=[UIFont systemFontOfSize:17];
@@ -69,16 +77,21 @@
         //设置导航栏上面的内容
         //左边的返回按钮
         UIButton *backBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+        
         [backBtn setTitle:@"返回" forState:UIControlStateNormal];
         [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [backBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+        
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+        
         [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        
 //        [backBtn sizeToFit];
         backBtn.contentEdgeInsets=UIEdgeInsetsMake(0, -10, 0, 0);
         backBtn.contentHorizontalAlignment=UIControlContentHorizontalAlignmentLeft;//让按钮内部所有内容左对齐
         backBtn.size=CGSizeMake(70, 30);
+        
         viewController.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:backBtn];
         
     }

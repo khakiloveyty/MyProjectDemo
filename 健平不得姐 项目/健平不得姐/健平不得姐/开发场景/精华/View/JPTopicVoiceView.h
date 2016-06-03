@@ -10,6 +10,5 @@
 @class JPTopic;
 
 @interface JPTopicVoiceView : UIView
-+(instancetype)voiceView;
 @property(nonatomic,strong)JPTopic *topic;
 @end

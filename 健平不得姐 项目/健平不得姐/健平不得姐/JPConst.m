@@ -47,3 +47,9 @@ CGFloat const JPTopicCellHotCommentContentMargin=5;
 
 /** 点击tabBar的通知 - 通知名称 */
 NSString *const JPTabBarDidSelectedNotification=@"JPTabBarDidSelectedNotification";
+
+/** 发布 - 发段子 - 添加标签 - 内容视图内边距 */
+CGFloat const JPAddTagViewMargin=5.0;
+
+/** 发布 - 发段子 - 标签高度 */
+CGFloat const JPTagHeight=25;

@@ -10,6 +10,5 @@
 @class JPTopic;
 
 @interface JPTopicVideoView : UIView
-+(instancetype)videoView;
 @property(nonatomic,strong)JPTopic *topic;
 @end

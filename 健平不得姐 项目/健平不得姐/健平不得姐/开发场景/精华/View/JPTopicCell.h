@@ -11,5 +11,4 @@
 
 @interface JPTopicCell : UITableViewCell
 @property(nonatomic,strong)JPTopic *topic;
-+(instancetype)cell;
 @end

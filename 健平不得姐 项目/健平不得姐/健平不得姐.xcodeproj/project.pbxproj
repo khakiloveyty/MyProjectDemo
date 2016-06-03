@@ -15,6 +15,12 @@
 		6F25E5601CEEC69C00587A75 /* JPWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25E55B1CEEC69C00587A75 /* JPWordViewController.m */; };
 		6F25E5631CEEC6C600587A75 /* JPEssenceTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25E5621CEEC6C600587A75 /* JPEssenceTitleCell.m */; };
 		6F25E5661CEEC6E500587A75 /* JPTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25E5651CEEC6E500587A75 /* JPTestViewController.m */; };
+		6F6163961D01198900437742 /* JPAddTagToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163951D01198900437742 /* JPAddTagToolbar.m */; };
+		6F6163981D01199B00437742 /* JPAddTagToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F6163971D01199B00437742 /* JPAddTagToolbar.xib */; };
+		6F61639B1D0134B900437742 /* JPPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F61639A1D0134B900437742 /* JPPlaceholderTextView.m */; };
+		6F61639E1D01356A00437742 /* JPAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F61639D1D01356A00437742 /* JPAddTagViewController.m */; };
+		6F6163A11D01867300437742 /* JPTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A01D01867300437742 /* JPTagButton.m */; };
+		6F6163A41D01A30300437742 /* JPTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A31D01A30300437742 /* JPTagTextField.m */; };
 		6F6C21E31CE47810000BE077 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C21E21CE47810000BE077 /* main.m */; };
 		6F6C21E61CE47811000BE077 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C21E51CE47811000BE077 /* AppDelegate.m */; };
 		6F6C21EE1CE47811000BE077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F6C21ED1CE47811000BE077 /* Assets.xcassets */; };
@@ -42,7 +48,6 @@
 		6F75E3D81D0007A1005F6B9A /* JPPostWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F75E3D71D0007A1005F6B9A /* JPPostWordViewController.m */; };
 		6F75E3DC1D000BD4005F6B9A /* JPPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F75E3DA1D000BD4005F6B9A /* JPPublishViewController.m */; };
 		6F75E3DD1D000BD4005F6B9A /* JPPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F75E3DB1D000BD4005F6B9A /* JPPublishViewController.xib */; };
-		6F75E3EC1D002AB9005F6B9A /* JPPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F75E3EB1D002AB9005F6B9A /* JPPlaceholderTextView.m */; };
 		6F771D3B1CF445C500A40527 /* JPPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F771D391CF445C500A40527 /* JPPublishView.m */; };
 		6F771D3C1CF445C500A40527 /* JPPublishView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F771D3A1CF445C500A40527 /* JPPublishView.xib */; };
 		6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77424D1CF9330E008030D2 /* JPCommentViewController.m */; };
@@ -122,6 +127,17 @@
 		6F25E5621CEEC6C600587A75 /* JPEssenceTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPEssenceTitleCell.m; sourceTree = "<group>"; };
 		6F25E5641CEEC6E500587A75 /* JPTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTestViewController.h; sourceTree = "<group>"; };
 		6F25E5651CEEC6E500587A75 /* JPTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTestViewController.m; sourceTree = "<group>"; };
+		6F6163941D01198900437742 /* JPAddTagToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAddTagToolbar.h; sourceTree = "<group>"; };
+		6F6163951D01198900437742 /* JPAddTagToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAddTagToolbar.m; sourceTree = "<group>"; };
+		6F6163971D01199B00437742 /* JPAddTagToolbar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPAddTagToolbar.xib; sourceTree = "<group>"; };
+		6F6163991D0134B900437742 /* JPPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPlaceholderTextView.h; sourceTree = "<group>"; };
+		6F61639A1D0134B900437742 /* JPPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPlaceholderTextView.m; sourceTree = "<group>"; };
+		6F61639C1D01356A00437742 /* JPAddTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAddTagViewController.h; sourceTree = "<group>"; };
+		6F61639D1D01356A00437742 /* JPAddTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAddTagViewController.m; sourceTree = "<group>"; };
+		6F61639F1D01867300437742 /* JPTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTagButton.h; sourceTree = "<group>"; };
+		6F6163A01D01867300437742 /* JPTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTagButton.m; sourceTree = "<group>"; };
+		6F6163A21D01A30300437742 /* JPTagTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTagTextField.h; sourceTree = "<group>"; };
+		6F6163A31D01A30300437742 /* JPTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTagTextField.m; sourceTree = "<group>"; };
 		6F6C21DE1CE47810000BE077 /* 健平不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "健平不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6C21E21CE47810000BE077 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F6C21E41CE47810000BE077 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,8 +189,6 @@
 		6F75E3D91D000BD4005F6B9A /* JPPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPublishViewController.h; sourceTree = "<group>"; };
 		6F75E3DA1D000BD4005F6B9A /* JPPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPublishViewController.m; sourceTree = "<group>"; };
 		6F75E3DB1D000BD4005F6B9A /* JPPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPPublishViewController.xib; sourceTree = "<group>"; };
-		6F75E3EA1D002AB9005F6B9A /* JPPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPlaceholderTextView.h; sourceTree = "<group>"; };
-		6F75E3EB1D002AB9005F6B9A /* JPPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPlaceholderTextView.m; sourceTree = "<group>"; };
 		6F771D381CF445C500A40527 /* JPPublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPublishView.h; sourceTree = "<group>"; };
 		6F771D391CF445C500A40527 /* JPPublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPublishView.m; sourceTree = "<group>"; };
 		6F771D3A1CF445C500A40527 /* JPPublishView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPPublishView.xib; sourceTree = "<group>"; };
@@ -681,6 +695,8 @@
 				6F771D3A1CF445C500A40527 /* JPPublishView.xib */,
 				6F75E3D61D0007A1005F6B9A /* JPPostWordViewController.h */,
 				6F75E3D71D0007A1005F6B9A /* JPPostWordViewController.m */,
+				6F61639C1D01356A00437742 /* JPAddTagViewController.h */,
+				6F61639D1D01356A00437742 /* JPAddTagViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -695,8 +711,15 @@
 		6F771D371CF4458D00A40527 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6F75E3EA1D002AB9005F6B9A /* JPPlaceholderTextView.h */,
-				6F75E3EB1D002AB9005F6B9A /* JPPlaceholderTextView.m */,
+				6F6163991D0134B900437742 /* JPPlaceholderTextView.h */,
+				6F61639A1D0134B900437742 /* JPPlaceholderTextView.m */,
+				6F6163941D01198900437742 /* JPAddTagToolbar.h */,
+				6F6163951D01198900437742 /* JPAddTagToolbar.m */,
+				6F6163971D01199B00437742 /* JPAddTagToolbar.xib */,
+				6F61639F1D01867300437742 /* JPTagButton.h */,
+				6F6163A01D01867300437742 /* JPTagButton.m */,
+				6F6163A21D01A30300437742 /* JPTagTextField.h */,
+				6F6163A31D01A30300437742 /* JPTagTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -872,6 +895,7 @@
 				6FE088331CF3156700531509 /* JPShowPictureViewController.xib in Resources */,
 				6F771D3C1CF445C500A40527 /* JPPublishView.xib in Resources */,
 				6F8D2C391CF821DD00101AC6 /* JPTopicVideoView.xib in Resources */,
+				6F6163981D01199B00437742 /* JPAddTagToolbar.xib in Resources */,
 				6F89C1CC1CF2D88B00062F68 /* JPTopicPictureView.xib in Resources */,
 				6F6C228A1CE5E6D0000BE077 /* JPRecommendUserCell.xib in Resources */,
 				6F6C22761CE5ACA6000BE077 /* JPFriendTrendsViewController.xib in Resources */,
@@ -958,6 +982,7 @@
 				6FE088361CF319B700531509 /* JPProgressView.m in Sources */,
 				6F6C22591CE492FD000BE077 /* UIView+Extension.m in Sources */,
 				6F9317921CE9BB0B005B1CF3 /* JPRecommendTagCell.m in Sources */,
+				6F61639E1D01356A00437742 /* JPAddTagViewController.m in Sources */,
 				6F6C227D1CE5BA1F000BE077 /* Foundation+Log.m in Sources */,
 				6F93178B1CE9B2F0005B1CF3 /* JPRecommendTagsViewController.m in Sources */,
 				6F94E63A1CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m in Sources */,
@@ -969,7 +994,6 @@
 				6F861B011CEAE366009DF540 /* JPVerticalButton.m in Sources */,
 				6F25E55D1CEEC69C00587A75 /* JPPictureViewController.m in Sources */,
 				6F6E89161CFC128C001AECCD /* JPTopWindow.m in Sources */,
-				6F75E3EC1D002AB9005F6B9A /* JPPlaceholderTextView.m in Sources */,
 				6F77424F1CF9330E008030D2 /* JPCommentViewController.m in Sources */,
 				6F771D3B1CF445C500A40527 /* JPPublishView.m in Sources */,
 				6F75E3DC1D000BD4005F6B9A /* JPPublishViewController.m in Sources */,
@@ -984,6 +1008,7 @@
 				6F6C226A1CE5704F000BE077 /* UIBarButtonItem+Extension.m in Sources */,
 				6F25E5661CEEC6E500587A75 /* JPTestViewController.m in Sources */,
 				6F94E6551CFF05D4005D407C /* JPWebViewController.m in Sources */,
+				6F61639B1D0134B900437742 /* JPPlaceholderTextView.m in Sources */,
 				6F6C227A1CE5B47A000BE077 /* JPRecommendViewController.m in Sources */,
 				6F94E64B1CFECC4C005D407C /* JPMeSquare.m in Sources */,
 				6F6C21E61CE47811000BE077 /* AppDelegate.m in Sources */,
@@ -997,10 +1022,12 @@
 				6F6C22551CE492D2000BE077 /* JPMeViewController.m in Sources */,
 				6F75E3D81D0007A1005F6B9A /* JPPostWordViewController.m in Sources */,
 				6F6C22541CE492D2000BE077 /* JPEssenceViewController.m in Sources */,
+				6F6163961D01198900437742 /* JPAddTagToolbar.m in Sources */,
 				6F94E64E1CFED3D7005D407C /* JPMeSquareButton.m in Sources */,
 				6F8D1AA81CEDBC620056FB0C /* JPConst.m in Sources */,
 				6F25E55F1CEEC69C00587A75 /* JPVoiceViewController.m in Sources */,
 				6F8D1AAC1CEDC6860056FB0C /* JPTopicCell.m in Sources */,
+				6F6163A41D01A30300437742 /* JPTagTextField.m in Sources */,
 				6F85C7D11CFABF9200505325 /* JPCommentCell.m in Sources */,
 				6F6C21E31CE47810000BE077 /* main.m in Sources */,
 				6F861B071CEB2A2E009DF540 /* JPPushGuideView.m in Sources */,
@@ -1008,6 +1035,7 @@
 				6F8D2C3F1CF8430000101AC6 /* JPComment.m in Sources */,
 				6F8D1AA51CEDA6360056FB0C /* JPTopic.m in Sources */,
 				6F25E55E1CEEC69C00587A75 /* JPVideoViewController.m in Sources */,
+				6F6163A11D01867300437742 /* JPTagButton.m in Sources */,
 				6F94E6481CFEC233005D407C /* JPMeFooterView.m in Sources */,
 				6F6C22531CE492D2000BE077 /* JPFriendTrendsViewController.m in Sources */,
 				6F8D2C3C1CF83FB800101AC6 /* JPUser.m in Sources */,
