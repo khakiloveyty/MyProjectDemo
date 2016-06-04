@@ -8,14 +8,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JPAddTagToolbar">
-            <rect key="frame" x="0.0" y="0.0" width="441" height="133"/>
+            <rect key="frame" x="0.0" y="0.0" width="970" height="138"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDd-F5-lBN" userLabel="工具条">
-                    <rect key="frame" x="0.0" y="98" width="441" height="35"/>
+                    <rect key="frame" x="0.0" y="103" width="970" height="35"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar-light" translatesAutoresizingMaskIntoConstraints="NO" id="lV4-JF-scN">
-                            <rect key="frame" x="0.0" y="0.0" width="441" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="970" height="35"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijj-Ya-7Aw">
                             <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -39,6 +39,7 @@
                         <constraint firstItem="eVU-mK-KLX" firstAttribute="top" secondItem="yDd-F5-lBN" secondAttribute="top" id="Q1e-6l-kAj"/>
                         <constraint firstAttribute="bottom" secondItem="Ijj-Ya-7Aw" secondAttribute="bottom" id="WG0-me-sVB"/>
                         <constraint firstItem="eVU-mK-KLX" firstAttribute="leading" secondItem="Ijj-Ya-7Aw" secondAttribute="trailing" id="dQV-CE-qpM"/>
+                        <constraint firstAttribute="bottom" secondItem="lV4-JF-scN" secondAttribute="bottom" id="gLF-j3-KVj"/>
                         <constraint firstItem="Ijj-Ya-7Aw" firstAttribute="top" secondItem="yDd-F5-lBN" secondAttribute="top" id="jLY-ti-Dfn"/>
                         <constraint firstItem="lV4-JF-scN" firstAttribute="leading" secondItem="yDd-F5-lBN" secondAttribute="leading" id="nMH-r4-73x"/>
                         <constraint firstAttribute="bottom" secondItem="lV4-JF-scN" secondAttribute="bottom" id="pgb-Zg-yxT"/>
@@ -46,28 +47,33 @@
                         <constraint firstItem="lV4-JF-scN" firstAttribute="top" secondItem="yDd-F5-lBN" secondAttribute="top" id="tmn-R6-hr0"/>
                         <constraint firstItem="Ijj-Ya-7Aw" firstAttribute="leading" secondItem="yDd-F5-lBN" secondAttribute="leading" id="vqw-2i-bBY"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="pgb-Zg-yxT"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bE-9F-ibV" userLabel="标签View">
-                    <rect key="frame" x="5" y="0.0" width="431" height="98"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="5" y="0.0" width="960" height="93"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="1bE-9F-ibV" secondAttribute="trailing" constant="5" id="72I-ac-yOs"/>
                 <constraint firstAttribute="trailing" secondItem="yDd-F5-lBN" secondAttribute="trailing" id="GD2-yw-tf0"/>
-                <constraint firstItem="yDd-F5-lBN" firstAttribute="top" secondItem="1bE-9F-ibV" secondAttribute="bottom" id="NHr-I4-cUJ"/>
+                <constraint firstItem="yDd-F5-lBN" firstAttribute="top" secondItem="1bE-9F-ibV" secondAttribute="bottom" constant="10" id="NHr-I4-cUJ"/>
+                <constraint firstItem="1bE-9F-ibV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Qb3-2m-yQG"/>
                 <constraint firstItem="1bE-9F-ibV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="T3U-Wg-Qpi"/>
+                <constraint firstAttribute="bottom" secondItem="yDd-F5-lBN" secondAttribute="bottom" id="TGF-G2-VmN"/>
                 <constraint firstItem="yDd-F5-lBN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="c7P-Nn-Dx9"/>
-                <constraint firstItem="1bE-9F-ibV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kHb-Pz-wOi"/>
-                <constraint firstAttribute="bottom" secondItem="yDd-F5-lBN" secondAttribute="bottom" id="szg-Qm-ujs"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="tagView" destination="1bE-9F-ibV" id="sD2-TR-IcS"/>
             </connections>
-            <point key="canvasLocation" x="188.5" y="186.5"/>
+            <point key="canvasLocation" x="453" y="186"/>
         </view>
     </objects>
     <resources>

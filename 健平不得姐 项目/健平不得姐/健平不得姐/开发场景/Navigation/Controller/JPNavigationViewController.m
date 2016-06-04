@@ -59,8 +59,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //使用了自定义的leftBarbuttonItem左滑返回手势会失效，需要重新设置代理：
-    self.interactivePopGestureRecognizer.delegate=(id<UIGestureRecognizerDelegate>)self;
+    //使用了自定义的leftBarbuttonItem左滑返回手势会失效，就清空代理，导航控制器发现代理没了就会重新设置这个功能
+    self.interactivePopGestureRecognizer.delegate=nil;
 }
 
 /*

@@ -40,6 +40,8 @@
     
     [self.tagView addSubview:addBtn];
     self.addBtn=addBtn;
+    
+    [self createTags:@[@"吐槽",@"糗事"]];
 }
 
 -(void)addBtnClick{
@@ -48,9 +50,12 @@
     //设置block（在pop回来的时候会调用该block的方法）
     //建议：避免造成循环引用，自定义block最好设置弱引用
     __weak typeof(self) weakSelf=self;
-    addTagVC.tagsBlock=^(NSArray *tags){
-        [weakSelf createTags:tags];
+    addTagVC.tagsBlock= ^(NSArray *tags){
+        [weakSelf createTags:tags]; //在添加标签页面点击完成时回调
     };
+    
+    //使用KVC将self.tagLabels里面所有的text属性放到一个数组中
+    addTagVC.tags=[self.tagLabels valueForKeyPath:@"text"];
     
     
     UITabBarController *tabBarController=(UITabBarController *)KeyWindow.rootViewController;
@@ -76,13 +81,24 @@
     [navi pushViewController:addTagVC animated:YES];
 }
 
+//创建标签
 -(void)createTags:(NSArray *)tags{
+    
+    //如果已经有标签了
+    if (self.tagLabels.count) {
+        //先移除标签
+        [self.tagLabels makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        //清空数组
+        [self.tagLabels removeAllObjects];
+    }
+    
     for (int i=0;i<tags.count;i++) {
         UILabel *tagLabel=[[UILabel alloc] init];
         tagLabel.backgroundColor=JPTagColor;
         tagLabel.textColor=[UIColor whiteColor];
-        tagLabel.font=JPTagFont;
+        tagLabel.textAlignment=NSTextAlignmentCenter;
         
+        tagLabel.font=JPTagFont;
         tagLabel.text=tags[i];
         [tagLabel sizeToFit];
         
@@ -90,10 +106,24 @@
         tagLabel.height=JPTagHeight;
         
         [self.tagLabels addObject:tagLabel];
-        
+        [self.tagView addSubview:tagLabel];
     }
     
+    //重新布局
+    [self setNeedsLayout];
+}
+
+/**
+ * xib创建出来的，awakeFromNib中自身的尺寸是xib文件中的尺寸，不是设置好的尺寸，自身的真实的尺寸要在layoutSubviews方法中获取
+ * PS：子控件的位置排布要在layoutSubviews里面设置
+ */
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    
+    //计算所有标签的位置
     for (int i=0;i<self.tagLabels.count;i++) {
+        
         UILabel *tagLabel=self.tagLabels[i];
         
         if (i==0) {
@@ -115,12 +145,10 @@
                 tagLabel.y=CGRectGetMaxY(lastTagLabel.frame)+JPAddTagViewMargin;
             }
         }
-        
-        [self.tagView addSubview:tagLabel];
-        
     }
     
-    //根据最后一个按钮调整textField的位置
+    
+    //根据最后一个标签调整添加按钮的位置
     UILabel *lastTagLabel=[self.tagLabels lastObject];
     
     CGFloat addBtnX=0;
@@ -150,6 +178,15 @@
     self.addBtn.x=addBtnX;
     self.addBtn.y=addBtnY;
     
+    
+    //由于是xib创建出来的，整体高度不会跟随着子控件的高度改变而改变，只好修改整体高度
+    
+    //1.先获取原来的高度
+    CGFloat oldHeight=self.height;
+    //2.修改整体高度（45=工具条高度35+间距10）
+    self.height=CGRectGetMaxY(self.addBtn.frame)+45;
+    //3.修改整体的y值（高度改变了，要修改在父视图的y值，要减去两个高度的差值，保持整体贴紧父视图的底部）
+    self.y-=self.height-oldHeight;
 }
 
 @end

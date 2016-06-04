@@ -32,6 +32,40 @@
     return _tagBtns;
 }
 
+-(UIView *)contentView{
+    if (!_contentView) {
+        UIView *contentView=[[UIView alloc] init];
+        [self.view addSubview:contentView];
+        self.contentView=contentView;
+    }
+    return _contentView;
+}
+
+-(JPTagTextField *)textField{
+    if (!_textField) {
+        JPTagTextField *textField=[[JPTagTextField alloc] init];
+        textField.delegate=self;
+        
+        //设置删除的回调
+        __weak typeof(self) weakSelf=self; //避免循环引用
+        textField.deleteBlock=^{
+            if (weakSelf.tagBtns.count && !weakSelf.textField.hasText) {
+                [weakSelf deleteTag:[weakSelf.tagBtns lastObject]];
+            }
+        };
+        
+        [self.contentView addSubview:textField];
+        self.textField=textField;
+        
+        //监听文字编辑
+        [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
+        
+        //设置默认宽度为占位文字的宽度（sizeWithAttributes：计算只有一行时的高度）
+        self.textFieldDefaultWidth=[self.textField.placeholder sizeWithAttributes:@{NSFontAttributeName:self.textField.font}].width;
+    }
+    return _textField;
+}
+
 -(UIButton *)addBtn{
     if (!_addBtn) {
         UIButton *addBtn=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -51,6 +85,8 @@
         //监听按钮：添加标签
         [addBtn addTarget:self action:@selector(addBtnClick) forControlEvents:UIControlEventTouchUpInside];
         
+        addBtn.hidden=YES;
+        
         [self.contentView addSubview:addBtn];
         _addBtn=addBtn;
     }
@@ -62,7 +98,6 @@
     
     [self setupBasic];
     
-    [self setupTextField];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -70,18 +105,12 @@
     [self.textField becomeFirstResponder];
 }
 
+#pragma mark - 基本配置
+
 -(void)setupBasic{
     self.title=@"添加标签";
     self.view.backgroundColor=[UIColor whiteColor];
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
-    
-    UIView *contentView=[[UIView alloc] init];
-    contentView.x=JPAddTagViewMargin;
-    contentView.y=64+JPAddTagViewMargin;
-    contentView.width=self.view.width-2*JPAddTagViewMargin;
-    contentView.height=self.view.height-64-2*JPAddTagViewMargin;
-    [self.view addSubview:contentView];
-    self.contentView=contentView;
 }
 
 -(void)done{
@@ -100,30 +129,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - 定义textField
-
--(void)setupTextField{
-    JPTagTextField *textField=[[JPTagTextField alloc] init];
-    textField.delegate=self;
-    textField.width=self.contentView.width;
-    
-    //设置删除的回调
-    __weak typeof(self) weakSelf=self; //避免循环引用
-    textField.deleteBlock=^{
-        if (weakSelf.tagBtns.count && !weakSelf.textField.hasText) {
-            [weakSelf deleteTag:[weakSelf.tagBtns lastObject]];
-        }
-    };
-    
-    [self.contentView addSubview:textField];
-    self.textField=textField;
-    
-    //监听文字编辑
-    [textField addTarget:self action:@selector(textDidChange) forControlEvents:UIControlEventEditingChanged];
-    
-    //设置默认宽度为占位文字的宽度（sizeWithAttributes：计算只有一行时的高度）
-    self.textFieldDefaultWidth=[self.textField.placeholder sizeWithAttributes:@{NSFontAttributeName:self.textField.font}].width;
-}
+#pragma mark - 监听textField的文字编辑
 
 //文字编辑的响应
 -(void)textDidChange{
@@ -160,6 +166,38 @@
     
 }
 
+#pragma mark - 布局子控件 （防止在viewDidLoad方法中获取不了self.view的宽度或获取的是xib文件中的宽度）
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    //使用了懒加载模式，直接调用同时创建好
+    self.contentView.x=JPAddTagViewMargin;
+    self.contentView.y=64+JPAddTagViewMargin;
+    self.contentView.width=self.view.width-2*JPAddTagViewMargin;
+    self.contentView.height=self.view.height-64-2*JPAddTagViewMargin;
+    
+    self.textField.width=self.contentView.width;
+    
+    //初始化标签
+    [self setupTags];
+}
+
+#pragma mark - 初始化标签
+
+-(void)setupTags{
+    if (self.tags.count) {
+        for (NSString *tag in self.tags) {
+//            self.textField.text=tag;
+//            [self addBtnClick]; //我在这个方法里使用了动画布局，在初始化标签没必要使用动画
+            [self createTagBtnWithTag:tag];
+        }
+        [self updateTagBtnFrame];
+        [self updateTextFieldFrame];
+        
+        self.tags=nil; //清空数组，防止重复执行（viewDidLayoutSubviews会多次调用）
+    }
+}
+
 #pragma mark - 标签按钮的添加、删除
 
 //添加标签
@@ -169,9 +207,24 @@
         return;
     }
     
+    [self createTagBtnWithTag:self.textField.text];
+    
+    //刷新按钮位置
+    [UIView animateWithDuration:0.25 animations:^{
+        [self updateTagBtnFrame];
+        [self updateTextFieldFrame];
+    }];
+    
+    //添加完就清空textField文字
+    self.textField.text=nil;
+    self.addBtn.hidden=YES; //通过代码清空textField文字是不会触发textDidChange方法，需要这里手动隐藏
+}
+
+//创建标签按钮
+-(void)createTagBtnWithTag:(NSString *)tag{
     JPTagButton *tagBtn=[JPTagButton buttonWithType:UIButtonTypeCustom];
     
-    [tagBtn setTitle:self.textField.text forState:UIControlStateNormal];
+    [tagBtn setTitle:tag forState:UIControlStateNormal];
 //    [tagBtn sizeToFit]; //重写了setTitle:forState:方法，内部调用sizeToFit，每当设置title时就会自适应size
     tagBtn.height=self.textField.height;
     
@@ -183,16 +236,6 @@
     
     [self.contentView addSubview:tagBtn];
     [self.tagBtns addObject:tagBtn];
-    
-    //刷新按钮位置
-    [UIView animateWithDuration:0.25 animations:^{
-        [self updateTagBtnFrame];
-        [self updateTextFieldFrame];
-    }];
-    
-    //添加完就清空textField文字
-    self.textField.text=nil;
-    self.addBtn.hidden=YES; //通过代码清空textField文字是不会触发textDidChange方法，需要这里手动隐藏
 }
 
 //删除标签

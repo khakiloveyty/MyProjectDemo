@@ -10,4 +10,6 @@
 
 @interface JPAddTagViewController : UIViewController
 @property(nonatomic,copy)void (^tagsBlock)(NSArray *tags);  //设置一个block在合适的时机再调用
+/** 所有标签名称 */
+@property(nonatomic,strong)NSArray *tags;
 @end

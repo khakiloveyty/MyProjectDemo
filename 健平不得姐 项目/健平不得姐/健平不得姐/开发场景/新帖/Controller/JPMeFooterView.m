@@ -74,7 +74,7 @@
     self.height=btnH*((squares.count+maxCols-1)/maxCols)+35;
     
     //刷新tableView的contentSize
-    [self.delegate requestSuccess];
+    !self.requestSuccess ? : self.requestSuccess();
     
 //    //重绘背景图
 //    [self setNeedsDisplay];

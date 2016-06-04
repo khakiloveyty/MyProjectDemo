@@ -133,7 +133,6 @@ static CGFloat const JPSpringFactor=9;
                 UINavigationController *navi=(UINavigationController *)tabBarController.selectedViewController;
                 
                 JPPostWordViewController *postWordVC=[[JPPostWordViewController alloc] init];
-                postWordVC.title=@"发表文字";
                 [navi pushViewController:postWordVC animated:YES];
                 
                 break;

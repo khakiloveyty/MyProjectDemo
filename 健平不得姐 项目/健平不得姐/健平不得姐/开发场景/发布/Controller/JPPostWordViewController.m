@@ -32,6 +32,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    [self.view endEditing:YES];//以防键盘没收回
     [self.textView becomeFirstResponder];
 }
 

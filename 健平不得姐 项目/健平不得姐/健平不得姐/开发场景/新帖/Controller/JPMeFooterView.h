@@ -7,14 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class JPMeFooterView;
-
-@protocol JPMeFooterViewDelegate <NSObject>
-
--(void)requestSuccess;
-
-@end
 
 @interface JPMeFooterView : UIView
-@property(nonatomic,weak)id<JPMeFooterViewDelegate>delegate;
+@property(nonatomic,copy)void (^requestSuccess)();
 @end

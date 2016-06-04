@@ -36,7 +36,7 @@
     //强引用了self.progress.progressBlock，里面又引用了self，造成循环引用，需要标识self为弱引用再在block中使用
     __weak typeof(self) weakSelf=self;
     self.progress.progressBlock=^(float progress){
-        JPLog(@"%f",progress);
+//        JPLog(@"%f",progress);
         weakSelf.progressView.progress=progress;
         weakSelf.progressView.hidden=(progress==1.0);
     };

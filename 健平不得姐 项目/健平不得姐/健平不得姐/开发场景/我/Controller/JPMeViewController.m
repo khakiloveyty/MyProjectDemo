@@ -10,10 +10,6 @@
 #import "JPMeCell.h"
 #import "JPMeFooterView.h"
 
-@interface JPMeViewController () <JPMeFooterViewDelegate>
-
-@end
-
 @implementation JPMeViewController
 
 - (void)viewDidLoad {
@@ -54,7 +50,14 @@
     //设置表尾视图
     JPMeFooterView *footerView=[[JPMeFooterView alloc] init];
     footerView.height=200;
-    footerView.delegate=self;
+    
+    __weak typeof(self) weakSelf=self;
+    footerView.requestSuccess=^{
+        JPMeFooterView *footerView=(JPMeFooterView *)weakSelf.tableView.tableFooterView;
+        weakSelf.tableView.tableFooterView=nil;
+        weakSelf.tableView.tableFooterView=footerView;
+    };
+    
     self.tableView.tableFooterView=footerView;
 }
 
@@ -63,11 +66,11 @@
 }
 
 -(void)setting{
-    JPLog(@"haha");
+    JPLog(@"设置");
 }
 
 -(void)moon{
-    JPLog(@"haha");
+    JPLog(@"夜间模式");
 }
 
 #pragma mark - Table view data source
@@ -98,15 +101,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-#pragma mark - JPMeFooterViewDelegate
-
--(void)requestSuccess{
-    //tableFooterView高度改变了，要重新设置tableFooterView才可以让tableView知道tableFooterView的新高度
-    JPMeFooterView *footerView=(JPMeFooterView *)self.tableView.tableFooterView;
-    self.tableView.tableFooterView=nil;
-    self.tableView.tableFooterView=footerView;
 }
 
 @end
