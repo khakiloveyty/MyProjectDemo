@@ -9,6 +9,7 @@
 #import "JPMeViewController.h"
 #import "JPMeCell.h"
 #import "JPMeFooterView.h"
+#import "JPSettingViewController.h"
 
 @implementation JPMeViewController
 
@@ -67,6 +68,8 @@
 
 -(void)setting{
     JPLog(@"设置");
+    JPSettingViewController *settingVC=[[JPSettingViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 -(void)moon{

@@ -21,6 +21,7 @@
 		6F61639E1D01356A00437742 /* JPAddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F61639D1D01356A00437742 /* JPAddTagViewController.m */; };
 		6F6163A11D01867300437742 /* JPTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A01D01867300437742 /* JPTagButton.m */; };
 		6F6163A41D01A30300437742 /* JPTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A31D01A30300437742 /* JPTagTextField.m */; };
+		6F6163A71D02BA4500437742 /* JPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A61D02BA4500437742 /* JPSettingViewController.m */; };
 		6F6C21E31CE47810000BE077 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C21E21CE47810000BE077 /* main.m */; };
 		6F6C21E61CE47811000BE077 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C21E51CE47811000BE077 /* AppDelegate.m */; };
 		6F6C21EE1CE47811000BE077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F6C21ED1CE47811000BE077 /* Assets.xcassets */; };
@@ -138,6 +139,8 @@
 		6F6163A01D01867300437742 /* JPTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTagButton.m; sourceTree = "<group>"; };
 		6F6163A21D01A30300437742 /* JPTagTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTagTextField.h; sourceTree = "<group>"; };
 		6F6163A31D01A30300437742 /* JPTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTagTextField.m; sourceTree = "<group>"; };
+		6F6163A51D02BA4500437742 /* JPSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSettingViewController.h; sourceTree = "<group>"; };
+		6F6163A61D02BA4500437742 /* JPSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSettingViewController.m; sourceTree = "<group>"; };
 		6F6C21DE1CE47810000BE077 /* 健平不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "健平不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6C21E21CE47810000BE077 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F6C21E41CE47810000BE077 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -550,6 +553,8 @@
 				6F94E6521CFF05D4005D407C /* JPWebViewController.h */,
 				6F94E6531CFF05D4005D407C /* JPWebViewController.m */,
 				6F94E6541CFF05D4005D407C /* JPWebViewController.xib */,
+				6F6163A51D02BA4500437742 /* JPSettingViewController.h */,
+				6F6163A61D02BA4500437742 /* JPSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1012,6 +1017,7 @@
 				6F6C227A1CE5B47A000BE077 /* JPRecommendViewController.m in Sources */,
 				6F94E64B1CFECC4C005D407C /* JPMeSquare.m in Sources */,
 				6F6C21E61CE47811000BE077 /* AppDelegate.m in Sources */,
+				6F6163A71D02BA4500437742 /* JPSettingViewController.m in Sources */,
 				6F25E5631CEEC6C600587A75 /* JPEssenceTitleCell.m in Sources */,
 				6F6C22701CE57D3F000BE077 /* JPNavigationViewController.m in Sources */,
 				6F8D1AB01CEE00700056FB0C /* NSDate+Extension.m in Sources */,
