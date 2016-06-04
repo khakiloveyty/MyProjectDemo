@@ -22,5 +22,6 @@
 #import "JPConst.h"
 #import "UIImage+Extension.h"
 #import "UIImageView+JPCircleHeaderImage.h"
+#import "JPLoginTool.h"
 
 #endif /* PrefixHeader_pch */

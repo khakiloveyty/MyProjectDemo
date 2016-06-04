@@ -239,10 +239,14 @@
     
     UIAlertAction *collectAction=[UIAlertAction actionWithTitle:@"收藏" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         JPLog(@"收藏");
+        NSString *uid=[JPLoginTool getUidAndGoLogin:YES];
+        if (uid==nil) return ;
     }];
     
     UIAlertAction *reportAction=[UIAlertAction actionWithTitle:@"举报" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         JPLog(@"举报");
+        NSString *uid=[JPLoginTool getUidAndGoLogin:YES];
+        if (uid==nil) return ;
     }];
     
     UIAlertAction *cancelAction=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];

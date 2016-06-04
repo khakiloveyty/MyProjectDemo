@@ -22,6 +22,7 @@
 		6F6163A11D01867300437742 /* JPTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A01D01867300437742 /* JPTagButton.m */; };
 		6F6163A41D01A30300437742 /* JPTagTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A31D01A30300437742 /* JPTagTextField.m */; };
 		6F6163A71D02BA4500437742 /* JPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A61D02BA4500437742 /* JPSettingViewController.m */; };
+		6F6163AA1D02DE3A00437742 /* JPLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6163A91D02DE3A00437742 /* JPLoginTool.m */; };
 		6F6C21E31CE47810000BE077 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C21E21CE47810000BE077 /* main.m */; };
 		6F6C21E61CE47811000BE077 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C21E51CE47811000BE077 /* AppDelegate.m */; };
 		6F6C21EE1CE47811000BE077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F6C21ED1CE47811000BE077 /* Assets.xcassets */; };
@@ -141,6 +142,8 @@
 		6F6163A31D01A30300437742 /* JPTagTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTagTextField.m; sourceTree = "<group>"; };
 		6F6163A51D02BA4500437742 /* JPSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSettingViewController.h; sourceTree = "<group>"; };
 		6F6163A61D02BA4500437742 /* JPSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSettingViewController.m; sourceTree = "<group>"; };
+		6F6163A81D02DE3A00437742 /* JPLoginTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLoginTool.h; sourceTree = "<group>"; };
+		6F6163A91D02DE3A00437742 /* JPLoginTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLoginTool.m; sourceTree = "<group>"; };
 		6F6C21DE1CE47810000BE077 /* 健平不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "健平不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6C21E21CE47810000BE077 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F6C21E41CE47810000BE077 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -675,6 +678,8 @@
 				6F861B081CEB2A44009DF540 /* JPPushGuideView.xib */,
 				6F6E89141CFC128C001AECCD /* JPTopWindow.h */,
 				6F6E89151CFC128C001AECCD /* JPTopWindow.m */,
+				6F6163A81D02DE3A00437742 /* JPLoginTool.h */,
+				6F6163A91D02DE3A00437742 /* JPLoginTool.m */,
 			);
 			path = "其他";
 			sourceTree = "<group>";
@@ -1007,6 +1012,7 @@
 				6F8D2C371CF821D000101AC6 /* JPTopicVideoView.m in Sources */,
 				6F25E54F1CEEC2F400587A75 /* JPTopicesViewController.m in Sources */,
 				6F6C22801CE5CAF4000BE077 /* JPRecommendType.m in Sources */,
+				6F6163AA1D02DE3A00437742 /* JPLoginTool.m in Sources */,
 				6F94E6341CFD74C7005D407C /* UIImage+Extension.m in Sources */,
 				6F6C228D1CE5E6F0000BE077 /* JPRecommendUser.m in Sources */,
 				6F6C22841CE5CEEC000BE077 /* JPRecommendTypeCell.m in Sources */,
