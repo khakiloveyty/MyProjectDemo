@@ -67,7 +67,7 @@
         
         size += [attrs fileSize];
     }
-    JPLog(@"%lf",size*1.0/1024/1024);
+//    JPLog(@"%lf",size*1.0/1024/1024);
 }
 
 #pragma mark - Table view data source
