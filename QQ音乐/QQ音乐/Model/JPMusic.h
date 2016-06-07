@@ -9,10 +9,21 @@
 #import <Foundation/Foundation.h>
 
 @interface JPMusic : NSObject
+/** 歌手名 */
 @property(nonatomic,copy)NSString *singer;
+
+/** 歌曲文件名 */
 @property(nonatomic,copy)NSString *filename;
+
+/** 歌曲图标 */
 @property(nonatomic,copy)NSString *icon;
+
+/** 歌曲名 */
 @property(nonatomic,copy)NSString *name;
+
+/** 歌词文件名 */
 @property(nonatomic,copy)NSString *lrcname;
+
+/** 歌手图标 */
 @property(nonatomic,copy)NSString *singerIcon;
 @end

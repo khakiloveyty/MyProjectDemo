@@ -61,6 +61,7 @@
 		6F770A351D06C8AE00B6FC56 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A341D06C8AE00B6FC56 /* Foundation+Log.m */; };
 		6F770A381D06C97C00B6FC56 /* JPMusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A371D06C97C00B6FC56 /* JPMusicTool.m */; };
 		6F770A3B1D06C9B200B6FC56 /* JPMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A3A1D06C9B200B6FC56 /* JPMusic.m */; };
+		6F770A3E1D06D84C00B6FC56 /* JPAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A3D1D06D84C00B6FC56 /* JPAudioTool.m */; };
 		9CB93C70224361F509B07C22 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEDCB4D584C96484FA7625C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,8 @@
 		6F770A371D06C97C00B6FC56 /* JPMusicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMusicTool.m; sourceTree = "<group>"; };
 		6F770A391D06C9B200B6FC56 /* JPMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMusic.h; sourceTree = "<group>"; };
 		6F770A3A1D06C9B200B6FC56 /* JPMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMusic.m; sourceTree = "<group>"; };
+		6F770A3C1D06D84C00B6FC56 /* JPAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAudioTool.h; sourceTree = "<group>"; };
+		6F770A3D1D06D84C00B6FC56 /* JPAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAudioTool.m; sourceTree = "<group>"; };
 		B1A6322668C538F349D3C3D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C7AFC9EFBFE8D25FC7ED1EAD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,6 +361,8 @@
 			children = (
 				6F770A361D06C97C00B6FC56 /* JPMusicTool.h */,
 				6F770A371D06C97C00B6FC56 /* JPMusicTool.m */,
+				6F770A3C1D06D84C00B6FC56 /* JPAudioTool.h */,
+				6F770A3D1D06D84C00B6FC56 /* JPAudioTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -617,6 +622,7 @@
 				6F77099E1D06A3C200B6FC56 /* main.m in Sources */,
 				6F770A331D06B5C800B6FC56 /* UIImage+BoxBlur.m in Sources */,
 				6F770A381D06C97C00B6FC56 /* JPMusicTool.m in Sources */,
+				6F770A3E1D06D84C00B6FC56 /* JPAudioTool.m in Sources */,
 				6F770A321D06B5C800B6FC56 /* DRNRealTimeBlurView.m in Sources */,
 				6F770A351D06C8AE00B6FC56 /* Foundation+Log.m in Sources */,
 				6F770A3B1D06C9B200B6FC56 /* JPMusic.m in Sources */,
