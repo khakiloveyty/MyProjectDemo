@@ -62,6 +62,7 @@
 		6F770A381D06C97C00B6FC56 /* JPMusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A371D06C97C00B6FC56 /* JPMusicTool.m */; };
 		6F770A3B1D06C9B200B6FC56 /* JPMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A3A1D06C9B200B6FC56 /* JPMusic.m */; };
 		6F770A3E1D06D84C00B6FC56 /* JPAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A3D1D06D84C00B6FC56 /* JPAudioTool.m */; };
+		6F8F0A391D0D063B002BF0F7 /* NSString+JPTimeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F0A381D0D063B002BF0F7 /* NSString+JPTimeExtension.m */; };
 		9CB93C70224361F509B07C22 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEDCB4D584C96484FA7625C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,8 @@
 		6F770A3A1D06C9B200B6FC56 /* JPMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMusic.m; sourceTree = "<group>"; };
 		6F770A3C1D06D84C00B6FC56 /* JPAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAudioTool.h; sourceTree = "<group>"; };
 		6F770A3D1D06D84C00B6FC56 /* JPAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAudioTool.m; sourceTree = "<group>"; };
+		6F8F0A371D0D063B002BF0F7 /* NSString+JPTimeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JPTimeExtension.h"; sourceTree = "<group>"; };
+		6F8F0A381D0D063B002BF0F7 /* NSString+JPTimeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JPTimeExtension.m"; sourceTree = "<group>"; };
 		B1A6322668C538F349D3C3D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C7AFC9EFBFE8D25FC7ED1EAD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +216,7 @@
 				6F770A261D06AE2F00B6FC56 /* View */,
 				6F770A251D06AE2D00B6FC56 /* Model */,
 				6F770A291D06AE4100B6FC56 /* Tool */,
+				6F8F0A361D0D060D002BF0F7 /* Category */,
 				6F770A281D06AE3F00B6FC56 /* Other */,
 				6F7709A51D06A3C200B6FC56 /* Main.storyboard */,
 				6F77099C1D06A3C200B6FC56 /* Supporting Files */,
@@ -376,6 +380,15 @@
 				6F770A311D06B5C800B6FC56 /* UIImage+BoxBlur.m */,
 			);
 			path = DRNRealTimeBlur;
+			sourceTree = "<group>";
+		};
+		6F8F0A361D0D060D002BF0F7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6F8F0A371D0D063B002BF0F7 /* NSString+JPTimeExtension.h */,
+				6F8F0A381D0D063B002BF0F7 /* NSString+JPTimeExtension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		8016B5BBB0813C66F75192F9 /* Frameworks */ = {
@@ -617,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F8F0A391D0D063B002BF0F7 /* NSString+JPTimeExtension.m in Sources */,
 				6F770A2C1D06AF0500B6FC56 /* JPPlayingViewController.m in Sources */,
 				6F7709A11D06A3C200B6FC56 /* AppDelegate.m in Sources */,
 				6F77099E1D06A3C200B6FC56 /* main.m in Sources */,

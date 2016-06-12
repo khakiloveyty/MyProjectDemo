@@ -11,6 +11,7 @@
 #import "JPMusicTool.h"
 #import "JPMusic.h"
 #import "JPAudioTool.h"
+#import "NSString+JPTimeExtension.h"
 
 #define JPRGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
@@ -25,8 +26,15 @@
 // 滑块
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
 
+// 定时器
+@property(nonatomic,strong)NSTimer *progressTimer;
 
-@property(nonatomic,strong)CADisplayLink *link;
+// 当前播放器
+@property(nonatomic,weak)AVAudioPlayer *currentPlayer;
+
+@property (weak, nonatomic) IBOutlet UIButton *playOrPauseBtn;
+@property (weak, nonatomic) IBOutlet UIButton *lastBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
 @end
 
 @implementation JPPlayingViewController
@@ -44,12 +52,12 @@
     [self setupBasic];
     
     [self startPlayingMusic];
-   
 }
 
 #pragma mark - 添加毛玻璃效果
 
 -(void)setupBlurView{
+    
     UIToolbar *toolbar=[[UIToolbar alloc] init];
     [toolbar setBarStyle:UIBarStyleBlack];
     [self.albumView addSubview:toolbar];
@@ -58,10 +66,11 @@
     
     //Masonry框架：添加约束
     [toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.albumView.mas_top);
-        make.bottom.equalTo(self.albumView.mas_bottom);
-        make.leading.equalTo(self.albumView.mas_leading);
-        make.trailing.equalTo(self.albumView.mas_trailing);
+//        make.top.equalTo(self.albumView.mas_top);
+//        make.bottom.equalTo(self.albumView.mas_bottom);
+//        make.leading.equalTo(self.albumView.mas_leading);
+//        make.trailing.equalTo(self.albumView.mas_trailing);
+        make.edges.equalTo(self.albumView);
     }];
 }
 
@@ -70,13 +79,6 @@
 -(void)setupBasic{
     //设置滑块进度的图片
     [self.progressSlider setThumbImage:[UIImage imageNamed:@"player_slider_playback_thumb"] forState:UIControlStateNormal];
-    
-    CABasicAnimation *anim=[CABasicAnimation animation];
-    anim.keyPath=@"transform.rotation";
-    anim.toValue=@(M_PI*2);
-    anim.duration=10.0;
-    anim.repeatCount=MAXFLOAT;
-    [self.iconView.layer addAnimation:anim forKey:nil];
 }
 
 -(void)viewWillLayoutSubviews{
@@ -107,38 +109,99 @@
     
     //开始播放歌曲
     AVAudioPlayer *currentPlayer=[JPAudioTool playMusicWithSoundName:playingMusic.filename];
+    self.currentPlayer=currentPlayer;
+    
+    //设置播放/暂停按钮样式
+    self.playOrPauseBtn.selected=self.currentPlayer.isPlaying;
     
     //duration：歌曲总时长
     //currentTime：当前播放时长
+    self.totalTimeLabel.text=[NSString stringWithTime:currentPlayer.duration];
+    self.currentTimeLabel.text=[NSString stringWithTime:currentPlayer.currentTime];
     
-    self.totalTimeLabel.text=[self stringWithTime:currentPlayer.duration];
-    self.currentTimeLabel.text=[self stringWithTime:currentPlayer.currentTime];
+    //开始旋转动画
+    [self startIconViewRotation];
+
+    //添加定时器 ---- 更新播放进度
+    [self removeProgressTimer]; //先移除已有的定时器
+    [self addProgressTimer];
     
-    self.progressSlider.value=currentPlayer.currentTime/currentPlayer.duration;
-    
-    _link=[CADisplayLink displayLinkWithTarget:self selector:@selector(playMusic)];
-    [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-//设置时间显示格式
--(NSString *)stringWithTime:(NSTimeInterval)time{
-//    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
-//    formatter.dateFormat=@"mm:ss";
-//    
-//    return [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:time]];
-    
-    NSInteger min=time/60;
-    NSInteger second=(NSInteger)time%60;
-    
-    return [NSString stringWithFormat:@"%02zd:%02zd",min,second];
+//添加旋转动画
+-(void)startIconViewRotation{
+    //设置中间图片旋转
+    CABasicAnimation *anim=[CABasicAnimation animation];
+    anim.keyPath=@"transform.rotation.z";
+    anim.fromValue=@0;
+    anim.toValue=@(M_PI*2);
+    anim.duration=20.0;
+    anim.repeatCount=MAXFLOAT;
+    [self.iconView.layer addAnimation:anim forKey:nil];
 }
 
--(void)playMusic{
-    JPMusic *playingMusic=[JPMusicTool playingMusic];
-    AVAudioPlayer *currentPlayer=[JPAudioTool playMusicWithSoundName:playingMusic.filename];
+#pragma mark - 定时器操作
+
+//添加定时器
+-(void)addProgressTimer{
+    //先刷新播放进度
+    [self updateProgressInfo];
     
-    self.currentTimeLabel.text=[self stringWithTime:currentPlayer.currentTime];
-    self.progressSlider.value=currentPlayer.currentTime/currentPlayer.duration;
+    self.progressTimer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressInfo) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.progressTimer forMode:NSRunLoopCommonModes];
+}
+
+//刷新播放进度
+-(void)updateProgressInfo{
+    self.currentTimeLabel.text=[NSString stringWithTime:self.currentPlayer.currentTime];
+    self.progressSlider.value=self.currentPlayer.currentTime/self.currentPlayer.duration;
+}
+
+//移除定时器
+-(void)removeProgressTimer{
+    if (self.progressTimer) {
+        [self.progressTimer invalidate];
+        self.progressTimer=nil;
+    }
+}
+
+#pragma mark - 监听progressSlider的事件处理（监听的是中间滑块）
+
+//开始点击（touch down）
+- (IBAction)startSlide {
+    //移除定时器
+    [self removeProgressTimer];
+}
+
+//进度值改变（Value Changed）
+- (IBAction)slideValueChange {
+    //刷新进度
+    self.currentTimeLabel.text=[NSString stringWithTime:self.progressSlider.value*self.currentPlayer.duration];
+}
+
+//结束点击（touch up inside、touch up outside）
+- (IBAction)endSlide {
+    
+    //播放拖拽的进度位置
+    self.currentPlayer.currentTime=self.progressSlider.value*self.currentPlayer.duration;
+    
+    //添加定时器
+   [self addProgressTimer];
+}
+
+//给progressSlider添加点击手势，监听点击
+- (IBAction)sliderClick:(UITapGestureRecognizer *)sender {
+    //获取点击的点
+    CGPoint point=[sender locationInView:sender.view];
+    
+    //获取点击的点在progressSlider宽度的比例
+    CGFloat sliderValue=point.x/self.progressSlider.bounds.size.width;
+    
+    //更改播放进度
+    self.currentPlayer.currentTime=sliderValue*self.currentPlayer.duration;
+    
+    //更新滑块位置
+    [self updateProgressInfo];
 }
 
 @end

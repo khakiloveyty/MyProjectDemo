@@ -99,6 +99,13 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hju-nc-SmL">
                                         <rect key="frame" x="48" y="6" width="504" height="31"/>
                                         <color key="minimumTrackTintColor" red="0.14901960780000001" green="0.73333333329999995" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="endSlide" destination="BYZ-38-t0r" eventType="touchUpOutside" id="I8E-Ep-ijp"/>
+                                            <action selector="endSlide" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ytm-FC-HNS"/>
+                                            <action selector="slideValueChange" destination="BYZ-38-t0r" eventType="valueChanged" id="rxC-Ct-AeX"/>
+                                            <action selector="startSlide" destination="BYZ-38-t0r" eventType="touchDown" id="pCj-Kx-abA"/>
+                                            <outletCollection property="gestureRecognizers" destination="TaT-p9-WB6" appends="YES" id="Hfe-Pe-3hX"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-2Z-piw" userLabel="播放时长">
                                         <rect key="frame" x="0.0" y="13" width="50" height="16"/>
@@ -179,6 +186,9 @@
                         <outlet property="albumView" destination="x6r-FL-Z21" id="A33-DX-5zD"/>
                         <outlet property="currentTimeLabel" destination="g9S-2Z-piw" id="Erl-Cg-Kvj"/>
                         <outlet property="iconView" destination="NNf-qQ-tIB" id="abg-P3-SWc"/>
+                        <outlet property="lastBtn" destination="yx2-vh-Abh" id="6R1-UV-glg"/>
+                        <outlet property="nextBtn" destination="crc-7Y-O3m" id="UBU-OE-Yhy"/>
+                        <outlet property="playOrPauseBtn" destination="kK0-Nh-I2m" id="j4J-ay-znb"/>
                         <outlet property="progressSlider" destination="Hju-nc-SmL" id="1t8-vi-iaA"/>
                         <outlet property="singerLabel" destination="Bwn-Du-Bgj" id="o9q-tg-Rv0"/>
                         <outlet property="songLabel" destination="Htf-Tv-D3D" id="1eZ-2C-kPH"/>
@@ -186,6 +196,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TaT-p9-WB6">
+                    <connections>
+                        <action selector="sliderClick:" destination="BYZ-38-t0r" id="fe7-da-bT5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="340" y="418"/>
         </scene>
