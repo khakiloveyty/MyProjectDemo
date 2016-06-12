@@ -6,6 +6,8 @@
 //  Copyright © 2016年 cb2015. All rights reserved.
 //
 
+// **** 提取歌曲模型工具类 ****
+
 #import <Foundation/Foundation.h>
 @class JPMusic;
 

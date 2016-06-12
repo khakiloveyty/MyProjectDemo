@@ -6,6 +6,8 @@
 //  Copyright © 2016年 cb2015. All rights reserved.
 //
 
+// **** 歌曲模型类 ****
+
 #import <Foundation/Foundation.h>
 
 @interface JPMusic : NSObject

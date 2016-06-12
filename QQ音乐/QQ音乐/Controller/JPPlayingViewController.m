@@ -31,6 +31,7 @@
 
 @implementation JPPlayingViewController
 
+//设置状态栏为轻色系
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
@@ -55,7 +56,7 @@
     
     toolbar.translatesAutoresizingMaskIntoConstraints=NO; //如果是从代码层面开始使用Autolayout,需要对使用的View的translatesAutoresizingMaskIntoConstraints的属性设置为NO.
     
-    //添加约束
+    //Masonry框架：添加约束
     [toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.albumView.mas_top);
         make.bottom.equalTo(self.albumView.mas_bottom);
@@ -67,13 +68,8 @@
 #pragma mark - 基本配置
 
 -(void)setupBasic{
-    //设置滑块的图片
+    //设置滑块进度的图片
     [self.progressSlider setThumbImage:[UIImage imageNamed:@"player_slider_playback_thumb"] forState:UIControlStateNormal];
-    
-    //设置图标边线
-    self.iconView.layer.masksToBounds=YES;
-    self.iconView.layer.borderColor=JPRGB(36, 36, 36).CGColor;
-    self.iconView.layer.borderWidth=8;
     
     CABasicAnimation *anim=[CABasicAnimation animation];
     anim.keyPath=@"transform.rotation";
@@ -86,6 +82,12 @@
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     
+    //设置图标边线
+    self.iconView.layer.masksToBounds=YES;
+    self.iconView.layer.borderColor=JPRGB(36, 36, 36).CGColor;
+    self.iconView.layer.borderWidth=8;
+    
+    //在这里才能获取准确的iconView的真实尺寸（如果在viewDidLoad里设置，获取的尺寸是故事版里面的尺寸，重新布局之后尺寸则会因约束而改变）
     self.iconView.layer.cornerRadius=self.iconView.bounds.size.height*0.5;
     
 }
@@ -106,8 +108,10 @@
     //开始播放歌曲
     AVAudioPlayer *currentPlayer=[JPAudioTool playMusicWithSoundName:playingMusic.filename];
     
-    self.totalTimeLabel.text=[self stringWithTime:currentPlayer.duration];
+    //duration：歌曲总时长
+    //currentTime：当前播放时长
     
+    self.totalTimeLabel.text=[self stringWithTime:currentPlayer.duration];
     self.currentTimeLabel.text=[self stringWithTime:currentPlayer.currentTime];
     
     self.progressSlider.value=currentPlayer.currentTime/currentPlayer.duration;
@@ -116,11 +120,17 @@
     [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
+//设置时间显示格式
 -(NSString *)stringWithTime:(NSTimeInterval)time{
-    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
-    formatter.dateFormat=@"mm:ss";
+//    NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
+//    formatter.dateFormat=@"mm:ss";
+//    
+//    return [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:time]];
     
-    return [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:time]];
+    NSInteger min=time/60;
+    NSInteger second=(NSInteger)time%60;
+    
+    return [NSString stringWithFormat:@"%02zd:%02zd",min,second];
 }
 
 -(void)playMusic{

@@ -6,6 +6,8 @@
 //  Copyright © 2016年 cb2015. All rights reserved.
 //
 
+// **** 播放歌曲工具类 ****
+
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -13,7 +15,6 @@
 
 /** 播放声音文件 */
 +(void)playSoundWithSoundName:(NSString *)soundName;
-
 
 
 /** 播放音乐文件 */
