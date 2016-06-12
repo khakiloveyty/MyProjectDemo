@@ -77,6 +77,9 @@
                                         </constraints>
                                         <state key="normal" image="player_btn_play_normal"/>
                                         <state key="selected" image="player_btn_pause_normal"/>
+                                        <connections>
+                                            <action selector="playOrPause" destination="BYZ-38-t0r" eventType="touchUpInside" id="96K-hG-xEc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-vh-Abh" userLabel="上一首">
                                         <rect key="frame" x="174" y="56" width="64" height="64"/>
@@ -86,6 +89,9 @@
                                         </constraints>
                                         <state key="normal" image="player_btn_pre_normal"/>
                                         <state key="highlighted" image="player_btn_pre_highlight"/>
+                                        <connections>
+                                            <action selector="last" destination="BYZ-38-t0r" eventType="touchUpInside" id="43J-3p-A36"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crc-7Y-O3m" userLabel="下一首">
                                         <rect key="frame" x="362" y="56" width="64" height="64"/>
@@ -95,6 +101,9 @@
                                         </constraints>
                                         <state key="normal" image="player_btn_next_normal"/>
                                         <state key="highlighted" image="player_btn_next_highlight"/>
+                                        <connections>
+                                            <action selector="next" destination="BYZ-38-t0r" eventType="touchUpInside" id="REb-eU-dnl"/>
+                                        </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hju-nc-SmL">
                                         <rect key="frame" x="48" y="6" width="504" height="31"/>
@@ -156,12 +165,22 @@
                                     <constraint firstAttribute="width" secondItem="NNf-qQ-tIB" secondAttribute="height" multiplier="1:1" id="JRU-NU-0to"/>
                                 </constraints>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1I-Da-zDS" customClass="JPLrcsScrollView">
+                                <rect key="frame" x="0.0" y="100" width="600" height="350"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Av2-pU-r4w"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="G6z-iK-DRK" secondAttribute="trailing" id="0sa-9M-nr8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="x6r-FL-Z21" secondAttribute="bottom" id="5e3-VH-tRK"/>
+                            <constraint firstAttribute="trailing" secondItem="M1I-Da-zDS" secondAttribute="trailing" id="6Sq-o5-s4m"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G6z-iK-DRK" secondAttribute="bottom" id="8J6-E8-w09"/>
+                            <constraint firstItem="G6z-iK-DRK" firstAttribute="top" secondItem="M1I-Da-zDS" secondAttribute="bottom" id="CxP-kK-lex"/>
+                            <constraint firstItem="M1I-Da-zDS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H7f-pD-mzj"/>
+                            <constraint firstItem="M1I-Da-zDS" firstAttribute="top" secondItem="dk4-tA-HAp" secondAttribute="bottom" id="Hte-RJ-wxm"/>
                             <constraint firstItem="dk4-tA-HAp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ld0-EF-hKv"/>
                             <constraint firstItem="NNf-qQ-tIB" firstAttribute="top" secondItem="dk4-tA-HAp" secondAttribute="bottom" constant="30" id="MKB-s1-XvP"/>
                             <constraint firstItem="G6z-iK-DRK" firstAttribute="top" secondItem="NI1-mi-NGK" secondAttribute="bottom" constant="20" id="Oj4-60-W4e"/>
@@ -187,6 +206,8 @@
                         <outlet property="currentTimeLabel" destination="g9S-2Z-piw" id="Erl-Cg-Kvj"/>
                         <outlet property="iconView" destination="NNf-qQ-tIB" id="abg-P3-SWc"/>
                         <outlet property="lastBtn" destination="yx2-vh-Abh" id="6R1-UV-glg"/>
+                        <outlet property="lrcsLabel" destination="NI1-mi-NGK" id="5Hh-SY-Nlf"/>
+                        <outlet property="lrcsScrollView" destination="M1I-Da-zDS" id="7im-A8-9q4"/>
                         <outlet property="nextBtn" destination="crc-7Y-O3m" id="UBU-OE-Yhy"/>
                         <outlet property="playOrPauseBtn" destination="kK0-Nh-I2m" id="j4J-ay-znb"/>
                         <outlet property="progressSlider" destination="Hju-nc-SmL" id="1t8-vi-iaA"/>
