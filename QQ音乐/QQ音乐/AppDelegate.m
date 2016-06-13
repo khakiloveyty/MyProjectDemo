@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    /*
+        1.首先要在项目的 Capabilities 中开启 Background Modes
+        2.然后选择 Audio,AirPlay,and Picture in Picture
+     */
+    
+    //1.获取音频会话
+    AVAudioSession *session=[AVAudioSession sharedInstance];
+    
+    //2.设置后台播放类别（AVAudioSessionCategoryPlayback：后台播放类别）
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    //3.激活会话
+    [session setActive:YES error:nil];
+    
     return YES;
 }
 

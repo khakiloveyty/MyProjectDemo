@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Playing View Controller-->
@@ -18,8 +19,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C17-Y1-zjn" userLabel="不动的背景图片">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dzq.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x6r-FL-Z21" userLabel="背景图片">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HCb-Z7-VLW" userLabel="不动的头像">
+                                <rect key="frame" x="174" y="130" width="252" height="252"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HCb-Z7-VLW" secondAttribute="height" multiplier="1:1" id="9ji-cV-hh2"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dzq.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NNf-qQ-tIB" userLabel="头像">
+                                <rect key="frame" x="174" y="130" width="252" height="252"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NNf-qQ-tIB" secondAttribute="height" multiplier="1:1" id="JRU-NU-0to"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-tA-HAp" userLabel="顶部View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
@@ -119,13 +135,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-2Z-piw" userLabel="播放时长">
                                         <rect key="frame" x="0.0" y="13" width="50" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="0.74967647622699385" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pee-YY-N92" userLabel="歌曲时长">
                                         <rect key="frame" x="550" y="13" width="50" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="0.74967647622699385" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -150,7 +166,7 @@
                                     <constraint firstItem="Hju-nc-SmL" firstAttribute="leading" secondItem="G6z-iK-DRK" secondAttribute="leading" constant="50" id="xbg-SS-UFf"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI1-mi-NGK" userLabel="歌词">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI1-mi-NGK" userLabel="歌词" customClass="JPLrcsLabel">
                                 <rect key="frame" x="279" y="412" width="42" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="fq5-fZ-z7b"/>
@@ -159,12 +175,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dzq.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NNf-qQ-tIB" userLabel="头像">
-                                <rect key="frame" x="174" y="130" width="252" height="252"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="NNf-qQ-tIB" secondAttribute="height" multiplier="1:1" id="JRU-NU-0to"/>
-                                </constraints>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1I-Da-zDS" customClass="JPLrcsScrollView">
                                 <rect key="frame" x="0.0" y="100" width="600" height="350"/>
                                 <connections>
@@ -177,29 +187,30 @@
                             <constraint firstAttribute="trailing" secondItem="G6z-iK-DRK" secondAttribute="trailing" id="0sa-9M-nr8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="x6r-FL-Z21" secondAttribute="bottom" id="5e3-VH-tRK"/>
                             <constraint firstAttribute="trailing" secondItem="M1I-Da-zDS" secondAttribute="trailing" id="6Sq-o5-s4m"/>
+                            <constraint firstItem="NI1-mi-NGK" firstAttribute="top" secondItem="HCb-Z7-VLW" secondAttribute="bottom" constant="30" id="7C3-bS-ZzL"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G6z-iK-DRK" secondAttribute="bottom" id="8J6-E8-w09"/>
+                            <constraint firstItem="HCb-Z7-VLW" firstAttribute="top" secondItem="dk4-tA-HAp" secondAttribute="bottom" constant="30" id="Cfb-Zg-Qag"/>
                             <constraint firstItem="G6z-iK-DRK" firstAttribute="top" secondItem="M1I-Da-zDS" secondAttribute="bottom" id="CxP-kK-lex"/>
                             <constraint firstItem="M1I-Da-zDS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H7f-pD-mzj"/>
                             <constraint firstItem="M1I-Da-zDS" firstAttribute="top" secondItem="dk4-tA-HAp" secondAttribute="bottom" id="Hte-RJ-wxm"/>
+                            <constraint firstAttribute="trailing" secondItem="C17-Y1-zjn" secondAttribute="trailing" id="L57-0o-9Ur"/>
                             <constraint firstItem="dk4-tA-HAp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ld0-EF-hKv"/>
                             <constraint firstItem="NNf-qQ-tIB" firstAttribute="top" secondItem="dk4-tA-HAp" secondAttribute="bottom" constant="30" id="MKB-s1-XvP"/>
                             <constraint firstItem="G6z-iK-DRK" firstAttribute="top" secondItem="NI1-mi-NGK" secondAttribute="bottom" constant="20" id="Oj4-60-W4e"/>
                             <constraint firstItem="NI1-mi-NGK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PtU-cj-UxB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="C17-Y1-zjn" secondAttribute="bottom" id="QTN-Fm-CZZ"/>
                             <constraint firstItem="x6r-FL-Z21" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QlZ-NS-1GD"/>
                             <constraint firstItem="NI1-mi-NGK" firstAttribute="top" secondItem="NNf-qQ-tIB" secondAttribute="bottom" constant="30" id="Rig-mJ-9vZ"/>
                             <constraint firstItem="dk4-tA-HAp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TcM-YU-51p"/>
                             <constraint firstItem="x6r-FL-Z21" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Y4l-8C-0Xc"/>
+                            <constraint firstItem="HCb-Z7-VLW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YIC-Mi-Bxw"/>
                             <constraint firstItem="NNf-qQ-tIB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dYl-WR-TNx"/>
                             <constraint firstAttribute="trailing" secondItem="dk4-tA-HAp" secondAttribute="trailing" id="eWd-7u-Z7W"/>
+                            <constraint firstItem="C17-Y1-zjn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gX0-Bp-1YY"/>
                             <constraint firstItem="G6z-iK-DRK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jBr-ah-HT4"/>
                             <constraint firstAttribute="trailing" secondItem="x6r-FL-Z21" secondAttribute="trailing" id="keK-yN-frp"/>
-                            <constraint firstItem="x6r-FL-Z21" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rpB-dZ-6L7"/>
+                            <constraint firstItem="C17-Y1-zjn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="rdO-fo-boL"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="rpB-dZ-6L7"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="albumView" destination="x6r-FL-Z21" id="A33-DX-5zD"/>
@@ -213,6 +224,8 @@
                         <outlet property="progressSlider" destination="Hju-nc-SmL" id="1t8-vi-iaA"/>
                         <outlet property="singerLabel" destination="Bwn-Du-Bgj" id="o9q-tg-Rv0"/>
                         <outlet property="songLabel" destination="Htf-Tv-D3D" id="1eZ-2C-kPH"/>
+                        <outlet property="staticAlbumView" destination="C17-Y1-zjn" id="9eZ-cA-Vcr"/>
+                        <outlet property="staticIconView" destination="HCb-Z7-VLW" id="9SF-ml-gRf"/>
                         <outlet property="totalTimeLabel" destination="pee-YY-N92" id="Nhj-wF-Jyh"/>
                     </connections>
                 </viewController>

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class JPLrcsLabel;
 
 @interface JPLrcsCell : UITableViewCell
 +(instancetype)lrcsCellWithTableView:(UITableView *)tableView;
+@property(nonatomic,weak,readonly)JPLrcsLabel *lrcsLabel;
 @end

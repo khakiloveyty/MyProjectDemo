@@ -142,5 +142,19 @@
 		<key>icon</key>
 		<string>eason.jpg</string>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>算什么男人</string>
+		<key>filename</key>
+		<string>周杰伦 - 算什么男人.mp3</string>
+		<key>lrcname</key>
+		<string>周杰伦-算什么男人.lrc</string>
+		<key>singer</key>
+		<string>周杰伦</string>
+		<key>singerIcon</key>
+		<string>jay_icon.png</string>
+		<key>icon</key>
+		<string>jay.jpg</string>
+	</dict>
 </array>
 </plist>

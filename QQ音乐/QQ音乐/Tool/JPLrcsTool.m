@@ -26,7 +26,7 @@
     for (NSString *lrcLineString in lrcs) {
         
         //过滤歌词文件中不需要的句子
-        if ([lrcLineString hasPrefix:@"[ti:"] || [lrcLineString hasPrefix:@"[ar:"] || [lrcLineString hasPrefix:@"[al:"] || ![lrcLineString hasPrefix:@"["]) {
+        if ([lrcLineString hasPrefix:@"[ti:"] || [lrcLineString hasPrefix:@"[ar:"] || [lrcLineString hasPrefix:@"[al:"] || [lrcLineString hasPrefix:@"[by"] || ![lrcLineString hasPrefix:@"["]) {
             continue;
         }
         

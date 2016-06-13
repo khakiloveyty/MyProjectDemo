@@ -62,6 +62,9 @@
 		6F770A381D06C97C00B6FC56 /* JPMusicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A371D06C97C00B6FC56 /* JPMusicTool.m */; };
 		6F770A3B1D06C9B200B6FC56 /* JPMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A3A1D06C9B200B6FC56 /* JPMusic.m */; };
 		6F770A3E1D06D84C00B6FC56 /* JPAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F770A3D1D06D84C00B6FC56 /* JPAudioTool.m */; };
+		6F78BAB61D0E47BA001ADDD4 /* JPLrcsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F78BAB51D0E47BA001ADDD4 /* JPLrcsLabel.m */; };
+		6F78BABE1D0E533D001ADDD4 /* 周杰伦-算什么男人.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 6F78BABD1D0E533D001ADDD4 /* 周杰伦-算什么男人.lrc */; };
+		6F78BAC01D0E55AD001ADDD4 /* 周杰伦 - 算什么男人.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F78BABF1D0E55AD001ADDD4 /* 周杰伦 - 算什么男人.mp3 */; };
 		6F8F0A391D0D063B002BF0F7 /* NSString+JPTimeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F0A381D0D063B002BF0F7 /* NSString+JPTimeExtension.m */; };
 		6F8F0A3C1D0D34E9002BF0F7 /* CALayer+PauseAimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F0A3B1D0D34E9002BF0F7 /* CALayer+PauseAimate.m */; };
 		6F8F0A3F1D0D4602002BF0F7 /* JPLrcsScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F0A3E1D0D4602002BF0F7 /* JPLrcsScrollView.m */; };
@@ -158,6 +161,10 @@
 		6F770A3A1D06C9B200B6FC56 /* JPMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMusic.m; sourceTree = "<group>"; };
 		6F770A3C1D06D84C00B6FC56 /* JPAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAudioTool.h; sourceTree = "<group>"; };
 		6F770A3D1D06D84C00B6FC56 /* JPAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPAudioTool.m; sourceTree = "<group>"; };
+		6F78BAB41D0E47BA001ADDD4 /* JPLrcsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPLrcsLabel.h; sourceTree = "<group>"; };
+		6F78BAB51D0E47BA001ADDD4 /* JPLrcsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPLrcsLabel.m; sourceTree = "<group>"; };
+		6F78BABD1D0E533D001ADDD4 /* 周杰伦-算什么男人.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "周杰伦-算什么男人.lrc"; sourceTree = "<group>"; };
+		6F78BABF1D0E55AD001ADDD4 /* 周杰伦 - 算什么男人.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "周杰伦 - 算什么男人.mp3"; sourceTree = "<group>"; };
 		6F8F0A371D0D063B002BF0F7 /* NSString+JPTimeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JPTimeExtension.h"; sourceTree = "<group>"; };
 		6F8F0A381D0D063B002BF0F7 /* NSString+JPTimeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JPTimeExtension.m"; sourceTree = "<group>"; };
 		6F8F0A3A1D0D34E9002BF0F7 /* CALayer+PauseAimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+PauseAimate.h"; sourceTree = "<group>"; };
@@ -320,6 +327,7 @@
 				6F7709ED1D06A4E500B6FC56 /* 309769.lrc */,
 				6F7709EE1D06A4E500B6FC56 /* 339744.lrc */,
 				6F7709EF1D06A4E500B6FC56 /* 月半小夜曲.lrc */,
+				6F78BABD1D0E533D001ADDD4 /* 周杰伦-算什么男人.lrc */,
 			);
 			path = Lrcs;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 				6F7709F81D06A4E500B6FC56 /* 255319.mp3 */,
 				6F7709F91D06A4E500B6FC56 /* 309769.mp3 */,
 				6F7709FA1D06A4E500B6FC56 /* 339744.mp3 */,
+				6F78BABF1D0E55AD001ADDD4 /* 周杰伦 - 算什么男人.mp3 */,
 			);
 			path = MP3s;
 			sourceTree = "<group>";
@@ -359,6 +368,8 @@
 				6F8F0A3E1D0D4602002BF0F7 /* JPLrcsScrollView.m */,
 				6F8F0A401D0D562E002BF0F7 /* JPLrcsCell.h */,
 				6F8F0A411D0D562E002BF0F7 /* JPLrcsCell.m */,
+				6F78BAB41D0E47BA001ADDD4 /* JPLrcsLabel.h */,
+				6F78BAB51D0E47BA001ADDD4 /* JPLrcsLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -503,6 +514,11 @@
 				TargetAttributes = {
 					6F7709981D06A3C200B6FC56 = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					6F7709B11D06A3C200B6FC56 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -575,6 +591,7 @@
 				6F770A191D06A4E500B6FC56 /* 月半小夜曲.lrc in Resources */,
 				6F7709FF1D06A4E500B6FC56 /* dzq_icon@2x.jpg in Resources */,
 				6F770A141D06A4E500B6FC56 /* 14945107.lrc in Resources */,
+				6F78BABE1D0E533D001ADDD4 /* 周杰伦-算什么男人.lrc in Resources */,
 				6F7709A91D06A3C200B6FC56 /* Assets.xcassets in Resources */,
 				6F770A221D06A4E500B6FC56 /* 309769.mp3 in Resources */,
 				6F770A121D06A4E500B6FC56 /* 120125029.lrc in Resources */,
@@ -582,6 +599,7 @@
 				6F770A151D06A4E500B6FC56 /* 235319.lrc in Resources */,
 				6F7709A71D06A3C200B6FC56 /* Main.storyboard in Resources */,
 				6F770A0A1D06A4E500B6FC56 /* nanquan@2x.jpg in Resources */,
+				6F78BAC01D0E55AD001ADDD4 /* 周杰伦 - 算什么男人.mp3 in Resources */,
 				6F770A231D06A4E500B6FC56 /* 339744.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +679,7 @@
 				6F8F0A3C1D0D34E9002BF0F7 /* CALayer+PauseAimate.m in Sources */,
 				6F77099E1D06A3C200B6FC56 /* main.m in Sources */,
 				6F8F0A3F1D0D4602002BF0F7 /* JPLrcsScrollView.m in Sources */,
+				6F78BAB61D0E47BA001ADDD4 /* JPLrcsLabel.m in Sources */,
 				6F770A331D06B5C800B6FC56 /* UIImage+BoxBlur.m in Sources */,
 				6FC9B39F1D0D5F0A00418795 /* JPLrcsTool.m in Sources */,
 				6F770A381D06C97C00B6FC56 /* JPMusicTool.m in Sources */,

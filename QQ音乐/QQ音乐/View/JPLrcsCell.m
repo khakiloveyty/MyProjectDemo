@@ -7,6 +7,8 @@
 //
 
 #import "JPLrcsCell.h"
+#import <Masonry.h>
+#import "JPLrcsLabel.h"
 
 @implementation JPLrcsCell
 
@@ -15,12 +17,30 @@
     if (!cell) {
         cell=[[JPLrcsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"JPLrcsCell"];
         cell.backgroundColor=[UIColor clearColor];
-        cell.textLabel.textColor=[UIColor whiteColor];
-        cell.textLabel.font=[UIFont systemFontOfSize:14];
-        cell.textLabel.textAlignment=NSTextAlignmentCenter;
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     return cell;
+}
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+        JPLrcsLabel *lrcsLabel=[[JPLrcsLabel alloc] init];
+        lrcsLabel.textColor=[UIColor whiteColor];
+        lrcsLabel.font=[UIFont systemFontOfSize:14];
+        lrcsLabel.textAlignment=NSTextAlignmentCenter;
+        
+        [self.contentView addSubview:lrcsLabel];
+        _lrcsLabel=lrcsLabel;
+        
+        lrcsLabel.translatesAutoresizingMaskIntoConstraints=NO;
+        
+        [lrcsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(self.contentView);
+        }];
+        
+    }
+    return self;
 }
 
 @end
