@@ -125,6 +125,7 @@
                                         <rect key="frame" x="48" y="6" width="504" height="31"/>
                                         <color key="minimumTrackTintColor" red="0.14901960780000001" green="0.73333333329999995" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <action selector="endSlide" destination="BYZ-38-t0r" eventType="touchCancel" id="3Ot-BG-5LY"/>
                                             <action selector="endSlide" destination="BYZ-38-t0r" eventType="touchUpOutside" id="I8E-Ep-ijp"/>
                                             <action selector="endSlide" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ytm-FC-HNS"/>
                                             <action selector="slideValueChange" destination="BYZ-38-t0r" eventType="valueChanged" id="rxC-Ct-AeX"/>

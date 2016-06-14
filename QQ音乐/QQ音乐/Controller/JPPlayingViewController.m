@@ -51,6 +51,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *staticAlbumView;
 @property(nonatomic,assign,getter=isPauseRotation)BOOL pauseRotation;
 @property(nonatomic,assign)CGRect iconViewFrame;
+@property (nonatomic, assign) CGFloat sliderValue;
 @end
 
 @implementation JPPlayingViewController
@@ -271,14 +272,19 @@
 //进度值改变（Value Changed）
 - (IBAction)slideValueChange {
     //刷新进度
+    self.sliderValue=self.progressSlider.value;
     self.currentTimeLabel.text=[NSString stringWithTime:self.progressSlider.value*self.currentPlayer.duration];
 }
 
 //结束点击（touch up inside、touch up outside）
 - (IBAction)endSlide {
     
+    /*
+     *  这里拿到的self.progressSlider.value是不准确的，所以我用了sliderValue这个属性在调用slideValueChange方法时保存实时的value值
+     */
+    
     //播放拖拽的进度位置
-    self.currentPlayer.currentTime=self.progressSlider.value*self.currentPlayer.duration;
+    self.currentPlayer.currentTime=self.sliderValue*self.currentPlayer.duration;
     
     //添加定时器
    [self addProgressTimer];
