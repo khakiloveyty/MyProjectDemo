@@ -50,6 +50,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *staticIconView;
 @property (weak, nonatomic) IBOutlet UIImageView *staticAlbumView;
 @property(nonatomic,assign,getter=isPauseRotation)BOOL pauseRotation;
+@property(nonatomic,assign)CGRect iconViewFrame;
 @end
 
 @implementation JPPlayingViewController
@@ -102,7 +103,6 @@
     
     //将歌词label给歌词页面引用：用于刷新歌词
     self.lrcsScrollView.lrcsLabel=self.lrcsLabel;
-
 }
 
 -(void)viewWillLayoutSubviews{
@@ -354,6 +354,7 @@
     self.staticIconView.alpha=0;
     
     self.view.userInteractionEnabled=NO;
+    self.iconViewFrame=self.iconView.frame;
     
     [UIView animateWithDuration:0.3 animations:^{
         
@@ -366,9 +367,7 @@
         
     }completion:^(BOOL finished) {
         
-        __block CGRect frame=self.iconView.frame;
-        
-        __block CGFloat y=frame.origin.y;
+        CGRect frame=self.iconView.frame;
     
         frame.origin.y=-100;
         
@@ -389,10 +388,8 @@
             
         }completion:^(BOOL finished) {
         
-            self.iconView.transform=CGAffineTransformMakeScale(1.0, 1.0);
-            frame=self.iconView.frame;
-            frame.origin.y=y;
-            self.iconView.frame=frame;
+            self.iconView.transform=CGAffineTransformIdentity;
+            self.iconView.frame=self.iconViewFrame;
 
             //4.改变界面信息并播放歌曲
             [self startPlayingMusic];
