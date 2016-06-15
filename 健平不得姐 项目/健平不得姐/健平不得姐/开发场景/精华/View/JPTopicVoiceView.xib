@@ -43,6 +43,9 @@
                     <state key="normal" image="playButtonPlay" backgroundImage="playButton"/>
                     <state key="selected" image="playButtonPause" backgroundImage="playButton"/>
                     <state key="highlighted" backgroundImage="playButtonClick"/>
+                    <connections>
+                        <action selector="playVoice:" destination="iN0-l3-epB" eventType="touchUpInside" id="blR-GW-H4z"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,6 +74,7 @@
             </variation>
             <connections>
                 <outlet property="imageView" destination="fqx-B9-Tn9" id="VQK-Uz-sWq"/>
+                <outlet property="playBtn" destination="NfW-27-hQV" id="eDs-UE-eYC"/>
                 <outlet property="playcountLabel" destination="lhA-W4-fGM" id="jGN-tG-a1K"/>
                 <outlet property="voicetimeLabel" destination="yXu-1n-QAd" id="whb-ZP-RHU"/>
             </connections>

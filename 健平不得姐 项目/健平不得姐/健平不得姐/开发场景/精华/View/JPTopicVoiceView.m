@@ -14,9 +14,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *voicetimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playcountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @end
 
 @implementation JPTopicVoiceView
+
+
 
 -(void)awakeFromNib{
     self.autoresizingMask=UIViewAutoresizingNone;//不会随父视图的改变而改变（xib文件有可能会拉伸）
@@ -54,6 +57,22 @@
     NSInteger minute=topic.voicetime/60;
     NSInteger second=topic.voicetime%60;
     self.voicetimeLabel.text=[NSString stringWithFormat:@"%02zd:%02zd",minute,second];
+    
+    self.playBtn.selected=self.topic.isPlaying;
 }
 
+- (IBAction)playVoice:(UIButton *)sender {
+    self.playBtn.selected=!self.playBtn.selected;
+    
+    JPTabBarController *tabBarController=(JPTabBarController *)KeyWindow.rootViewController;
+    
+    if (self.playBtn.selected==YES) {
+        self.topic.playing=YES;
+        AVPlayerItem *item=[AVPlayerItem playerItemWithURL:[NSURL URLWithString:self.topic.voiceuri]];
+        [tabBarController playWithPlayItem:item withTopicType:self.topic.type];
+    }else{
+        [tabBarController pause];
+    }
+
+}
 @end

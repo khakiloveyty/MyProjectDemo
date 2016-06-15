@@ -10,7 +10,7 @@
 #import "JPTopic.h"
 #import "JPProgressView.h"
 
-@interface JPShowPictureViewController ()
+@interface JPShowPictureViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property(nonatomic,weak)UIImageView *imageView;
@@ -26,8 +26,8 @@
     NSString *extension=self.topic.big_image.pathExtension;//取出图片URL的扩展名
     BOOL isgif=[extension.lowercaseString isEqualToString:@"gif"];
     
-    if (self.topic.type==JPPictureTopic && isgif==NO) {
-#warning 图片浏览处理
+    //不是gif才让图片能放大
+    if (isgif==NO) {
         self.scrollView.minimumZoomScale = 1.0;
         self.scrollView.maximumZoomScale = 2.0;
     }
@@ -41,9 +41,22 @@
     //添加图片
     UIImageView *imageView=[[UIImageView alloc] init];
     imageView.userInteractionEnabled=YES;
-    [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(close:)]];
     [self.scrollView addSubview:imageView];
     self.imageView=imageView;
+    
+    //添加手势
+    //单击返回
+    UITapGestureRecognizer *tapGR=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(close:)];
+    [imageView addGestureRecognizer:tapGR];
+    
+    //双击放大、还原
+    UITapGestureRecognizer *doubleTapGR=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(enlargeOrReturn:)];
+    doubleTapGR.numberOfTapsRequired=2;
+    [self.imageView addGestureRecognizer:doubleTapGR];
+    
+    //设置双击优先级比单击高
+    [tapGR requireGestureRecognizerToFail:doubleTapGR];
+    
     
     //设置尺寸
     CGFloat pictureWidth=Screen_Width;
@@ -110,6 +123,33 @@
         [SVProgressHUD showErrorWithStatus:@"保存失败"];
     }else{
         [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return  self.imageView;
+}
+
+//让图片居中（当图片不是在scrollView的顶部，缩放时会在上方留下一截）
+- (void)scrollViewDidZoom:(UIScrollView *)aScrollView{
+    CGFloat offsetX = (aScrollView.bounds.size.width > aScrollView.contentSize.width)?
+    (aScrollView.bounds.size.width - aScrollView.contentSize.width) * 0.5 : 0.0;
+    CGFloat offsetY = (aScrollView.bounds.size.height > aScrollView.contentSize.height)?
+    (aScrollView.bounds.size.height - aScrollView.contentSize.height) * 0.5 : 0.0;
+    self.imageView.center = CGPointMake(aScrollView.contentSize.width * 0.5 + offsetX,aScrollView.contentSize.height * 0.5 + offsetY);
+}
+
+//双击放大、还原
+-(void)enlargeOrReturn:(UITapGestureRecognizer *)doubleTapGR{
+    if (self.scrollView.zoomScale>1) {
+        [self.scrollView setZoomScale:1.0 animated:YES];
+    }else{
+        CGPoint touchPoint = [doubleTapGR locationInView:self.imageView];
+        CGFloat newZoomScale = self.scrollView.maximumZoomScale;
+        CGFloat xsize = self.scrollView.frame.size.width / newZoomScale;
+        CGFloat ysize = self.scrollView.frame.size.height / newZoomScale;
+        [self.scrollView zoomToRect:CGRectMake(touchPoint.x - xsize/2, touchPoint.y - ysize/2, xsize, ysize) animated:YES];
     }
 }
 

@@ -13,9 +13,11 @@
 #import "JPMeViewController.h"
 #import "JPTabBar.h"
 #import "JPNavigationViewController.h"
+#import <AVKit/AVKit.h>
 
 @interface JPTabBarController ()
-
+@property(nonatomic,strong)AVPlayer *player;
+@property(nonatomic,strong)AVPlayerViewController *avViewController;
 @end
 
 @implementation JPTabBarController
@@ -90,5 +92,23 @@
     
 }
 
+-(void)playWithPlayItem:(AVPlayerItem *)playerItem withTopicType:(JPTopicType)type{
+    if (type==JPVoiceTopic) {
+        self.player=[AVPlayer playerWithPlayerItem:playerItem];
+        [self.player play];
+    }else if (type==JPVideoTopic){
+        self.avViewController=[[AVPlayerViewController alloc] init];
+        self.avViewController.player=[AVPlayer playerWithPlayerItem:playerItem];
+        [self presentViewController:self.avViewController animated:YES completion:^{
+            [self.avViewController.player play];
+        }];
+    }
+}
+
+-(void)pause{
+    if (self.player.currentItem) {
+        [self.player pause];
+    }
+}
 
 @end

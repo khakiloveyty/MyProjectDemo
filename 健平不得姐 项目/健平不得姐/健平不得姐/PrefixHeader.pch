@@ -23,5 +23,7 @@
 #import "UIImage+Extension.h"
 #import "UIImageView+JPCircleHeaderImage.h"
 #import "JPLoginTool.h"
+#import <AVFoundation/AVFoundation.h>
+#import "JPTabBarController.h"
 
 #endif /* PrefixHeader_pch */

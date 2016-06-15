@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface JPTabBarController : UITabBarController
-
+-(void)playWithPlayItem:(AVPlayerItem *)playerItem withTopicType:(JPTopicType)type;
+-(void)pause;
 @end

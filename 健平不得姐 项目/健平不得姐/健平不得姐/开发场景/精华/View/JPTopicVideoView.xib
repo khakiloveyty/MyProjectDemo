@@ -41,6 +41,9 @@
                         <constraint firstAttribute="width" constant="71" id="uZN-Wt-uww"/>
                     </constraints>
                     <state key="normal" image="video-play"/>
+                    <connections>
+                        <action selector="playVideo:" destination="iN0-l3-epB" eventType="touchUpInside" id="7Nw-ZT-gDk"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>

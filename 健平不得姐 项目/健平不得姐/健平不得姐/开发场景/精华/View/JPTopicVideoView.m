@@ -56,4 +56,9 @@
     self.videotimeLabel.text=[NSString stringWithFormat:@"%02zd:%02zd",minute,second];
 }
 
+- (IBAction)playVideo:(UIButton *)sender {
+    AVPlayerItem *item=[AVPlayerItem playerItemWithURL:[NSURL URLWithString:self.topic.videouri]];
+    JPTabBarController *tabBarController=(JPTabBarController *)KeyWindow.rootViewController;
+    [tabBarController playWithPlayItem:item withTopicType:self.topic.type];
+}
 @end
