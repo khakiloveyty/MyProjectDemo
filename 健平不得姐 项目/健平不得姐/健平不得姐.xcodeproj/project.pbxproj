@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39FC0DE11D140F32001F4967 /* JPMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FC0DDC1D140F32001F4967 /* JPMeCell.m */; };
+		39FC0DE21D140F32001F4967 /* JPMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FC0DDE1D140F32001F4967 /* JPMeFooterView.m */; };
+		39FC0DE31D140F32001F4967 /* JPMeSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FC0DE01D140F32001F4967 /* JPMeSquareButton.m */; };
+		39FC0DE71D140F3A001F4967 /* JPMeSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FC0DE61D140F3A001F4967 /* JPMeSquare.m */; };
 		6F25E54F1CEEC2F400587A75 /* JPTopicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25E54E1CEEC2F400587A75 /* JPTopicesViewController.m */; };
 		6F25E55C1CEEC69C00587A75 /* JPAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25E5531CEEC69C00587A75 /* JPAllViewController.m */; };
 		6F25E55D1CEEC69C00587A75 /* JPPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F25E5551CEEC69C00587A75 /* JPPictureViewController.m */; };
@@ -83,10 +87,6 @@
 		6F94E6341CFD74C7005D407C /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6331CFD74C7005D407C /* UIImage+Extension.m */; };
 		6F94E63A1CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6391CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m */; };
 		6F94E6421CFE7EFE005D407C /* JPNewTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6411CFE7EFE005D407C /* JPNewTopicViewController.m */; };
-		6F94E6451CFEB7EC005D407C /* JPMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6441CFEB7EC005D407C /* JPMeCell.m */; };
-		6F94E6481CFEC233005D407C /* JPMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6471CFEC233005D407C /* JPMeFooterView.m */; };
-		6F94E64B1CFECC4C005D407C /* JPMeSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E64A1CFECC4C005D407C /* JPMeSquare.m */; };
-		6F94E64E1CFED3D7005D407C /* JPMeSquareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E64D1CFED3D7005D407C /* JPMeSquareButton.m */; };
 		6F94E6551CFF05D4005D407C /* JPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F94E6531CFF05D4005D407C /* JPWebViewController.m */; };
 		6F94E6561CFF05D4005D407C /* JPWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F94E6541CFF05D4005D407C /* JPWebViewController.xib */; };
 		6FE088321CF3156700531509 /* JPShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE088301CF3156700531509 /* JPShowPictureViewController.m */; };
@@ -113,6 +113,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39FC0DDB1D140F32001F4967 /* JPMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMeCell.h; sourceTree = "<group>"; };
+		39FC0DDC1D140F32001F4967 /* JPMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMeCell.m; sourceTree = "<group>"; };
+		39FC0DDD1D140F32001F4967 /* JPMeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMeFooterView.h; sourceTree = "<group>"; };
+		39FC0DDE1D140F32001F4967 /* JPMeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMeFooterView.m; sourceTree = "<group>"; };
+		39FC0DDF1D140F32001F4967 /* JPMeSquareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMeSquareButton.h; sourceTree = "<group>"; };
+		39FC0DE01D140F32001F4967 /* JPMeSquareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMeSquareButton.m; sourceTree = "<group>"; };
+		39FC0DE51D140F3A001F4967 /* JPMeSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMeSquare.h; sourceTree = "<group>"; };
+		39FC0DE61D140F3A001F4967 /* JPMeSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMeSquare.m; sourceTree = "<group>"; };
 		6F25E54D1CEEC2F400587A75 /* JPTopicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPTopicesViewController.h; sourceTree = "<group>"; };
 		6F25E54E1CEEC2F400587A75 /* JPTopicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPTopicesViewController.m; sourceTree = "<group>"; };
 		6F25E5521CEEC69C00587A75 /* JPAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPAllViewController.h; sourceTree = "<group>"; };
@@ -251,14 +259,6 @@
 		6F94E6391CFD81E5005D407C /* UIImageView+JPCircleHeaderImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JPCircleHeaderImage.m"; sourceTree = "<group>"; };
 		6F94E6401CFE7EFE005D407C /* JPNewTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNewTopicViewController.h; sourceTree = "<group>"; };
 		6F94E6411CFE7EFE005D407C /* JPNewTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNewTopicViewController.m; sourceTree = "<group>"; };
-		6F94E6431CFEB7EC005D407C /* JPMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPMeCell.h; path = "健平不得姐/开发场景/新帖/Controller/JPMeCell.h"; sourceTree = SOURCE_ROOT; };
-		6F94E6441CFEB7EC005D407C /* JPMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPMeCell.m; path = "健平不得姐/开发场景/新帖/Controller/JPMeCell.m"; sourceTree = SOURCE_ROOT; };
-		6F94E6461CFEC233005D407C /* JPMeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPMeFooterView.h; path = "健平不得姐/开发场景/新帖/Controller/JPMeFooterView.h"; sourceTree = SOURCE_ROOT; };
-		6F94E6471CFEC233005D407C /* JPMeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPMeFooterView.m; path = "健平不得姐/开发场景/新帖/Controller/JPMeFooterView.m"; sourceTree = SOURCE_ROOT; };
-		6F94E6491CFECC4C005D407C /* JPMeSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPMeSquare.h; path = "健平不得姐/开发场景/新帖/Controller/JPMeSquare.h"; sourceTree = SOURCE_ROOT; };
-		6F94E64A1CFECC4C005D407C /* JPMeSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPMeSquare.m; path = "健平不得姐/开发场景/新帖/Controller/JPMeSquare.m"; sourceTree = SOURCE_ROOT; };
-		6F94E64C1CFED3D7005D407C /* JPMeSquareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPMeSquareButton.h; path = "健平不得姐/开发场景/新帖/Controller/JPMeSquareButton.h"; sourceTree = SOURCE_ROOT; };
-		6F94E64D1CFED3D7005D407C /* JPMeSquareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JPMeSquareButton.m; path = "健平不得姐/开发场景/新帖/Controller/JPMeSquareButton.m"; sourceTree = SOURCE_ROOT; };
 		6F94E6521CFF05D4005D407C /* JPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPWebViewController.h; sourceTree = "<group>"; };
 		6F94E6531CFF05D4005D407C /* JPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPWebViewController.m; sourceTree = "<group>"; };
 		6F94E6541CFF05D4005D407C /* JPWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPWebViewController.xib; sourceTree = "<group>"; };
@@ -298,6 +298,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39FC0DDA1D140F32001F4967 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				39FC0DDB1D140F32001F4967 /* JPMeCell.h */,
+				39FC0DDC1D140F32001F4967 /* JPMeCell.m */,
+				39FC0DDD1D140F32001F4967 /* JPMeFooterView.h */,
+				39FC0DDE1D140F32001F4967 /* JPMeFooterView.m */,
+				39FC0DDF1D140F32001F4967 /* JPMeSquareButton.h */,
+				39FC0DE01D140F32001F4967 /* JPMeSquareButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		39FC0DE41D140F3A001F4967 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39FC0DE51D140F3A001F4967 /* JPMeSquare.h */,
+				39FC0DE61D140F3A001F4967 /* JPMeSquare.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6F25E5511CEEC5E700587A75 /* 垃圾箱 */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,8 +564,8 @@
 			isa = PBXGroup;
 			children = (
 				6F6C22481CE492D2000BE077 /* Controller */,
-				6F6C224C1CE492D2000BE077 /* View */,
-				6F6C224B1CE492D2000BE077 /* Model */,
+				39FC0DDA1D140F32001F4967 /* View */,
+				39FC0DE41D140F3A001F4967 /* Model */,
 			);
 			path = "我";
 			sourceTree = "<group>";
@@ -562,34 +584,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		6F6C224B1CE492D2000BE077 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6F94E6491CFECC4C005D407C /* JPMeSquare.h */,
-				6F94E64A1CFECC4C005D407C /* JPMeSquare.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6F6C224C1CE492D2000BE077 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6F94E6431CFEB7EC005D407C /* JPMeCell.h */,
-				6F94E6441CFEB7EC005D407C /* JPMeCell.m */,
-				6F94E6461CFEC233005D407C /* JPMeFooterView.h */,
-				6F94E6471CFEC233005D407C /* JPMeFooterView.m */,
-				6F94E64C1CFED3D7005D407C /* JPMeSquareButton.h */,
-				6F94E64D1CFED3D7005D407C /* JPMeSquareButton.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		6F6C224D1CE492D2000BE077 /* 新帖 */ = {
 			isa = PBXGroup;
 			children = (
 				6F6C224E1CE492D2000BE077 /* Controller */,
-				6F6C22511CE492D2000BE077 /* Model */,
-				6F6C22521CE492D2000BE077 /* View */,
 			);
 			path = "新帖";
 			sourceTree = "<group>";
@@ -601,20 +599,6 @@
 				6F94E6411CFE7EFE005D407C /* JPNewTopicViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		6F6C22511CE492D2000BE077 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6F6C22521CE492D2000BE077 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		6F6C225D1CE4934E000BE077 /* TabBar */ = {
@@ -1015,13 +999,15 @@
 				6F6163AA1D02DE3A00437742 /* JPLoginTool.m in Sources */,
 				6F94E6341CFD74C7005D407C /* UIImage+Extension.m in Sources */,
 				6F6C228D1CE5E6F0000BE077 /* JPRecommendUser.m in Sources */,
+				39FC0DE11D140F32001F4967 /* JPMeCell.m in Sources */,
 				6F6C22841CE5CEEC000BE077 /* JPRecommendTypeCell.m in Sources */,
 				6F6C226A1CE5704F000BE077 /* UIBarButtonItem+Extension.m in Sources */,
+				39FC0DE21D140F32001F4967 /* JPMeFooterView.m in Sources */,
 				6F25E5661CEEC6E500587A75 /* JPTestViewController.m in Sources */,
 				6F94E6551CFF05D4005D407C /* JPWebViewController.m in Sources */,
 				6F61639B1D0134B900437742 /* JPPlaceholderTextView.m in Sources */,
 				6F6C227A1CE5B47A000BE077 /* JPRecommendViewController.m in Sources */,
-				6F94E64B1CFECC4C005D407C /* JPMeSquare.m in Sources */,
+				39FC0DE71D140F3A001F4967 /* JPMeSquare.m in Sources */,
 				6F6C21E61CE47811000BE077 /* AppDelegate.m in Sources */,
 				6F6163A71D02BA4500437742 /* JPSettingViewController.m in Sources */,
 				6F25E5631CEEC6C600587A75 /* JPEssenceTitleCell.m in Sources */,
@@ -1035,7 +1021,6 @@
 				6F75E3D81D0007A1005F6B9A /* JPPostWordViewController.m in Sources */,
 				6F6C22541CE492D2000BE077 /* JPEssenceViewController.m in Sources */,
 				6F6163961D01198900437742 /* JPAddTagToolbar.m in Sources */,
-				6F94E64E1CFED3D7005D407C /* JPMeSquareButton.m in Sources */,
 				6F8D1AA81CEDBC620056FB0C /* JPConst.m in Sources */,
 				6F25E55F1CEEC69C00587A75 /* JPVoiceViewController.m in Sources */,
 				6F8D1AAC1CEDC6860056FB0C /* JPTopicCell.m in Sources */,
@@ -1043,12 +1028,11 @@
 				6F85C7D11CFABF9200505325 /* JPCommentCell.m in Sources */,
 				6F6C21E31CE47810000BE077 /* main.m in Sources */,
 				6F861B071CEB2A2E009DF540 /* JPPushGuideView.m in Sources */,
-				6F94E6451CFEB7EC005D407C /* JPMeCell.m in Sources */,
 				6F8D2C3F1CF8430000101AC6 /* JPComment.m in Sources */,
 				6F8D1AA51CEDA6360056FB0C /* JPTopic.m in Sources */,
+				39FC0DE31D140F32001F4967 /* JPMeSquareButton.m in Sources */,
 				6F25E55E1CEEC69C00587A75 /* JPVideoViewController.m in Sources */,
 				6F6163A11D01867300437742 /* JPTagButton.m in Sources */,
-				6F94E6481CFEC233005D407C /* JPMeFooterView.m in Sources */,
 				6F6C22531CE492D2000BE077 /* JPFriendTrendsViewController.m in Sources */,
 				6F8D2C3C1CF83FB800101AC6 /* JPUser.m in Sources */,
 			);
