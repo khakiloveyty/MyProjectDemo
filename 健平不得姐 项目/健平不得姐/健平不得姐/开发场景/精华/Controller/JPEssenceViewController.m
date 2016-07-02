@@ -213,6 +213,13 @@
 
 #pragma mark - UIScrollViewDelegate
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (scrollView==self.contentView) {
+        CGFloat itemWidth=self.view.width/self.childViewControllers.count;
+        self.indicatorView.x=(itemWidth-self.indicatorView.width)/2+(itemWidth*(scrollView.contentOffset.x/scrollView.width));
+    }
+}
+
 //调用代码滚动动画停止时会调用该方法，手指滑动停止不会来到这里
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     

@@ -94,9 +94,12 @@
 
 -(void)playWithPlayItem:(AVPlayerItem *)playerItem withTopicType:(JPTopicType)type{
     if (type==JPVoiceTopic) {
-        self.player=[AVPlayer playerWithPlayerItem:playerItem];
+        if (self.player.currentItem!=playerItem) {
+            self.player=[AVPlayer playerWithPlayerItem:playerItem];
+        }
         [self.player play];
     }else if (type==JPVideoTopic){
+        [self.player pause];
         self.avViewController=[[AVPlayerViewController alloc] init];
         self.avViewController.player=[AVPlayer playerWithPlayerItem:playerItem];
         [self presentViewController:self.avViewController animated:YES completion:^{

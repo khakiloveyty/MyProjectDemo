@@ -71,6 +71,7 @@
         AVPlayerItem *item=[AVPlayerItem playerItemWithURL:[NSURL URLWithString:self.topic.voiceuri]];
         [tabBarController playWithPlayItem:item withTopicType:self.topic.type];
     }else{
+        self.topic.playing=NO;
         [tabBarController pause];
     }
 
