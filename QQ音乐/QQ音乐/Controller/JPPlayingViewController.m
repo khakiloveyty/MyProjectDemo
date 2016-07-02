@@ -69,6 +69,21 @@
     [self setupBasic];
     
     [self startPlayingMusic];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startAnimation) name:@"EnterForeground" object:nil];
+}
+
+#pragma mark - 后台返回恢复动画
+
+-(void)startAnimation{
+    CABasicAnimation *anim=(CABasicAnimation *)[self.iconView.layer animationForKey:@"rotation"];
+    if (!anim) {
+        [self startIconViewRotation];
+    }
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - 添加毛玻璃效果
