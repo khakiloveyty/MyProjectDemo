@@ -22,6 +22,8 @@
 @property(nonatomic,strong)NSIndexPath *selectedIndexPath;
 /** 底部滚动视图 */
 @property(nonatomic,weak)UIScrollView *contentView;
+/** 是否点击了标签栏的cell而滚动（是的话不要执行scrollViewDidScroll的方法） */
+@property(nonatomic,assign,getter=isTouchScroll)BOOL touchScroll;
 @end
 
 @implementation JPEssenceViewController
@@ -203,6 +205,9 @@
         //cell滚动
         [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
         
+        //是点击了cell而滚动的，就不要执行scrollViewDidScroll的方法
+        self.touchScroll=YES;
+        
         //底部scrollView滚动
         CGPoint offset=self.contentView.contentOffset;
         offset.x=cell.tag*self.contentView.width;
@@ -214,7 +219,7 @@
 #pragma mark - UIScrollViewDelegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (scrollView==self.contentView) {
+    if (scrollView==self.contentView && self.isTouchScroll==NO) {
         CGFloat itemWidth=self.view.width/self.childViewControllers.count;
         self.indicatorView.x=(itemWidth-self.indicatorView.width)/2+(itemWidth*(scrollView.contentOffset.x/scrollView.width));
     }
@@ -247,7 +252,13 @@
             [scrollView addSubview:vc.view];
         }
         
+        //动画结束后恢复判断标识
+        if (self.isTouchScroll==YES) {
+            self.touchScroll=NO;
+        }
+        
     }
+    
 }
 
 //手指滑动动画停止时会调用该方法
