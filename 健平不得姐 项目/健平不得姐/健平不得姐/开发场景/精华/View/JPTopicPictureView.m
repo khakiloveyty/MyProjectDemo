@@ -35,10 +35,16 @@
     
     //UIButton会拦截点击事件，点击seeBigBtn不会响应该方法，所以先将seeBigBtn的userInteractionEnabled关闭，这样就会将点击事件传递到self.imageView上
     
+    //创建CATransition对象
+    CATransition *animation=[CATransition animation];
+    animation.duration=0.5;
+    animation.type=kCATransitionFade;
+    [KeyWindow.layer addAnimation:animation forKey:nil];
+    
     JPShowPictureViewController *showPictureVC=[[JPShowPictureViewController alloc] init];
     showPictureVC.topic=self.topic;
     showPictureVC.delegate=self;
-    [KeyWindow.rootViewController presentViewController:showPictureVC animated:YES completion:nil];//使用根控制器就可以在任意地方弹出别的控制器了~
+    [KeyWindow.rootViewController presentViewController:showPictureVC animated:NO completion:nil];//使用根控制器就可以在任意地方弹出别的控制器了~
     
     //[UIApplication sharedApplication].keyWindow.rootViewController：根控制器
     

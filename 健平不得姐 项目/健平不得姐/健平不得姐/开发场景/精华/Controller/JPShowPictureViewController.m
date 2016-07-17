@@ -103,7 +103,12 @@
 
 - (IBAction)close:(id)sender {
     [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleDefault; //返回时恢复状态栏原来样式
-    [self dismissViewControllerAnimated:YES completion:nil];
+    //创建CATransition对象
+    CATransition *animation=[CATransition animation];
+    animation.duration=0.5;
+    animation.type=kCATransitionFade;
+    [KeyWindow.layer addAnimation:animation forKey:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 //保存图片
